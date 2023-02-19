@@ -1,5 +1,6 @@
 ---
 title: "Linux1"
+typora-root-url: ../
 weight: 1
 # bookFlatSection: false
 # bookToc: true
@@ -19,6 +20,8 @@ weight: 1
 http://www.study-area.org/network/network.htm
 
 在Linux系统中， 每个设备都被当成一个文件来对待
+
+![image-20230219210201630](/../img/image-20230219210201630.png)
 
 
 第二章 主机规划与磁盘分区
