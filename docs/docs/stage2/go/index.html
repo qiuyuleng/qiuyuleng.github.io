@@ -1,0 +1,1327 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Chapter 1: Set up Go Environment # Go Workspace # export GOPATH=$HOME/go export PATH=$PATH:$GOPATH/bin Use go env to show all the environment variables
+Environmemnt variable:
+variable GOPATH: point to your go workspace
+variable GOROOT: point to your binary installation of GO
+Go Command # go run compile your code into a binary. However, the binary is build in a temporary directory.
+go build
+go build -o &#43; binary name Getting third party go tools # go install location_of_source_code_repo@version: Install the binary in $GOPATH/bin directory.">
+<meta name="theme-color" content="#FFFFFF">
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="Go" />
+<meta property="og:description" content="Chapter 1: Set up Go Environment # Go Workspace # export GOPATH=$HOME/go export PATH=$PATH:$GOPATH/bin Use go env to show all the environment variables
+Environmemnt variable:
+variable GOPATH: point to your go workspace
+variable GOROOT: point to your binary installation of GO
+Go Command # go run compile your code into a binary. However, the binary is build in a temporary directory.
+go build
+go build -o &#43; binary name Getting third party go tools # go install location_of_source_code_repo@version: Install the binary in $GOPATH/bin directory." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://example.org/docs/stage2/go/" /><meta property="article:section" content="docs" />
+
+<meta property="article:modified_time" content="2023-02-09T16:35:23+08:00" />
+<title>Go | My CS Learning</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.c58292d36b18b675680ab9baea2029204537b839ea72f258746ec0f32ce8d6c8.css" integrity="sha256-xYKS02sYtnVoCrm66iApIEU3uDnqcvJYdG7A8yzo1sg=" crossorigin="anonymous">
+  <script defer src="/flexsearch.min.js"></script>
+  <script defer src="/en.search.min.d21bb57d4c3f130cf6b7b017952e0df457da08ecfd8a0726fdead1d98fdde857.js" integrity="sha256-0hu1fUw/Ewz2t7AXlS4N9FfaCOz9igcm/erR2Y/d6Fc=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>My CS Learning</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/stage1/ansible/" class="">Ansible</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/stage2/docker-in-action/" class="">Docker in Action</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/stage1/git/" class="">Git</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/stage2/go/" class="active">Go</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/stage2/k8s-in-action/" class="">K8s in Action</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/stage1/linux1/" class="">Linux1</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/stage2/linux2/" class="">Linux2</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/stage1/make_file/" class="">Make File</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/stage1/tmux/" class="">Tmux</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/stage2/udemy/" class="">Udemy</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Go</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#go-workspace">Go Workspace</a></li>
+    <li><a href="#go-command">Go Command</a>
+      <ul>
+        <li><a href="#getting-third-party-go-tools">Getting third party go tools</a></li>
+        <li><a href="#formatting-your-code">Formatting your code</a></li>
+      </ul>
+    </li>
+    <li><a href="#linting-and-vetting">Linting and Vetting</a></li>
+    <li><a href="#makefile">Makefile</a></li>
+    <li><a href="#staying-up-tp-date">Staying Up tp Date</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#build-in-types">Build-in Types</a>
+      <ul>
+        <li><a href="#zero-value">Zero value</a></li>
+        <li><a href="#literals">Literals</a></li>
+      </ul>
+    </li>
+    <li><a href="#var-versus-">var Versus :=</a></li>
+    <li><a href="#using-const">Using const</a></li>
+    <li><a href="#unused-variables">Unused Variables</a></li>
+    <li><a href="#naming-variables-and-constants">Naming Variables and Constants</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#arrays-too-rigid-to-use-directly">Arrays: Too rigid to use directly</a></li>
+    <li><a href="#slices">Slices</a>
+      <ul>
+        <li><a href="#capacity">Capacity</a></li>
+        <li><a href="#make-slices">make slices</a></li>
+        <li><a href="#declaring-your-slice">Declaring your Slice</a></li>
+        <li><a href="#slicing-slices">Slicing Slices</a></li>
+        <li><a href="#covert-arrays-to-slices">Covert arrays to slices</a></li>
+        <li><a href="#copy">Copy</a></li>
+      </ul>
+    </li>
+    <li><a href="#strings-and-runes-and-bytes">Strings and Runes and Bytes</a></li>
+    <li><a href="#maps">Maps</a>
+      <ul>
+        <li><a href="#reading-and-writing-a-map">Reading and Writing a Map</a></li>
+        <li><a href="#the-comma-ok-idiom">The comma ok idiom</a></li>
+        <li><a href="#deleting-from-maps">Deleting from Maps</a></li>
+        <li><a href="#using-maps-as-sets">Using Maps as Sets</a></li>
+      </ul>
+    </li>
+    <li><a href="#structs">Structs</a>
+      <ul>
+        <li><a href="#anonymous-structs">Anonymous Structs</a></li>
+        <li><a href="#comparing-and-converting-structs">Comparing and Converting Structs</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#blocks">Blocks</a></li>
+    <li><a href="#shadowing-variables">Shadowing Variables</a></li>
+    <li><a href="#detecting-shadowed-variables">Detecting Shadowed Variables</a></li>
+    <li><a href="#if">if</a></li>
+    <li><a href="#for-four-ways">for, Four Ways</a>
+      <ul>
+        <li><a href="#the-complete-for-statement">The Complete for Statement</a></li>
+        <li><a href="#the-condition-only-for-statement">The Condition-Only for Statement</a></li>
+        <li><a href="#the-infinite-for-statement">The Infinite for Statement</a></li>
+        <li><a href="#break-and-continue">break and continue</a></li>
+        <li><a href="#the-for-range-statement">The for-range Statement</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#the-basics-of-testing">The Basics of Testing</a>
+      <ul>
+        <li><a href="#reporting-test-failures">Reporting Test Failures</a></li>
+        <li><a href="#setting-up-and-tearing-down">Setting up and tearing down</a></li>
+        <li><a href="#storing-sample-test-data">Storing Sample Test Data</a></li>
+        <li><a href="#caching-test-results">Caching Test Results</a></li>
+        <li><a href="#testing-your-public-api">Testing your Public API</a></li>
+        <li><a href="#use-go-cmp-to-compare-test-results">Use go-cmp to Compare Test Results</a></li>
+      </ul>
+    </li>
+    <li><a href="#table-tests">Table Tests</a></li>
+    <li><a href="#checking-your-code-coverage">Checking Your Code Coverage</a></li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="chapter-1-set-up-go-environment">
+  Chapter 1: Set up Go Environment
+  <a class="anchor" href="#chapter-1-set-up-go-environment">#</a>
+</h1>
+<h2 id="go-workspace">
+  Go Workspace
+  <a class="anchor" href="#go-workspace">#</a>
+</h2>
+<pre tabindex="0"><code>export GOPATH=$HOME/go
+export PATH=$PATH:$GOPATH/bin
+</code></pre><p>Use <code>go env</code> to show all the environment variables</p>
+<p>Environmemnt variable:</p>
+<ul>
+<li>
+<p>variable <code>GOPATH</code>: point to your go workspace</p>
+</li>
+<li>
+<p>variable <code>GOROOT</code>: point to your binary installation of GO</p>
+</li>
+</ul>
+<h2 id="go-command">
+  Go Command
+  <a class="anchor" href="#go-command">#</a>
+</h2>
+<p><code>go run</code> compile your code into a binary. However, the binary is build in a temporary directory.</p>
+<p><code>go build</code></p>
+<ul>
+<li><code>go build -o</code> + binary name</li>
+</ul>
+<h3 id="getting-third-party-go-tools">
+  Getting third party go tools
+  <a class="anchor" href="#getting-third-party-go-tools">#</a>
+</h3>
+<p><code>go install location_of_source_code_repo@version</code>:
+Install the binary in <code>$GOPATH/bin</code> directory.</p>
+<p>Update tools to a newer version: <code>go install location_of_source_code_repo@newer_version</code></p>
+<h3 id="formatting-your-code">
+  Formatting your code
+  <a class="anchor" href="#formatting-your-code">#</a>
+</h3>
+<p><code>go fmt</code> automatically reformats your code to match the standard format, including indentation, white space, spacing around operators.</p>
+<p><code>goimports</code> is an enhanced version of <code>go fmt</code></p>
+<p>Semicolon insertion rule to faster compile and enforce coding style.</p>
+<h2 id="linting-and-vetting">
+  Linting and Vetting
+  <a class="anchor" href="#linting-and-vetting">#</a>
+</h2>
+<p><code>golint</code>: ensure code following style guidelines. Includes properly naming variables, formatting error messages, and placing comments on public methods and types. (are not errors)</p>
+<pre tabindex="0"><code>go install golang.org/x/lint/golint@latest
+golint ./...
+</code></pre><p><code>go vet</code> for passing the wrong number of parameters to formatting methods or assigning values to variables that are never used. <code>go ver ./...</code> for entire project</p>
+<p><code>golangci-lint</code>: combine golint, go vet and others. <code>golangci-lint run</code></p>
+<ul>
+<li><code>.golangci.yml</code> at the root of your project: configure which linters are enabled, which files they analyze.</li>
+<li><a href="https://golangci-lint.run/usage/configuration/">https://golangci-lint.run/usage/configuration/</a></li>
+</ul>
+<h2 id="makefile">
+  Makefile
+  <a class="anchor" href="#makefile">#</a>
+</h2>
+<pre tabindex="0"><code>.DEFAULT_GOAL := build
+
+fmt:
+    go fmt ./...
+.PHONY:fmt
+
+lint: fmt
+    golint ./...
+.PHONY:lint
+
+vet: fmt
+    go vet ./...
+.PHONY:vet
+
+build: vet
+    go build hello.go
+.PHONY:build
+</code></pre><p><code>.DEFAULT_GOAL</code>: which target is run when no target is specified.</p>
+<p><code>name_of_target: targets_must_be_run_before_the_target</code></p>
+<p>The <code>.PHONY</code> line keeps make from getting confused if you ever create a directory in your project with the same name as a target.</p>
+<h2 id="staying-up-tp-date">
+  Staying Up tp Date
+  <a class="anchor" href="#staying-up-tp-date">#</a>
+</h2>
+<p>Install a secondary Go environment</p>
+<pre tabindex="0"><code>go get golang.org/dl/go.1.15.6
+go1.15.6 download
+go1.15.6 build
+</code></pre><p>Remove the secondary Go environment</p>
+<pre tabindex="0"><code>go1.15.6 env GOROOT
+rm -rf $(go1.15.6 env GOROOT)
+rm $(go env GOPATH)/bin/go1.15.6
+</code></pre><p><code>go get</code> package management</p>
+<pre tabindex="0"><code>mkdir go_programming
+cd go_programming
+go mod init example.com/test
+go env -w GO111MODULE=on
+go get -d github.com/GoesToEleven/GolangTraining/...
+</code></pre><p>Dowload them in /root/go/pkg/&hellip;</p>
+<p><code>go install xxx</code> will install package in /root/go/bin</p>
+<h1 id="chapter-2-primitive-types-and-declarations">
+  Chapter 2: Primitive Types and Declarations
+  <a class="anchor" href="#chapter-2-primitive-types-and-declarations">#</a>
+</h1>
+<h2 id="build-in-types">
+  Build-in Types
+  <a class="anchor" href="#build-in-types">#</a>
+</h2>
+<p>booolenas, integers, floats, strings</p>
+<h3 id="zero-value">
+  Zero value
+  <a class="anchor" href="#zero-value">#</a>
+</h3>
+<p>default zero value to any variable that is declared but not assigned a values.</p>
+<h3 id="literals">
+  Literals
+  <a class="anchor" href="#literals">#</a>
+</h3>
+<p>0b binary</p>
+<p>0o octal (eight)</p>
+<p>0x hexadecimal (sixteen)</p>
+<p>For longer integer literals, use underscores to improve readability <code>1_234</code></p>
+<h2 id="var-versus-">
+  var Versus :=
+  <a class="anchor" href="#var-versus-">#</a>
+</h2>
+<p><code>var Versus :=</code></p>
+<h2 id="using-const">
+  Using const
+  <a class="anchor" href="#using-const">#</a>
+</h2>
+<p><code>const x int64 = 10</code></p>
+<p><code>const y = &quot;hello&quot;</code></p>
+<h2 id="unused-variables">
+  Unused Variables
+  <a class="anchor" href="#unused-variables">#</a>
+</h2>
+<p>Every declared local variable must be used.</p>
+<pre tabindex="0"><code>func main() {
+    x := 10
+    x = 20
+    fmt.Println(x)
+    x = 30
+}
+// valid
+</code></pre><p>Go compiler won&rsquo;t stop you from creating unread package-level variables (golangci-lint could detect them).</p>
+<p>Go allows you to create unread constants with <code>const</code>.</p>
+<h2 id="naming-variables-and-constants">
+  Naming Variables and Constants
+  <a class="anchor" href="#naming-variables-and-constants">#</a>
+</h2>
+<p>Go requires identifier names to start with a letter or underscore, and the name can contain numbers, underscores, and letters.</p>
+<p>Idiomatic go doesn&rsquo;t use snake case (names like <code>index_counter</code> or <code>number_tries</code>). Instead, go use camel case (names like <code>indexCounter</code> or <code>numberTries</code>).</p>
+<p>Go uses the case of the first letter in the name of a package-level declaration to determine if the item is accessible outside the package.</p>
+<p>Within a function, favor short variable names.
+The smaller the scope for a variable,
+the shorter the name that’s used for it.
+It is very common in Go to see single-lette variable names.</p>
+<ul>
+<li>The names <code>k</code> and <code>v</code> (short for key and value) are used as the variable names in a for-range loop.</li>
+<li>If you are using a standard for loop, <code>i</code> and <code>j</code> are common names for the index variable.</li>
+<li>Provide variable types and single-letter names. For example, <code>i</code>for integers, <code>f</code> for floats, <code>b</code> for booleans.</li>
+</ul>
+<p>For variables and constants in package block, we need to use more descriptive names.</p>
+<h1 id="chapter-3-composite-types">
+  Chapter 3: Composite Types
+  <a class="anchor" href="#chapter-3-composite-types">#</a>
+</h1>
+<h2 id="arrays-too-rigid-to-use-directly">
+  Arrays: Too rigid to use directly
+  <a class="anchor" href="#arrays-too-rigid-to-use-directly">#</a>
+</h2>
+<pre tabindex="0"><code>var x1 [3]int // x[0], x[1] and x[2] are initialized to zero.
+var x2 = [3]int{10, 20, 30}
+var x3 = [12]init{1, 5:4, 6, 10: 100, 15} // [1,0,0,0,0,4,6,0,0,0,100,15]
+var x4 = [...]int{10, 20, 30}
+fmt.Println(x == y) // Ture
+fmt.Println(len(x))
+
+var x [2][3]int // multidimensional arrays
+</code></pre><p>Cannot use a negative index. e.g., <code>x[-1] = 10</code></p>
+<p>Cannot change the size of an array, since length is part of the type the array.</p>
+<h2 id="slices">
+  Slices
+  <a class="anchor" href="#slices">#</a>
+</h2>
+<pre tabindex="0"><code>var x []int
+var x [][]int
+</code></pre><p><code>nil</code>: an identifier that represents the lack of a value for some types</p>
+<p>slices is not comparable. (can use <code>reflect.DeepEqual</code> to compare)</p>
+<pre tabindex="0"><code>var x []int
+var y []int
+fmt.Println(x == y) // compile-time error
+fmt.Println(x == nil) // print true
+len(x) // return 0
+x = append(x, 10, 5, 7)
+var z = []int{1, 2, 3}
+x= append(x, z...)
+</code></pre><blockquote>
+<p>Why need <strong>x</strong> = append(x, 10)?</p>
+<p>Go is a call by value language. Every time you pass a parameter to a function, Go makes a copy of the value that’s passed in. Passing a slice to the append function actually passes a copy of the slice to the function. The function adds the values to the copy of the slice and returns the copy. You then assign the returned slice back to the variable in the calling function.</p>
+</blockquote>
+<h3 id="capacity">
+  Capacity
+  <a class="anchor" href="#capacity">#</a>
+</h3>
+<p>capacity: the number of consecutive memory locations reserved.</p>
+<p>When the length reaches the capacity, there’s no more room to put values.
+If you try to add additional values when the length equals the capacity, the function append uses the Go runtime to allocate a new slice with a larger capacity (usually double the size of the slice, or grow by at least 25%).
+The values in the original slice are copied to the new slice, the new values are added to the end, and the new slice is returned.</p>
+<blockquote>
+<p>Go Runtime</p>
+<ul>
+<li>Go runtime is the software stack responsible for building and running your code.</li>
+<li>Go runtime is compiled into every go binary</li>
+<li>Go runtime provides services like memory allocation and garbage collection, concurrency support, networking, and implementations of built-in types and functions.</li>
+</ul>
+</blockquote>
+<p><code>cap(x)</code> return the current capacity of slice <code>x</code></p>
+<h3 id="make-slices">
+  make slices
+  <a class="anchor" href="#make-slices">#</a>
+</h3>
+<pre tabindex="0"><code>x := make([]int, 5)
+x = append(x, 10) // [0,0,0,0,0,10]
+</code></pre><p><code>append</code> always inceases the length of a slice.</p>
+<h3 id="declaring-your-slice">
+  Declaring your Slice
+  <a class="anchor" href="#declaring-your-slice">#</a>
+</h3>
+<p>Goal: minimize the number of times the slice need to grow</p>
+<ul>
+<li>declaring a slice that might stay nil: <code>var date []int</code></li>
+<li>declaring a slice with default values: <code>date = []int{1, 2, 3}</code></li>
+<li>know how large your slice needs to be, but do not know what those values: using <code>make</code>
+<ul>
+<li>use slice as buffer: nonzero length</li>
+<li>know the exact size you want: specify the length and index into the slice to set the values</li>
+<li>others: <strong>zero length</strong>, specified capacity. allow use <code>append</code> to add items</li>
+</ul>
+</li>
+</ul>
+<h3 id="slicing-slices">
+  Slicing Slices
+  <a class="anchor" href="#slicing-slices">#</a>
+</h3>
+<pre tabindex="0"><code>x := []int{1, 2, 3, 4}
+y := x[:2]
+z := x[1:]
+d := x[1:3]
+e := x[:]
+</code></pre><p>When take a slice from a slice, you are <em>not</em> making a copy of the date. You have two variables that are sharing memory.</p>
+<p>Changes to an element in a slice affect all slices share that element. NEVER use <code>append</code> with subslices.</p>
+<p>Use three-part slice expression to limit capacity that is available for the subslice.</p>
+<h3 id="covert-arrays-to-slices">
+  Covert arrays to slices
+  <a class="anchor" href="#covert-arrays-to-slices">#</a>
+</h3>
+<p>Take a slice from array using a slice expression</p>
+<pre tabindex="0"><code>x := [4]int{5, 6, 7, 8}
+y := x[:2]
+</code></pre><p>Have the same memory-sharing issue.</p>
+<h3 id="copy">
+  Copy
+  <a class="anchor" href="#copy">#</a>
+</h3>
+<p>Use copy built-in function to create a slice that is independent of the original.</p>
+<pre tabindex="0"><code>num := copy(destination_slice, source_slice)
+</code></pre><p><code>num</code> is the number of elements copoed, limited by whichever slice is smaller (length). If do not need <code>num</code>, do not need to assign it.</p>
+<h2 id="strings-and-runes-and-bytes">
+  Strings and Runes and Bytes
+  <a class="anchor" href="#strings-and-runes-and-bytes">#</a>
+</h2>
+<p>String is composed of a sequence of UTF-8-encoded code points.</p>
+<blockquote>
+<p>UTF-8: most commonly used encoding for Unicode</p>
+<p>Unicode uses foru bytes (32 bits) to represent each code point (code point is the technical name for each character and modifier) : UTF-32 (waste so much space)</p>
+<p>UTF-16 (wasteful)</p>
+<p>UTF-8: allow you to look at any byte in a sequence and tell if you are at the start of a UTF-8 sequence, or somewhere in the middle.</p>
+</blockquote>
+<p>Slice substrings. <code>s[2]</code> and <code>s[2:]</code></p>
+<ul>
+<li>A string is composed of a sequence of bytes, while a code point in UTF-8 can be anywhere from one to four bytes long. (such as emoji)</li>
+<li>Only use slicing when you know that your string only contains chars that take up one byte.</li>
+<li>Instead of using slice and index expressions, try to use functions in <code>strings</code> and <code>unicode/utf8</code> packages to iterate over the code points in a string. (<em>next chapter</em>)</li>
+</ul>
+<p><code>len(s)</code></p>
+<p>Covert a single rune or byte to a string</p>
+<pre tabindex="0"><code>var a rune = &#39;x&#39;
+var s string = string(a)
+var b byte = &#39;y&#39;
+var s2 string = string(b)
+</code></pre><p>Cannot convert an int into a string</p>
+<pre tabindex="0"><code>var x int = 65
+var y = string(x)
+fmt.Println(y) // do not print 65, but A
+</code></pre><h2 id="maps">
+  Maps
+  <a class="anchor" href="#maps">#</a>
+</h2>
+<p>Declare map: <code>map[keyType]valueType</code></p>
+<pre tabindex="0"><code>var nilMap map[string]int // declare nil map
+totalWins := map[string]int{} // declare empty map
+ages := make(map[int][]string, 10)
+</code></pre><ul>
+<li>Maps are not comparable. You can check if a map equal to nil, but you cannot check if two maps have identical keys and values using <code>==</code> or <code>!=</code></li>
+<li>Know how many key-values pairs, using <code>make</code> to create a map</li>
+<li><code>len(map)</code></li>
+<li>The key for a map must be comparable type (cannot use slice or map)</li>
+<li>The type of the value can be anything</li>
+</ul>
+<blockquote>
+<p>Hash Map</p>
+<p>When insert a key and value, the key is turned into a number using a <em>hash algorithm</em></p>
+<p>When two keys map to the same bucket, cause collision.</p>
+<p>Go does not require (allow) you to define your own hash algorithm.</p>
+</blockquote>
+<h3 id="reading-and-writing-a-map">
+  Reading and Writing a Map
+  <a class="anchor" href="#reading-and-writing-a-map">#</a>
+</h3>
+<pre tabindex="0"><code>totalWins := map[string]int{}
+totalWins[&#34;Orcas&#34;] = 1
+totalWins[&#34;Lions&#34;] = 2
+fmt.Println(totalWins[&#34;Orcas&#34;])
+fmt.Println(totalWins[&#34;Kittens&#34;]) // 0
+totalWins[&#34;Kittens&#34;]++
+fmt.Println(totalWins[&#34;Kittens&#34;])
+totalWins[&#34;Lions&#34;] = 3
+fmt.Println(totalWins[&#34;Lions&#34;])
+</code></pre><p>When we try to read the value assigned to a map key that was never set, the map returns the <em>zero</em> value for the map’s value type.</p>
+<h3 id="the-comma-ok-idiom">
+  The comma ok idiom
+  <a class="anchor" href="#the-comma-ok-idiom">#</a>
+</h3>
+<p>Comma ok idiom tells the difference between a key that&rsquo;s associated with a zero value and a key that is not in the map.</p>
+<pre tabindex="0"><code>m := map[string]int{
+&#34;hello&#34;: 5,
+&#34;world&#34;: 0,
+}
+v, ok := m[&#34;hello&#34;]
+fmt.Println(v, ok) // 5, true
+v, ok = m[&#34;world&#34;]
+fmt.Println(v, ok) // 0, true
+v, ok = m[&#34;goodbye&#34;]
+fmt.Println(v, ok) // 0, false
+</code></pre><h3 id="deleting-from-maps">
+  Deleting from Maps
+  <a class="anchor" href="#deleting-from-maps">#</a>
+</h3>
+<pre tabindex="0"><code>m := map[string]int{
+&#34;hello&#34;: 5,
+&#34;world&#34;: 10,
+}
+delete(m, &#34;hello&#34;)
+</code></pre><h3 id="using-maps-as-sets">
+  Using Maps as Sets
+  <a class="anchor" href="#using-maps-as-sets">#</a>
+</h3>
+<p>Set is a data type that ensures there is at most one of a value, but not guarantee the values are in any particular order.</p>
+<p>Go does not include a set, but we can use a map to simulate some of its features.
+Create a map where the keys are of int type and the values are of bool type.</p>
+<pre tabindex="0"><code>intSet := map[int]bool{}
+vals := []int{5, 10, 2, 5, 8, 7, 3, 9, 1, 2, 10}
+for _, v := range vals {
+    intSet[v] = true
+}
+fmt.Println(len(vals), len(intSet))
+fmt.Println(intSet[5])
+fmt.Println(intSet[500])
+if intSet[100] {
+    fmt.Println(&#34;100 is in the set&#34;)
+}
+</code></pre><h2 id="structs">
+  Structs
+  <a class="anchor" href="#structs">#</a>
+</h2>
+<p>For maps,</p>
+<ul>
+<li>They don’t define an API since there’s no way to constrain a map to only allow certain
+keys</li>
+<li>All values in a map must be of the same type</li>
+</ul>
+<pre tabindex="0"><code>type person struct {
+    name string
+    age int
+    pet string
+}
+</code></pre><ul>
+<li>There are no commas separating the fields in a struct
+declaration.</li>
+<li>A struct type that’s defined within a function can only be used within that function.</li>
+</ul>
+<pre tabindex="0"><code>var fred person
+bob := person{}
+// No difference for the above two methods
+</code></pre><p>Since no value is assigned to <code>fred</code>, it gets the zero value for the <code>person</code> struct type. A zero value struct has every field set to the
+field’s zero value.</p>
+<pre tabindex="0"><code>julia := person{
+    &#34;Julia&#34;,
+    40,
+    &#34;cat&#34;,
+}
+</code></pre><p>A struct literal can be specified as a comma-separated list of values for the fields inside of braces (in order). Used for simple struct</p>
+<pre tabindex="0"><code>beth := person{
+age: 30,
+name: &#34;Beth&#34;,
+}
+</code></pre><p>Map literal style: you can leave out keys and specify the fields in any order. Used for complex struct.</p>
+<pre tabindex="0"><code>bob.name = &#34;Bob&#34;
+fmt.Println(beth.name)
+</code></pre><p>Dotted notation.</p>
+<h3 id="anonymous-structs">
+  Anonymous Structs
+  <a class="anchor" href="#anonymous-structs">#</a>
+</h3>
+<pre tabindex="0"><code>var person struct {
+    name string
+    age int
+    pet string
+}
+
+person.name = &#34;bob&#34;
+person.age = 50
+person.pet = &#34;dog&#34;
+
+pet := struct {
+    name string
+    kind string
+}{
+    name: &#34;Fido&#34;,
+    kind: &#34;dog&#34;,
+}
+</code></pre><p>Usages for anonymous struct:</p>
+<ul>
+<li>Translate external data into a struct or a struct into external data (like JSON or protocol buffers) (called unmarshaling and marshaling
+data)</li>
+<li>Anonymous structs pop up: writing table-driven tests</li>
+</ul>
+<h3 id="comparing-and-converting-structs">
+  Comparing and Converting Structs
+  <a class="anchor" href="#comparing-and-converting-structs">#</a>
+</h3>
+<p>Whether or not a struct is comparable depends on the struct’s fields.
+Structs consists slice or map fields (and function and channel) fields are not comparable.</p>
+<p>Go doesn’t allow comparisons between variables that represent structs of different types.</p>
+<p>Go allow type conversion from one struct type to another if the fields of both structs have the same names, order, and types.</p>
+<pre tabindex="0"><code>type firstPerson struct {
+    name string
+    age int
+}
+
+type secondPerson struct {
+    name string
+    age int
+}
+
+type thirdPerson struct {
+    age int
+    name string
+}
+
+type fourthPerson struct {
+    firstName string
+    age int
+}
+
+type fifthPerson struct {
+    name string
+    age int
+    favoriteColor string
+}
+</code></pre><pre tabindex="0"><code>person := firstPerson{
+	name: &#34;Bob&#34;,
+	age:  50,
+}
+
+person2 := secondPerson(person)
+
+fmt.Println(person2)
+fmt.Printf(&#34;%T&#34;, person2) // secondPerson
+fmt.Printf(&#34;%T&#34;, person) //firstPerson
+fmt.Println(person2 == person)// error: mismatched types secondPerson and firstPerson
+</code></pre><ul>
+<li>Can use a type conversion to convert an instance of <code>firstPerson</code> to
+<code>secondPerson</code>
+<ul>
+<li>How to convert? <code>person := firstPerson{} person2 = secondPerson(person)</code>?</li>
+</ul>
+</li>
+<li>Cannot use <code>==</code> to compare an instance of <code>firstPerson</code> and an instance of <code>secondPerson</code> (because they are different types)</li>
+<li>Cannot convert an instance of <code>firstPerson</code> to <code>thirdPerson</code>, because the fields are in a different order</li>
+<li>Cannot convert an instance of firstPerson to fourthPerson because the field names don’t match</li>
+<li>Cannot convert an instance of firstPerson to fifthPerson because there’s an additional field</li>
+</ul>
+<pre tabindex="0"><code>type firstPerson struct {
+	name string
+	age  int
+}
+f := firstPerson{
+	name: &#34;Bob&#34;,
+	age:  50,
+}
+var g struct {
+	name string
+	age  int
+}
+// compiles -- can use = and == between identical named and anonymous structs
+g = f
+fmt.Println(f == g)
+</code></pre><p>If two struct variables are being compared and at least one of them has a type that’s an anonymous struct,
+you can compare them without a type conversion if the fields of both structs have the same names, order, and types.
+You can also assign between named and anonymous struct types if
+the fields of both structs have the same names, order, and types</p>
+<h1 id="chapter-4-blocks-shadows-and-control-structures">
+  Chapter 4: Blocks, Shadows, and Control Structures
+  <a class="anchor" href="#chapter-4-blocks-shadows-and-control-structures">#</a>
+</h1>
+<h2 id="blocks">
+  Blocks
+  <a class="anchor" href="#blocks">#</a>
+</h2>
+<p>Each place where a declaration occurs is called a block.</p>
+<ul>
+<li>package block: declare variables, constants, types, and functions</li>
+<li>file block: <code>import</code> statement</li>
+</ul>
+<h2 id="shadowing-variables">
+  Shadowing Variables
+  <a class="anchor" href="#shadowing-variables">#</a>
+</h2>
+<pre tabindex="0"><code>func main() {
+	x := 10
+	if x &gt; 5 {
+		fmt.Println(x) // 10
+		x := 5
+		fmt.Println(x) // 5
+	}
+	fmt.Println(x) // 10
+}
+</code></pre><p>A shadowing variable is a variable that has the same name as a variable in a containing block.
+For as long as the shadowing variable exists, you cannot access a <em>shadowed</em> variable.</p>
+<pre tabindex="0"><code>func main() {
+    x := 10
+    fmt.Println(x)
+    fmt := &#34;oops&#34;
+    fmt.Println(fmt)
+}
+</code></pre><p>Shadowing package names: <code>fmt.Println undefined (type string has no field or method Println)</code></p>
+<h2 id="detecting-shadowed-variables">
+  Detecting Shadowed Variables
+  <a class="anchor" href="#detecting-shadowed-variables">#</a>
+</h2>
+<p>It is good to make sure that you do not have any shadowed variables in your programs.</p>
+<pre tabindex="0"><code>go install golang.org/x/tools/go/analysis/passes/shadow/cmd/shadow@latest
+</code></pre><p>Then in Makefile, add <code>shadow ./..</code></p>
+<blockquote>
+<p>What is the meanning of block, scopes, and identifier?</p>
+</blockquote>
+<pre tabindex="0"><code>fmt.Println(true) // true
+true := 10
+fmt.Println(true) // 10
+</code></pre><blockquote>
+<p>The Universe Block</p>
+<p>The built-in types (like <code>int</code> and <code>string</code>), constants (like <code>true</code> and <code>false</code>), functions (like <code>make</code> or <code>close</code>) and <code>nil</code> are not included in Go 25 keywords.
+Go considers these predeclared identifier and defines them in the <code>universe block</code>.</p>
+<p>You must be very careful to never redefine any of the identifiers in the universe block.</p>
+<p>Not even shadow detects shadowing of universe block identifiers.</p>
+</blockquote>
+<h2 id="if">
+  if
+  <a class="anchor" href="#if">#</a>
+</h2>
+<pre tabindex="0"><code>n := rand.Intn(10)
+if n == 0 {
+    fmt.Println(&#34;That&#39;s too low&#34;)
+} else if n &gt; 5 {
+    fmt.Println(&#34;That&#39;s too big:&#34;, n)
+} else {
+    fmt.Println(&#34;That&#39;s a good number:&#34;, n)
+}
+</code></pre><p>Go can declare variables that are scoped to the condition and to both the <code>if</code> and <code>else</code> blocks. You can shadow variables here.</p>
+<pre tabindex="0"><code>if n := rand.Intn(10); n == 0 {
+    fmt.Println(&#34;That&#39;s too low&#34;)
+} else if n &gt; 5 {
+    fmt.Println(&#34;That&#39;s too big:&#34;, n)
+} else {
+    fmt.Println(&#34;That&#39;s a good number:&#34;, n)
+}
+fmt.Println(n) // undefined: n
+</code></pre><p>Once the series of <code>if/else</code> statements ends, <code>n</code> is undefined.</p>
+<h2 id="for-four-ways">
+  for, Four Ways
+  <a class="anchor" href="#for-four-ways">#</a>
+</h2>
+<p><code>for</code> is the <em>only</em> looping keyword in Go:</p>
+<ul>
+<li>A complete, C-style <code>for</code></li>
+<li>A condition-only <code>for</code></li>
+<li>An infinite <code>for</code></li>
+<li><code>for-range</code></li>
+</ul>
+<h3 id="the-complete-for-statement">
+  The Complete for Statement
+  <a class="anchor" href="#the-complete-for-statement">#</a>
+</h3>
+<pre tabindex="0"><code>for i := 0; i &lt; 10; i++ {
+    fmt.Println(i)
+}
+</code></pre><ul>
+<li>three parts, separated by <code>;</code></li>
+<li>use <code>:=</code> to initialize the variable, not <code>var</code></li>
+<li>you can shadow a variable here</li>
+</ul>
+<h3 id="the-condition-only-for-statement">
+  The Condition-Only for Statement
+  <a class="anchor" href="#the-condition-only-for-statement">#</a>
+</h3>
+<pre tabindex="0"><code>i := 1
+for i &lt; 100 {
+    fmt.Println(i)
+    i = i * 2
+}
+</code></pre><h3 id="the-infinite-for-statement">
+  The Infinite for Statement
+  <a class="anchor" href="#the-infinite-for-statement">#</a>
+</h3>
+<pre tabindex="0"><code>func main() {
+    for {
+        fmt.Println(&#34;Hello&#34;)
+    }
+}
+</code></pre><p>Print &ldquo;Hello&rdquo; forever.</p>
+<h3 id="break-and-continue">
+  break and continue
+  <a class="anchor" href="#break-and-continue">#</a>
+</h3>
+<pre tabindex="0"><code>for {
+    // things to do in the loop
+    if !CONDITION {
+        break
+    }
+}
+</code></pre><pre tabindex="0"><code>//confusing code
+for i := 1; i &lt;= 100; i++ {
+    if i%3 == 0 {
+        if i%5 == 0 {
+            fmt.Println(&#34;FizzBuzz&#34;)
+        } else {
+            fmt.Println(&#34;Fizz&#34;)
+        }
+    } else if i%5 == 0 {
+        fmt.Println(&#34;Buzz&#34;)
+    } else {
+        fmt.Println(i)
+    }
+}
+</code></pre><p>continue: skips over the rest of the body of a <code>for</code> loop and proceeds directly to the next iteration.</p>
+<pre tabindex="0"><code>// as left-aligned as possible
+for i := 1; i &lt;= 100; i++ {
+    if i%3 == 0 &amp;&amp; i%5 == 0 {
+        fmt.Println(&#34;FizzBuzz&#34;)
+        continue
+    }
+    if i%3 == 0 {
+        fmt.Println(&#34;Fizz&#34;)
+        continue
+    }
+    if i%5 == 0 {
+        fmt.Println(&#34;Buzz&#34;)
+        continue
+    }
+    fmt.Println(i)
+}
+</code></pre><h3 id="the-for-range-statement">
+  The for-range Statement
+  <a class="anchor" href="#the-for-range-statement">#</a>
+</h3>
+<pre tabindex="0"><code>evenVals := []int{2, 4, 6, 8, 10, 12}
+for i, v := range evenVals {
+    fmt.Println(i, v)
+}
+</code></pre><ul>
+<li>You can also iterate over user-defined types.</li>
+<li>The first variable <code>i</code> is the position in the data structure being iterated
+<ul>
+<li>you can use <code>i</code> for array, slice or string index, use <code>k</code> for map key</li>
+<li>if you do not need it, using <code>_</code>: <code>for _, v := range evenVals</code></li>
+</ul>
+</li>
+<li>the second <code>v</code> is the value at that position.</li>
+</ul>
+<p>Want the key, but do not want the value: just leave off the second variable. The most common reason for iterating over the key is when a map is being used as a set.</p>
+<pre tabindex="0"><code>uniqueNames := map[string]bool{&#34;Fred&#34;: true, &#34;Raul&#34;: true, &#34;Wilma&#34;: true}
+for k := range uniqueNames {
+    fmt.Println(k)
+}
+</code></pre><h4 id="iterating-over-maps">
+  Iterating over maps
+  <a class="anchor" href="#iterating-over-maps">#</a>
+</h4>
+<pre tabindex="0"><code>m := map[string]int{
+    &#34;a&#34;: 1,
+    &#34;c&#34;: 3,
+    &#34;b&#34;: 2,
+}
+for i := 0; i &lt; 3; i++ {
+    fmt.Println(&#34;Loop&#34;, i)
+    for k, v := range m {
+        fmt.Println(k, v)
+    }
+}
+</code></pre><p>The order of the keys and values varies.
+This is a security feature to avoid <em>Hash Dos</em>.</p>
+<p>To make it easier to debug, the formatting function (like <code>fmt.Println</code> always output maps with their keys in ascending sorted order).</p>
+<h4 id="iterating-over-strings">
+  Iterating over strings
+  <a class="anchor" href="#iterating-over-strings">#</a>
+</h4>
+<p>When iterating over a string with <code>for-range</code> loop, it iterates over <code>runes</code>, not <code>bytes</code>, in order.</p>
+<h4 id="the-for-range-value-is-a-copy">
+  The for-range value is a copy
+  <a class="anchor" href="#the-for-range-value-is-a-copy">#</a>
+</h4>
+<p>The <code>for-range</code> loop copies the value from the compound type to the value variable. Modifying the value does not modify the source.</p>
+<pre tabindex="0"><code>evenVals := []int{2, 4, 6, 8, 10, 12}
+for _, v := range evenVals {
+    v *= 2
+}
+fmt.Println(evenVals) // 2,4,6,8,10,12
+</code></pre><h1 id="chapter-13-writing-tests">
+  Chapter 13: Writing Tests
+  <a class="anchor" href="#chapter-13-writing-tests">#</a>
+</h1>
+<h2 id="the-basics-of-testing">
+  The Basics of Testing
+  <a class="anchor" href="#the-basics-of-testing">#</a>
+</h2>
+<p>Go tests are placed in the same directory and the same package as the production code.</p>
+<pre tabindex="0"><code>func addNumbers(x, y int) int {
+    return x + x
+}
+
+func Test_addNumbers(t *testing.T) {
+    result := addNumbers(2,3)
+    if result != 5 {
+i    t.Error(&#34;incorrect result: expected 5, got&#34;, result)
+    }
+}
+</code></pre><ul>
+<li>Every test file ends with <code>_test.go</code></li>
+<li>Test functions name <code>Test</code> + document/function what you are testing</li>
+<li>Test functions take in a single parameter of type <code>*testing.T</code>. By convention, this parameter is named <code>t</code></li>
+<li>When there is an incorrect result, we report the error with <code>t.Error</code> method.</li>
+<li><code>go test ./...</code></li>
+</ul>
+<h3 id="reporting-test-failures">
+  Reporting Test Failures
+  <a class="anchor" href="#reporting-test-failures">#</a>
+</h3>
+<p>Error/Errorf: if test several independent items. So that can report as many problems at once.</p>
+<p>Fatal/Fatalf: test function exits immediately after the test failure message is generated. If the failure of a check in a test means that further checks in the same test function will
+always fail or cause the test to panic.</p>
+<h3 id="setting-up-and-tearing-down">
+  Setting up and tearing down
+  <a class="anchor" href="#setting-up-and-tearing-down">#</a>
+</h3>
+<pre tabindex="0"><code>func TestMain(m *testing.M) {
+    fmt.Println(&#34;Set up stuff for tests here&#34;)
+    testTime = time.Now()
+    exitVal := m.Run()
+    fmt.Println(&#34;Clean up stuff after tests here&#34;)
+    os.Exit(exitVal)
+}
+</code></pre><ul>
+<li>Parameter of type <code>*testing.M</code></li>
+<li>Running go on a package with a <code>TestMain</code> function calls the function instead of invoking the tests directly.</li>
+<li>Once the state is configured, call the <code>Run</code> method on <code>*testing.M</code> to run the test functions.
+<ul>
+<li>The <code>Run</code> method returns the exit code;</li>
+<li><code>0</code> indicates that all tests passed.</li>
+</ul>
+</li>
+<li>Finally, you must call <code>os.Exit</code> with the exit code returned from <code>Run</code>.</li>
+<li><code>TestMain</code> is invoked once, not before and after each individual test</li>
+<li>you can have only one <code>TestMain</code> per package.</li>
+</ul>
+<p>Using <code>Cleanup</code> method or <code>defer</code> statement to clean up temp resources created for a single test.</p>
+<h3 id="storing-sample-test-data">
+  Storing Sample Test Data
+  <a class="anchor" href="#storing-sample-test-data">#</a>
+</h3>
+<p>Create a subdirectory named <code>testdata</code> to hold sample data to test functions.</p>
+<h3 id="caching-test-results">
+  Caching Test Results
+  <a class="anchor" href="#caching-test-results">#</a>
+</h3>
+<p>Go also caches test results when running tests across multiple packages if they have passed and their code hasn’t changed.</p>
+<ul>
+<li>using <code>count=1</code> flag to force tests akways run</li>
+</ul>
+<h3 id="testing-your-public-api">
+  Testing your Public API
+  <a class="anchor" href="#testing-your-public-api">#</a>
+</h3>
+<p>TODO</p>
+<h3 id="use-go-cmp-to-compare-test-results">
+  Use go-cmp to Compare Test Results
+  <a class="anchor" href="#use-go-cmp-to-compare-test-results">#</a>
+</h3>
+<p>TODO</p>
+<h2 id="table-tests">
+  Table Tests
+  <a class="anchor" href="#table-tests">#</a>
+</h2>
+<p>TODO</p>
+<h2 id="checking-your-code-coverage">
+  Checking Your Code Coverage
+  <a class="anchor" href="#checking-your-code-coverage">#</a>
+</h2>
+<pre tabindex="0"><code>go test -v -cover -coverprofile=c.out
+go tool cover -html=c.out
+</code></pre><ul>
+<li><code>-cover</code>: calculate coverage information and include a summary in the test ourtput</li>
+<li><code>-coverprofile</code>: save the coverage information to a file</li>
+</ul>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#go-workspace">Go Workspace</a></li>
+    <li><a href="#go-command">Go Command</a>
+      <ul>
+        <li><a href="#getting-third-party-go-tools">Getting third party go tools</a></li>
+        <li><a href="#formatting-your-code">Formatting your code</a></li>
+      </ul>
+    </li>
+    <li><a href="#linting-and-vetting">Linting and Vetting</a></li>
+    <li><a href="#makefile">Makefile</a></li>
+    <li><a href="#staying-up-tp-date">Staying Up tp Date</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#build-in-types">Build-in Types</a>
+      <ul>
+        <li><a href="#zero-value">Zero value</a></li>
+        <li><a href="#literals">Literals</a></li>
+      </ul>
+    </li>
+    <li><a href="#var-versus-">var Versus :=</a></li>
+    <li><a href="#using-const">Using const</a></li>
+    <li><a href="#unused-variables">Unused Variables</a></li>
+    <li><a href="#naming-variables-and-constants">Naming Variables and Constants</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#arrays-too-rigid-to-use-directly">Arrays: Too rigid to use directly</a></li>
+    <li><a href="#slices">Slices</a>
+      <ul>
+        <li><a href="#capacity">Capacity</a></li>
+        <li><a href="#make-slices">make slices</a></li>
+        <li><a href="#declaring-your-slice">Declaring your Slice</a></li>
+        <li><a href="#slicing-slices">Slicing Slices</a></li>
+        <li><a href="#covert-arrays-to-slices">Covert arrays to slices</a></li>
+        <li><a href="#copy">Copy</a></li>
+      </ul>
+    </li>
+    <li><a href="#strings-and-runes-and-bytes">Strings and Runes and Bytes</a></li>
+    <li><a href="#maps">Maps</a>
+      <ul>
+        <li><a href="#reading-and-writing-a-map">Reading and Writing a Map</a></li>
+        <li><a href="#the-comma-ok-idiom">The comma ok idiom</a></li>
+        <li><a href="#deleting-from-maps">Deleting from Maps</a></li>
+        <li><a href="#using-maps-as-sets">Using Maps as Sets</a></li>
+      </ul>
+    </li>
+    <li><a href="#structs">Structs</a>
+      <ul>
+        <li><a href="#anonymous-structs">Anonymous Structs</a></li>
+        <li><a href="#comparing-and-converting-structs">Comparing and Converting Structs</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#blocks">Blocks</a></li>
+    <li><a href="#shadowing-variables">Shadowing Variables</a></li>
+    <li><a href="#detecting-shadowed-variables">Detecting Shadowed Variables</a></li>
+    <li><a href="#if">if</a></li>
+    <li><a href="#for-four-ways">for, Four Ways</a>
+      <ul>
+        <li><a href="#the-complete-for-statement">The Complete for Statement</a></li>
+        <li><a href="#the-condition-only-for-statement">The Condition-Only for Statement</a></li>
+        <li><a href="#the-infinite-for-statement">The Infinite for Statement</a></li>
+        <li><a href="#break-and-continue">break and continue</a></li>
+        <li><a href="#the-for-range-statement">The for-range Statement</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#the-basics-of-testing">The Basics of Testing</a>
+      <ul>
+        <li><a href="#reporting-test-failures">Reporting Test Failures</a></li>
+        <li><a href="#setting-up-and-tearing-down">Setting up and tearing down</a></li>
+        <li><a href="#storing-sample-test-data">Storing Sample Test Data</a></li>
+        <li><a href="#caching-test-results">Caching Test Results</a></li>
+        <li><a href="#testing-your-public-api">Testing your Public API</a></li>
+        <li><a href="#use-go-cmp-to-compare-test-results">Use go-cmp to Compare Test Results</a></li>
+      </ul>
+    </li>
+    <li><a href="#table-tests">Table Tests</a></li>
+    <li><a href="#checking-your-code-coverage">Checking Your Code Coverage</a></li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

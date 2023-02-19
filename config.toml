@@ -1,0 +1,6 @@
+baseURL = 'http://example.org/'
+languageCode = 'en-us'
+title = 'My CS Learning'
+theme = "hugo-book"
+publishDir = 'docs'
+enableGitInfo = true

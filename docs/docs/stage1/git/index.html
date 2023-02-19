@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="git reset
+git reverse
+git rebase
+git rebase main
+当前在bugFix这个branch，把当前的branch copy到main branch
+git rebase a b
+将b复制到a下
+git rebase bugFix
+git rebase bugFix main
+git pull &ndash;rebase
+git push origin main (git push )
+git push origin &lt;source本地&gt;:&lt;destination远&gt;
+如果是空的，例如 git push origin :foo ，那就是删除foo on remote
+git fetch 和 git pull的区别？git pull = git fetch &#43; merge
+git fetch origin &lt;source远&gt;:&lt;destination本地&gt;
+如果是空的，例如git fetch origin :bar, 那就是新建bar 分支">
+<meta name="theme-color" content="#FFFFFF">
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="Git" />
+<meta property="og:description" content="git reset
+git reverse
+git rebase
+git rebase main
+当前在bugFix这个branch，把当前的branch copy到main branch
+git rebase a b
+将b复制到a下
+git rebase bugFix
+git rebase bugFix main
+git pull &ndash;rebase
+git push origin main (git push )
+git push origin &lt;source本地&gt;:&lt;destination远&gt;
+如果是空的，例如 git push origin :foo ，那就是删除foo on remote
+git fetch 和 git pull的区别？git pull = git fetch &#43; merge
+git fetch origin &lt;source远&gt;:&lt;destination本地&gt;
+如果是空的，例如git fetch origin :bar, 那就是新建bar 分支" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://example.org/docs/stage1/git/" /><meta property="article:section" content="docs" />
+
+<meta property="article:modified_time" content="2023-01-29T20:53:00+08:00" />
+<title>Git | My CS Learning</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.c58292d36b18b675680ab9baea2029204537b839ea72f258746ec0f32ce8d6c8.css" integrity="sha256-xYKS02sYtnVoCrm66iApIEU3uDnqcvJYdG7A8yzo1sg=" crossorigin="anonymous">
+  <script defer src="/flexsearch.min.js"></script>
+  <script defer src="/en.search.min.d21bb57d4c3f130cf6b7b017952e0df457da08ecfd8a0726fdead1d98fdde857.js" integrity="sha256-0hu1fUw/Ewz2t7AXlS4N9FfaCOz9igcm/erR2Y/d6Fc=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>My CS Learning</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/stage1/ansible/" class="">Ansible</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/stage2/docker-in-action/" class="">Docker in Action</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/stage1/git/" class="active">Git</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/stage2/go/" class="">Go</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/stage2/k8s-in-action/" class="">K8s in Action</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/stage1/linux1/" class="">Linux1</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/stage2/linux2/" class="">Linux2</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/stage1/make_file/" class="">Make File</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/stage1/tmux/" class="">Tmux</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/stage2/udemy/" class="">Udemy</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Git</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents"></nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><p>git reset</p>
+<p>git reverse</p>
+<p>git rebase</p>
+<p>git rebase main</p>
+<p>当前在bugFix这个branch，把当前的branch copy到main branch</p>
+<p>git rebase a b</p>
+<p>将b复制到a下</p>
+<p>git rebase bugFix</p>
+<p>git rebase bugFix main</p>
+<p>git pull &ndash;rebase</p>
+<p>git push origin main (git push <!-- raw HTML omitted --> <!-- raw HTML omitted -->)</p>
+<p>git push origin &lt;source本地&gt;:&lt;destination远&gt;</p>
+<p>如果<!-- raw HTML omitted -->是空的，例如 git push origin :foo ，那就是删除foo on remote</p>
+<p>git fetch 和 git pull的区别？git pull = git fetch + merge</p>
+<p>git fetch origin &lt;source远&gt;:&lt;destination本地&gt;</p>
+<p>如果<!-- raw HTML omitted -->是空的，例如git fetch origin :bar, 那就是新建bar 分支</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents"></nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
