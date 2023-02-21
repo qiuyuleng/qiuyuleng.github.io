@@ -115,14 +115,22 @@ Kubernetes 通过配置Docker 来让一个pod 内的所有容器共享相同的L
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://example.org/docs/stage1/linux1/</guid>
-      <description>第零章 计算机基础 操作系统是连接硬件和用户的，让用户不用对着机器文档编程，更方便 操作系统用来有效率地控制计算机的硬件资源，并且提供方便程序员编程的接口
-第一章 Linux是什么 网路基础： http://www.study-area.org/network/network.htm
+      <description>第零章 计算机基础 # 操作系统是连接硬件和用户的，让用户不用对着机器文档编程，更方便 操作系统用来有效率地控制计算机的硬件资源，并且提供方便程序员编程的接口
+第一章 Linux是什么 # 网路基础： http://www.study-area.org/network/network.htm
 在Linux系统中， 每个设备都被当成一个文件来对待
-第二章 主机规划与磁盘分区 第三章 安装一个Linux系统 简单翻过去了
-第四章 首次登陆与线上求助 man指令学到了很多小技巧，比如/search 一些数字的含义 如果忘记指令了怎么办？ man后面的一些后缀 nano Tmux 使用教程 - 阮一峰的网络日志 (ruanyifeng.com) vimtutor
-Vim 配置入门 - 阮一峰的网络日志 (ruanyifeng.com)
-第五章 Linux文件权限与目录配置 各种权限查看和更改 ls -l chgrp, chown, chmod 各种权限是什么含义，尤其是目录文件的 注意目录的x权限 绝对目录、相对目录
-第六章 Linux文件与目录管理 .和..和~ PATH rmdir 删除空目录 rm-r 删除不空的目录 mv除了移动文件，也可以用作文件的更名 管线|：前一个指令输出的讯息，通过管线交给后续的指令继续使用 eg：cat -n /etc/man_db.conf | head -n 20 | tail -n 10 分号；：在一行中输入多个指令 touch 创建新的空文件，修改 /atime（access读取时间）和mtime（modify修改时间），不能修改ctime（status time） 查阅文件内容 cat, less, more, tail, head 默认权限 umask 文件 666 默认没有x（不可执行） 目录 777 默认有x（可以进入目录） 特殊权限 SUID、SGID、SBIT 4 SUID：使用者执行这一程序时，执行过程中会暂时拥有程序拥有者的权限，例如：passwd修改自己的密码 2 SGID：使用者在这个目录下新建的文件的群组都会和该目录的群组名称相同 小组作业，小组内部成员可以同一个目录底下工作，但是小组成员还是拥有自己的家目录和私有群组，那么可以新建小组群组并将小组成员添加到这个群组，新建小组任务文件夹，然后将该文件夹权限设置为2770（13章任务二例题） 1 SBIT：该目录下使用者创建的文件只有自己与root能够删除 chattr和lsattr设置观察隐藏属性 which查指令 whereis查文件很快，后面要接文件的完整名字 locate查文件也很快，并且后面不需要接完整的名字，但是因为查的是数据库里的数据，所以有时候需要updatedb来更新数据库 updatedb执行比较慢 find 很万能 find [PATH] [option] e.</description>
+第二章 主机规划与磁盘分区 # 第三章 安装一个Linux系统s # 简单翻过去了
+第四章 首次登陆与线上求助 # man指令学到了很多小技巧，比如/search 一些数字的含义 如果忘记指令了怎么办？ man后面的一些后缀 nano vimtutor
+第五章 Linux文件权限与目录配置 # 各种权限查看和更改
+ls -l
+chgrp, chown, chmod 各种权限是什么含义，尤其是目录文件的 注意目录的x权限 绝对目录、相对目录
+第六章 Linux文件与目录管理 # .和..和~
+PATH
+rmdir 删除空目录 rm-r 删除不空的目录
+mv除了移动文件，也可以用作文件的更名
+管线|：前一个指令输出的讯息，通过管线交给后续的指令继续使用
+eg：cat -n /etc/man_db.conf | head -n 20 | tail -n 10 分号；：在一行中输入多个指令
+touch 创建新的空文件，修改 /atime（access读取时间）和mtime（modify修改时间），不能修改ctime（status time）
+查阅文件内容 cat, less, more, tail, head</description>
     </item>
     
     <item>
