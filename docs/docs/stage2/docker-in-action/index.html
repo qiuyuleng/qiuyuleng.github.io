@@ -3,10 +3,14 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Introduction Chapter 1: Welcome to Docker Docker make it easier for users to install and run the software. Docker is a tool helping solve common problems such as installing, removing, upgrading, distributing, trusting and running software, helping system administrators focus on higher-value activities. What is Docker? Docker is an open source project for building, shipping and running programs. containers Install Docker https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository Take care of the setting of proxy https://docs.docker.com/config/daemon/systemd/#httphttps-proxy https://docs.">
+<meta name="description" content="Introduction # Chapter 1: Welcome to Docker # Docker make it easier for users to install and run the software. Docker is a tool helping solve common problems such as installing, removing, upgrading, distributing, trusting and running software, helping system administrators focus on higher-value activities. What is Docker? # Docker is an open source project for building, shipping and running programs.
+containers Install Docker
+https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository Take care of the setting of proxy https://docs.">
 <meta name="theme-color" content="#FFFFFF">
 <meta name="color-scheme" content="light dark"><meta property="og:title" content="Docker in Action" />
-<meta property="og:description" content="Introduction Chapter 1: Welcome to Docker Docker make it easier for users to install and run the software. Docker is a tool helping solve common problems such as installing, removing, upgrading, distributing, trusting and running software, helping system administrators focus on higher-value activities. What is Docker? Docker is an open source project for building, shipping and running programs. containers Install Docker https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository Take care of the setting of proxy https://docs.docker.com/config/daemon/systemd/#httphttps-proxy https://docs." />
+<meta property="og:description" content="Introduction # Chapter 1: Welcome to Docker # Docker make it easier for users to install and run the software. Docker is a tool helping solve common problems such as installing, removing, upgrading, distributing, trusting and running software, helping system administrators focus on higher-value activities. What is Docker? # Docker is an open source project for building, shipping and running programs.
+containers Install Docker
+https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository Take care of the setting of proxy https://docs." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://example.org/docs/stage2/docker-in-action/" /><meta property="article:section" content="docs" />
 
@@ -16,7 +20,7 @@
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.c58292d36b18b675680ab9baea2029204537b839ea72f258746ec0f32ce8d6c8.css" integrity="sha256-xYKS02sYtnVoCrm66iApIEU3uDnqcvJYdG7A8yzo1sg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.5d06eab3561632cebaf0a2d78cbfe70b558f516dee53482eced24c05563660df.js" integrity="sha256-XQbqs1YWMs668KLXjL/nC1WPUW3uU0guztJMBVY2YN8=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.9efd597a2fa4492ee6cc9b0579fc06c0794fa0486f79685b78183e8512a99888.js" integrity="sha256-nv1Zei&#43;kSS7mzJsFefwGwHlPoEhveWhbeBg&#43;hRKpmIg=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -241,7 +245,118 @@ https://github.com/alex-shpak/hugo-book
   <aside class="hidden clearfix">
     
   
-<nav id="TableOfContents"></nav>
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#chapter-1-welcome-to-docker">Chapter 1: Welcome to Docker</a>
+      <ul>
+        <li><a href="#what-is-docker">What is Docker?</a></li>
+        <li><a href="#what-problems-does-docker-solve">What problems does Docker solve?</a></li>
+        <li><a href="#why-is-docker-important--when-and-where-to-use-docker">Why is Docker Important? &amp; When and where to use Docker?</a></li>
+        <li><a href="#getting-help-with-the-docker-command-line">Getting help with the Docker command line</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#chapter-2-running-software-in-containers">Chapter 2: Running software in containers</a>
+      <ul>
+        <li><a href="#controlling-containers-building-a-website-monitor">Controlling containers: Building a website monitor</a></li>
+        <li><a href="#creating-and-starting-a-new-container-detached-containers">Creating and starting a new container: detached containers</a></li>
+        <li><a href="#running-interactive-containers">Running interactive containers</a></li>
+        <li><a href="#listing-stopping-restarting-and-viewing-output-of-containers">Listing, stopping, restarting, and viewing output of containers</a></li>
+        <li><a href="#solved-problems-and-the-pid-namespace">Solved problems and the PID namespace</a></li>
+        <li><a href="#eliminating-metaconflicts-building-a-website-farm">Eliminating metaconflicts: Building a website farm</a></li>
+        <li><a href="#building-environment-agnostic-systems">Building environment-agnostic systems</a></li>
+        <li><a href="#building-durable-containers">Building durable containers</a></li>
+        <li><a href="#cleaning-up">Cleaning up</a></li>
+      </ul>
+    </li>
+    <li><a href="#chapter-3-software-installation-simplified">Chapter 3: Software installation simplified</a>
+      <ul>
+        <li><a href="#identifying-software">Identifying software</a></li>
+        <li><a href="#finding-and-installing-software">Finding and installing software</a></li>
+        <li><a href="#installation-files-and-isolation">Installation files and isolation</a></li>
+      </ul>
+    </li>
+    <li><a href="#chapter-4-working-with-storage-and-volumes">Chapter 4: Working with storage and volumes</a>
+      <ul>
+        <li><a href="#file-trees-and-mount-points">File trees and mount points</a></li>
+        <li><a href="#bind-mounts">Bind mounts</a></li>
+        <li><a href="#in-memory-storage">In-memory storage</a></li>
+        <li><a href="#docker-volumes">Docker volumes</a></li>
+        <li><a href="#shared-mount-points-and-sharing-files">Shared mount points and sharing files</a></li>
+        <li><a href="#cleaning-up-volumes">Cleaning up volumes</a></li>
+        <li><a href="#advanced-storage-with-volume-plugins">Advanced storage with volume plugins</a></li>
+      </ul>
+    </li>
+    <li><a href="#chapter-5-single-host-networking">Chapter 5: Single-host networking</a>
+      <ul>
+        <li><a href="#networking-background">Networking background</a></li>
+        <li><a href="#docker-container-networking">Docker container networking</a></li>
+        <li><a href="#special-container-networks-host-and-none">Special container networks: host and none</a></li>
+        <li><a href="#handling-inbound-traffic-with-nodeport-publishing">Handling inbound traffic with NodePort publishing</a></li>
+        <li><a href="#container-networking-caveats-and-customizations">Container networking caveats and customizations</a></li>
+      </ul>
+    </li>
+    <li><a href="#chapter6-limiting-risk-with-resource-controls">Chapter6: Limiting risk with resource controls</a>
+      <ul>
+        <li><a href="#set-resource-allowances">Set resource allowances</a></li>
+        <li><a href="#sharing-memory">Sharing memory</a></li>
+        <li><a href="#understanding-users">Understanding users</a></li>
+        <li><a href="#adjusting-os-feature-access-with-capabilities">Adjusting OS feature access with capabilities</a></li>
+        <li><a href="#running-a-container-with-full-privileges">Running a container with full privileges</a></li>
+        <li><a href="#strengthening-containers-with-enhanced-tools">Strengthening containers with enhanced tools</a></li>
+        <li><a href="#building-use-case-appropriate-containers">Building use-case-appropriate containers</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#chapter-7-packaging-software-in-images">Chapter 7: Packaging software in images</a>
+      <ul>
+        <li><a href="#building-docker-images-from-a-container">Building Docker images from a container</a></li>
+        <li><a href="#going-deep-on-docker-images-and-layers">Going deep on Docker images and layers</a></li>
+        <li><a href="#exporting-and-importing-flat-filesystems">Exporting and importing flat filesystems</a></li>
+        <li><a href="#versioning-best-practices">Versioning best practices</a></li>
+      </ul>
+    </li>
+    <li><a href="#chapter-8-building-images-automatically-with-dockerfiles">Chapter 8: Building images automatically with Dockerfiles</a>
+      <ul>
+        <li><a href="#packaging-git-with-dockerfile">Packaging Git with Dockerfile</a></li>
+        <li><a href="#a-dockerfile-primer">A Dockerfile primer</a></li>
+        <li><a href="#injecting-downstream-build-time-behavior">Injecting downstream build-time behavior</a></li>
+        <li><a href="#using-startup-scripts-and-multiprocess-containers">Using startup scripts and multiprocess containers</a></li>
+        <li><a href="#building-hardened-application-images">Building hardened application images</a></li>
+        <li><a href="#chapter-9-public-and-private-software-distribution">Chapter 9: Public and private software distribution</a></li>
+        <li><a href="#choosing-a-distribution-method">Choosing a distribution method</a></li>
+        <li><a href="#publishing-with-hosted-registries">Publishing with hosted registries</a></li>
+        <li><a href="#introducing-private-registries">Introducing private registries</a></li>
+        <li><a href="#manual-image-publishing-and-distribution">Manual image publishing and distribution</a></li>
+        <li><a href="#image-source-distribution-workflows">Image source-distribution workflows</a></li>
+      </ul>
+    </li>
+    <li><a href="#chapter-10-image-pipelines">Chapter 10: Image pipelines</a>
+      <ul>
+        <li><a href="#goals-of-an-image-build-pipeline">Goals of an image build pipeline</a></li>
+        <li><a href="#patterns-for-building-images">Patterns for building images</a></li>
+        <li><a href="#record-metadata-at-image-build-time">Record metadata at image build time</a></li>
+        <li><a href="#testing-images-in-a-build-pipeline">Testing images in a build pipeline</a></li>
+        <li><a href="#patterns-for-tagging-images">Patterns for tagging images</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#chapter-11-service-with-docker-and-compose">Chapter 11: Service with Docker and Compose</a>
+      <ul>
+        <li><a href="#a-service-hello-world">A service &ldquo;Hello World!&rdquo;</a></li>
+        <li><a href="#declarative-service-environments-with-compose-v3">Declarative service environments with Compose V3</a></li>
+        <li><a href="#stateful-services-and-preserving-data">Stateful services and preserving data</a></li>
+        <li><a href="#load-balancing-service-discovery-and-networks-with-compose">Load balancing, service discovery, and networks with Compose</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
 
 
 
@@ -252,207 +367,537 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown"><p>Introduction
-Chapter 1: Welcome to Docker
-Docker make it easier for users to install and run the software.
-Docker is a tool helping solve common problems such as installing, removing, upgrading, distributing, trusting and running software, helping system administrators focus on higher-value activities.
-What is Docker?
-Docker is an open source project for building, shipping and running programs.
-containers
-Install Docker
-<a href="https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository">https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository</a>
-Take care of the setting of proxy
-<a href="https://docs.docker.com/config/daemon/systemd/#httphttps-proxy">https://docs.docker.com/config/daemon/systemd/#httphttps-proxy</a>
-<a href="https://docs.docker.com/network/proxy/">https://docs.docker.com/network/proxy/</a>
-Hello World
-本机上没有这个image
-本机上有这个image
-Containers and Docker
-Containers can isolate a process from all resources except where explicitly allowed.
-However, it is challenging to to manually built correctly.
-Docker solved this problem. Docker makes container simpler to use.
-Containers are not virtualization
-Virtual machines require high resource overhead (because they run a whole OS) and requires a long time to startup.
-Docker (containers) solved this problem.
-Container is an OS feature.
-Running software in containers for isolation</p>
-<p>Programs run inside a container can access only their own memory and resources as scoped by the container.
-Docker build container using 10 major system features to suit the needs of the contained software and fit the environment the container will run.
-Shipping containers
-image: component in the container (shipping units)
-Docker image is a bundled snapshot of all files needed for program running inside a container.
-Containers that were started from the same image don’t share changes to their filesystem.
-registries and indexes
-What problems does Docker solve?
-Get organized</p>
-<p>Improve portability 便携性
-On macOS and Windows, Docker uses a single, small virtual machine to run all the containers.
-Developer could focus on writing programs on a single platform.
-Protect your computer
-also protect from the software inside a container</p>
-<p>Why is Docker Important? &amp; When and where to use Docker?
-Docker provides an abstraction.</p>
+  <article class="markdown"><h1 id="introduction">
+  Introduction
+  <a class="anchor" href="#introduction">#</a>
+</h1>
+<h2 id="chapter-1-welcome-to-docker">
+  Chapter 1: Welcome to Docker
+  <a class="anchor" href="#chapter-1-welcome-to-docker">#</a>
+</h2>
+<ul>
+<li>Docker make it easier for users to install and run the software.</li>
+<li>Docker is a tool helping solve common problems such as installing, removing, upgrading, distributing, trusting and running software, helping system administrators focus on higher-value activities.</li>
+</ul>
+<h3 id="what-is-docker">
+  What is Docker?
+  <a class="anchor" href="#what-is-docker">#</a>
+</h3>
+<ul>
+<li>
+<p>Docker is an open source project for building, shipping and running programs.</p>
+<ul>
+<li>containers</li>
+</ul>
+</li>
+<li>
+<p>Install Docker</p>
+<ul>
+<li><a href="https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository">https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository</a></li>
+<li>Take care of the setting of proxy
+<ul>
+<li><a href="https://docs.docker.com/config/daemon/systemd/#httphttps-proxy">https://docs.docker.com/config/daemon/systemd/#httphttps-proxy</a></li>
+<li><a href="https://docs.docker.com/network/proxy/">https://docs.docker.com/network/proxy/</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Hello World</p>
+<ul>
+<li>本机上没有这个image
+<ul>
+<li><img src="/../img/image-20230222211344274.png" alt="image-20230222211344274" /></li>
+</ul>
+</li>
+<li>本机上有这个image
+<ul>
+<li><img src="/../img/image-20230222211354748.png" alt="image-20230222211354748" /></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Containers and Docker</p>
+<ul>
+<li>Containers can isolate a process from all resources except where explicitly allowed.</li>
+<li>However, it is challenging to to manually built correctly.</li>
+<li>Docker solved this problem. Docker makes container simpler to use.</li>
+</ul>
+</li>
+<li>
+<p>Containers are not virtualization</p>
+<ul>
+<li>Virtual machines require high resource overhead (because they run a whole OS) and requires a long time to startup.</li>
+<li>Docker (containers) solved this problem.</li>
+<li>Container is an OS feature.</li>
+</ul>
+</li>
+<li>
+<p>Running software in containers for isolation</p>
+<ul>
+<li>
+<p><img src="/../img/image-20230222211411821.png" alt="image-20230222211411821" /></p>
+</li>
+<li>
+<p>Programs run inside a container can access only their own memory and resources as scoped by the container.</p>
+</li>
+<li>
+<p>Docker build container using 10 major system features to suit the needs of the contained software and fit the environment the container will run.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Shipping containers</p>
+<ul>
+<li>image: component in the container (shipping units)</li>
+<li>Docker image is a bundled snapshot of all files needed for program running inside a container.</li>
+<li>Containers that were started from the same image don’t share changes to their filesystem.</li>
+<li>registries and indexes</li>
+</ul>
+</li>
+</ul>
+<h3 id="what-problems-does-docker-solve">
+  What problems does Docker solve?
+  <a class="anchor" href="#what-problems-does-docker-solve">#</a>
+</h3>
+<ul>
+<li>
+<p>Get organized</p>
+<ul>
+<li><img src="/../img/image-20230222211433079.png" alt="image-20230222211433079" /></li>
+<li><img src="/../img/image-20230222211507041.png" alt="image-20230222211507041" /></li>
+</ul>
+</li>
+<li>
+<p>Improve portability 便携性</p>
+<ul>
+<li>On macOS and Windows, Docker uses a single, small virtual machine to run all the containers.</li>
+<li>Developer could focus on writing programs on a single platform.</li>
+</ul>
+</li>
+<li>
+<p>Protect your computer</p>
+<ul>
+<li>also protect from the software inside a container</li>
+<li><img src="/../img/image-20230222211526884.png" alt="image-20230222211526884" /></li>
+</ul>
+</li>
+</ul>
+<h3 id="why-is-docker-important--when-and-where-to-use-docker">
+  Why is Docker Important? &amp; When and where to use Docker?
+  <a class="anchor" href="#why-is-docker-important--when-and-where-to-use-docker">#</a>
+</h3>
+<ul>
+<li>
+<p>Docker provides an abstraction.</p>
+</li>
+<li>
 <p>Keep your computer clean.</p>
+</li>
+<li>
 <p>Security issues.</p>
-<p>Getting help with the Docker command line
-docker help</p>
-<p>docker help <!-- raw HTML omitted --></p>
-<p>e.g. docker help ps</p>
-<p>Part 1: Process isolation and environment-independent computing
-Chapter 2: Running software in containers
-Controlling containers: Building a website monitor</p>
-<p>NGINX and mailer run as detached containers.
-Detached means the container will run in the background, without being attached to any input or output stream.
-Watcher runs as interactive container.
-Steps:</p>
-<p>Creating and starting a new container: detached containers
-docker run &ndash;detach &ndash;name web nginx:latest
-&ndash;detach  or -d means the program is started in the background and is not attached to your terminal (cannot be found in ps -l ), called daemon
-Running interactive containers
-docker run &ndash;interactive &ndash;tty &ndash;link web:web &ndash;name web_test busybox:1.29 /bin/sh
-&ndash;interactive : keep the standard input open for the container even if no terminal is attached
-&ndash;tty : allocate a virtual terminal for the container
-Usually use both of these when running an interactive program
-docker run -it &ndash;name agent &ndash;link web:insideweb &ndash;link mailer:insidemailer dockerinaction/ch2_agent
-Hold ctrl and press P and then Q to return to the shell.
-Listing, stopping, restarting, and viewing output of containers
-docker ps  shows information for each running containers
-docker logs container_name check the logs for container
-docker stop container_name stop a container
-Solved problems and the PID namespace
-Docker creates a new PID namespace for each container by default</p>
-<p>docker exec container_name command  run a command in a running container
-docker exec container_name ps  to show all the running processes and their PID in the container
-docker run &ndash;pid host busybox:1.29 ps to create containers without their own PID namespace.
-could see all process in the host server.
-Conflict problems could be solved by docker due to environment independence</p>
+</li>
+</ul>
+<h3 id="getting-help-with-the-docker-command-line">
+  Getting help with the Docker command line
+  <a class="anchor" href="#getting-help-with-the-docker-command-line">#</a>
+</h3>
+<ul>
+<li>
+<p><code>docker help </code></p>
+</li>
+<li>
+<p><code>docker help &lt;command&gt; </code></p>
+</li>
+<li>
+<p>e.g. <code>docker help ps</code></p>
+</li>
+</ul>
+<h1 id="part-1-process-isolation-and-environment-independent-computing">
+  Part 1: Process isolation and environment-independent computing
+  <a class="anchor" href="#part-1-process-isolation-and-environment-independent-computing">#</a>
+</h1>
+<h2 id="chapter-2-running-software-in-containers">
+  Chapter 2: Running software in containers
+  <a class="anchor" href="#chapter-2-running-software-in-containers">#</a>
+</h2>
+<h3 id="controlling-containers-building-a-website-monitor">
+  Controlling containers: Building a website monitor
+  <a class="anchor" href="#controlling-containers-building-a-website-monitor">#</a>
+</h3>
+<p><img src="/../img/image-20230222211153582.png" alt="image-20230222211153582" /></p>
+<ul>
+<li>NGINX and mailer run as detached containers.
+<ul>
+<li>Detached means the container will run in the background, without being attached to any input or output stream.</li>
+</ul>
+</li>
+<li>Watcher runs as interactive container.</li>
+<li>Steps:
+<ul>
+<li><img src="/../img/image-20230222211205533.png" alt="image-20230222211205533" /></li>
+</ul>
+</li>
+</ul>
+<h3 id="creating-and-starting-a-new-container-detached-containers">
+  Creating and starting a new container: detached containers
+  <a class="anchor" href="#creating-and-starting-a-new-container-detached-containers">#</a>
+</h3>
+<p><code>docker run --detach --name web nginx:latest</code></p>
+<ul>
+<li><code>--detach</code>  or <code>-d</code> means the program is started in the background and is not attached to your terminal (cannot be found in <code>ps -l</code> ), called <code>daemon</code></li>
+</ul>
+<h3 id="running-interactive-containers">
+  Running interactive containers
+  <a class="anchor" href="#running-interactive-containers">#</a>
+</h3>
+<ul>
+<li><code>docker run --interactive --tty --link web:web --name web_test busybox:1.29 /bin/sh</code>
+<ul>
+<li><code>--interactive</code> : keep the standard input open for the container even if no terminal is attached</li>
+<li><code>--tty</code> : allocate a virtual terminal for the container</li>
+<li>Usually use both of these when running an interactive program</li>
+</ul>
+</li>
+<li><code>docker run -it --name agent --link web:insideweb --link mailer:insidemailer dockerinaction/ch2_agent</code>
+<ul>
+<li>Hold ctrl and press P and then Q to return to the shell.</li>
+</ul>
+</li>
+</ul>
+<h3 id="listing-stopping-restarting-and-viewing-output-of-containers">
+  Listing, stopping, restarting, and viewing output of containers
+  <a class="anchor" href="#listing-stopping-restarting-and-viewing-output-of-containers">#</a>
+</h3>
+<ul>
+<li><code>docker ps</code>  shows information for each running containers</li>
+<li><code>docker logs</code> container_name check the logs for container</li>
+<li><code>docker stop</code> container_name stop a container</li>
+</ul>
+<h3 id="solved-problems-and-the-pid-namespace">
+  Solved problems and the PID namespace
+  <a class="anchor" href="#solved-problems-and-the-pid-namespace">#</a>
+</h3>
+<p>Docker creates a new PID namespace for each container by default</p>
+<ol>
+<li><code>docker exec container_name command</code>  run a command in a running container
+<ol>
+<li><code>docker exec container_name ps</code>  to show all the running processes and their PID in the container</li>
+</ol>
+</li>
+<li><code>docker run --pid host busybox:1.29 ps</code> to create containers <strong>without</strong> their own PID namespace.
+<ol>
+<li>could see all process in the host server.</li>
+</ol>
+</li>
+</ol>
+<p>Conflict problems could be solved by docker due to environment independence</p>
+<ul>
+<li>
 <p>Other conflict problems that docker could solve:</p>
-<p>By using Linux namespaces, resource limits, filesystem roots, virtualized network components.
-Eliminating metaconflicts: Building a website farm
-Flexible container identification: deal with container name collisions
-docker rename new-name old-name  rename a container
-container ID, could use the first 12 chars.
-docker create creates a container in a stopped state.
-docker create &ndash;cidfile /tmp/web.cid nginx  write container ID (CID) to a known file.
-Docker won&rsquo;t create a new container if the provided CID file already exits.
-To avoid conflict, we can use a partition path, such as /containers/web/customer1/web.cid
-docker ps &ndash;latest &ndash;quiet get the CID of the last container.
-docker could generates human-readable names for each container ( &ndash;name flag override it)
-Container state and dependencies</p>
-<p>docker ps -a  to see all the containers
-The order of starting containers
-generate an IP addr when creating containers
-Building environment-agnostic systems
-To help build environment-agnostic system, Docker has three specific features:</p>
-<p>Read-only filesystems
-Environment variable injection
-Volumes
-Read-only filesystems
-docker inspect &ndash;format &ldquo;{{.State.Running}}&rdquo; wp  inspect the container metadata directly.
-&ndash;format with Go template
-docker diff CONTAINER Inspect changes to files or directories on a container&rsquo;s filesystem
-docker run -d &ndash;name wp2 &ndash;read-only -v /run/apache2/ &ndash;tmpfs /tmp wordpress:5.0.0-php7.2-apache
-#!/bin/sh
+<p><img src="/../img/image-20230222211109675.png" alt="image-20230222211109675" /></p>
+</li>
+<li>
+<p>By using Linux namespaces, resource limits, filesystem roots, virtualized network components.</p>
+</li>
+</ul>
+<h3 id="eliminating-metaconflicts-building-a-website-farm">
+  Eliminating metaconflicts: Building a website farm
+  <a class="anchor" href="#eliminating-metaconflicts-building-a-website-farm">#</a>
+</h3>
+<h4 id="flexible-container-identification-deal-with-container-name-collisions">
+  Flexible container identification: deal with container name collisions
+  <a class="anchor" href="#flexible-container-identification-deal-with-container-name-collisions">#</a>
+</h4>
+<ul>
+<li><code>docker rename new-name old-name</code>  rename a container</li>
+<li>container ID, could use the first 12 chars.</li>
+<li><code>docker create</code> creates a container in a stopped state.</li>
+<li><code>docker create --cidfile /tmp/web.cid nginx</code>  write container ID (CID) to a known file.
+<ul>
+<li>Docker won&rsquo;t create a new container if the provided CID file already exits.</li>
+<li>To avoid conflict, we can use a partition path, such as /containers/web/customer1/web.cid</li>
+</ul>
+</li>
+<li><code>docker ps --latest --quiet</code> get the CID of the last container.</li>
+<li>docker could generates human-readable names for each container ( &ndash;name flag override it)</li>
+</ul>
+<h4 id="container-state-and-dependencies">
+  Container state and dependencies
+  <a class="anchor" href="#container-state-and-dependencies">#</a>
+</h4>
+<p><img src="/../img/image-20230222211041642.png" alt="image-20230222211041642" /></p>
+<ul>
+<li><code>docker ps -a</code>  to see all the containers</li>
+<li>The order of starting containers
+<ul>
+<li>generate an IP addr when creating containers</li>
+</ul>
+</li>
+</ul>
+<h3 id="building-environment-agnostic-systems">
+  Building environment-agnostic systems
+  <a class="anchor" href="#building-environment-agnostic-systems">#</a>
+</h3>
+<p>To help build environment-agnostic system, Docker has three specific features:</p>
+<ul>
+<li>Read-only filesystems</li>
+<li>Environment variable injection</li>
+<li>Volumes</li>
+</ul>
+<h4 id="read-only-filesystems">
+  Read-only filesystems
+  <a class="anchor" href="#read-only-filesystems">#</a>
+</h4>
+<ul>
+<li><code>docker inspect --format &quot;{{.State.Running}}&quot; wp</code>  inspect the container metadata directly.
+<ul>
+<li><code>--format</code> with Go template</li>
+</ul>
+</li>
+<li><code>docker diff CONTAINER</code> Inspect changes to files or directories on a container&rsquo;s filesystem</li>
+<li><code>docker run -d --name wp2 --read-only -v /run/apache2/ --tmpfs /tmp wordpress:5.0.0-php7.2-apache</code></li>
+</ul>
+<pre tabindex="0"><code>#!/bin/sh
 DB_CID=$(docker create -e MYSQL_ROOT_PASSWORD=ch2demo mysql:5.7)
 docker start $DB_CID
 MAILER_CID=$(docker create dockerinaction/ch2_mailer)
 docker start $MAILER_CID
-WP_CID=$(docker create &ndash;link $DB_CID:mysql -p 80 <br>
-&ndash;read-only -v /run/apache2/ &ndash;tmpfs /tmp <br>
+WP_CID=$(docker create --link $DB_CID:mysql -p 80 \
+--read-only -v /run/apache2/ --tmpfs /tmp \
 wordpress:5.0.0-php7.2-apache)
 docker start $WP_CID
-AGENT_CID=$(docker create &ndash;link $WP_CID:insideweb <br>
-&ndash;link $MAILER_CID:insidemailer <br>
+AGENT_CID=$(docker create --link $WP_CID:insideweb \
+--link $MAILER_CID:insidemailer \
 dockerinaction/ch2_agent)
 docker start $AGENT_CID
-Environment variable injection
-Environment variable: change programs&rsquo; configuration without modifying any files
-docker run &ndash;env (-e) ENVIRONMENT_VAR=my_environment_vat busybox:1.29 env  Injects an environment variable</p>
-<p>Building durable containers
-Restore the container service as quickly as possible.</p>
+</code></pre><h4 id="environment-variable-injection">
+  Environment variable injection
+  <a class="anchor" href="#environment-variable-injection">#</a>
+</h4>
+<ul>
+<li>Environment variable: change programs&rsquo; configuration without modifying any files
+<ul>
+<li><code>docker run --env (-e) ENVIRONMENT_VAR=my_environment_vat busybox:1.29 env</code>  Injects an environment variable</li>
+</ul>
+</li>
+<li><img src="/../img/image-20230222211809897.png" alt="image-20230222211809897" /></li>
+</ul>
+<h3 id="building-durable-containers">
+  Building durable containers
+  <a class="anchor" href="#building-durable-containers">#</a>
+</h3>
+<p>Restore the container service as quickly as possible.</p>
 <p>Basic strategy: automatically restarting a process when it exits or fails.</p>
-<p>Automatically restarting containers
-&ndash;restart flag</p>
-<p>Backoff strategy: determines the amount of time that should pass between successive restart attempts.
-Exponential backoff strategy
-Issues: containers waiting to be restarted are in the restarting state, and we cannot do anything that requires the container to be in a running state (such as docker exec )
-Using PID 1 and init systems
-Init system: a program that&rsquo;s used to launch and maintain the state of other programs.
-e.g.: runit, Yelp/dumb-init, tini, supervisord, and tianon/gosu.
-docker run -d -p 80:80 &ndash;name lamp-test tutum/lamp
-docker top CONTAINER Display the running processes of a container
-An alternative method of init system: using a startup script
-docker run &ndash;entrypoint=&ldquo;cat&rdquo; wordpress:5.0.0-php7.2-apache /usr/local/bin/docker-entrypoint.sh
-&ndash;entrypoint
-Docker containers run something called an entrypoint before executing the command
-Cleaning up
-docker rm CONTAINER
-For container in running process, using docker stop first (better), or using docker rm -f CONTAINER (for quick stop).
-docker run &ndash;rm  Automatically remove the container as soon as it enters the exited state.
-docker rm -vf $(docker ps -a -q) Clean (kill) all the containers.
-Chapter 3: Software installation simplified</p>
-<p>Identifying software
-What is a named repository?
-It is a named bucket of images, similar to a URL.</p>
-<p>A repository can hold several images, identified uniquely with tags.</p>
+<h4 id="automatically-restarting-containers">
+  Automatically restarting containers
+  <a class="anchor" href="#automatically-restarting-containers">#</a>
+</h4>
+<ul>
+<li>
+<p><code>--restart</code> flag</p>
+<ul>
+<li><img src="/../img/image-20230222211854133.png" alt="image-20230222211854133" /></li>
+</ul>
+</li>
+<li>
+<p>Backoff strategy: determines the amount of time that should pass between successive restart attempts.</p>
+<ul>
+<li>Exponential backoff strategy</li>
+</ul>
+</li>
+<li>
+<p>Issues: containers waiting to be restarted are in the restarting state, and we cannot do anything that requires the container to be in a running state (such as <code>docker exec</code> )</p>
+</li>
+</ul>
+<h4 id="using-pid-1-and-init-systems">
+  Using PID 1 and init systems
+  <a class="anchor" href="#using-pid-1-and-init-systems">#</a>
+</h4>
+<ul>
+<li>Init system: a program that&rsquo;s used to launch and maintain the state of other programs.
+<ul>
+<li>e.g.: runit, Yelp/dumb-init, tini, supervisord, and tianon/gosu.</li>
+<li><code>docker run -d -p 80:80 --name lamp-test tutum/lamp </code></li>
+</ul>
+</li>
+<li><code>docker top CONTAINER</code> Display the running processes of a container</li>
+<li>An alternative method of init system: using a startup script
+<ul>
+<li><code>docker run --entrypoint=&quot;cat&quot; wordpress:5.0.0-php7.2-apache /usr/local/bin/docker-entrypoint.sh</code></li>
+<li><code>--entrypoint</code></li>
+<li>Docker containers run something called an entrypoint before executing the command</li>
+</ul>
+</li>
+</ul>
+<h3 id="cleaning-up">
+  Cleaning up
+  <a class="anchor" href="#cleaning-up">#</a>
+</h3>
+<ul>
+<li><code>docker rm CONTAINER</code>
+<ul>
+<li>For container in running process, using docker stop first (better), or using docker rm -f CONTAINER (for quick stop).</li>
+</ul>
+</li>
+<li><code>docker run --rm</code>  Automatically remove the container as soon as it enters the exited state.</li>
+<li><code>docker rm -vf $(docker ps -a -q)</code> Clean (kill) all the containers.</li>
+</ul>
+<h2 id="chapter-3-software-installation-simplified">
+  Chapter 3: Software installation simplified
+  <a class="anchor" href="#chapter-3-software-installation-simplified">#</a>
+</h2>
+<p><img src="/../img/image-20230222212918324.png" alt="image-20230222212918324" /></p>
+<p><img src="/../img/image-20230222213159304.png" alt="image-20230222213159304" /></p>
+<h3 id="identifying-software">
+  Identifying software
+  <a class="anchor" href="#identifying-software">#</a>
+</h3>
+<h4 id="what-is-a-named-repository">
+  What is a named repository?
+  <a class="anchor" href="#what-is-a-named-repository">#</a>
+</h4>
+<p>It is a named bucket of images, similar to a URL.</p>
+<p><img src="/../img/image-20230222213028719.png" alt="image-20230222213028719" /></p>
+<p>A repository can hold several images, identified uniquely with <em>tags</em>.</p>
 <p>Name and tag form a composite key, e.g., nginx:latest</p>
-<p>Using tags
-A tag can only attach to one image, while one image can have several tags.</p>
-<p>create useful aliases
-different tags for different versioning
-different tags for different software configurations
-Finding and installing software</p>
-<p>Find software using index. Docker Hub is one of the public Docker indexes, and is the default registry and index used by docker.</p>
-<p>Working with Docker registries from the command line
-docker login before publishing images.</p>
-<p>Using alternative registries
-Registry address is part of the full repository specification.</p>
-<p>[REGISTRYHOST:PORT/][USERNAME/]NAME[:TAG]</p>
-<p>Just specify the registry host, e.g., docker pull quay.io/dockerinaction/ch3_hello_registry:latest</p>
-<p>Working with images as files
-Using docker load command.</p>
-<p>Before this, we need to save one image from a loaded image docker save -o filename.tar busybox:latest</p>
-<p>Remove image from docker docker rmi busybox</p>
-<p>Load it again docker load -i myfile.tar</p>
-<p>Check it docker images to list images.</p>
-<p>Installing from a Dockerfile
-git clone <a href="https://github.com/dockerinaction/ch3_dockerfile.git">https://github.com/dockerinaction/ch3_dockerfile.git</a></p>
-<p>docker build -t dia_ch3/dockerfile:latest ch3_dockerfile</p>
-<p>Using Docker Hub from the website
-<a href="https://hub.docker.com">https://hub.docker.com</a></p>
-<p>Installation files and isolation
-layer: a set of files and file metadata that is packaged and distributed as an atomic unit, called intermediate images.</p>
-<p>Image layers in action
-Layer relationships
-Docker can uniquely identifies images and layers, it is able to recognize shared image dependencies between applications and avoid download those dependencies again.</p>
-<p>Container filesystem abstraction and isolation: Union filesystem
-Union filesystem (UFS) is used to create mount point and abstract the use of layers.</p>
-<p>When Docker creates a container, that new container will have its own MNT namespace, and a new mount point will be created for the container to the image.
-chroot is used to prevent from referring any other part of the host filesystem in the container.
-Benefits of this toolset and filesystem structure
-Common layers need to be installed only once.
-Layers could manage dependencies and separating concerns.
-Create software specializations when you can layer minor changes on top of a basic image.
-Weaknesses of union filesystems
-Often need to translate between the rules of different filesystems.
-Chapter 4: Working with storage and volumes
-Manage data with containers: where is the data stored? what happens to that data when you stop the container or remove it?</p>
-<p>File trees and mount points
-the image that a container is created from is mounted at that container’s file tree root, or the / point
-every container has a different set of mount points
-Containers get access to storage on the host filesystem and share storage between containers: mount nonimage-related storage at other points in a container file tree.
-Three types of storage mounted into containers:
-bind mount
-in-memory storage
-docker volumes</p>
-<p>&ndash;mount flag in docker run and docker create
-Bind mounts
-Bind mounts attach a user-specified location on the host filesystem to a specific point in a container file tree.</p>
-<p>host provides files or dictionaries need by the program running in a container.
-containerized program produces a file or log need to be processed outside containers.
-An example</p>
-<p>touch ~/example.log
-cat &gt;~/example.conf &laquo;EOF
+<h4 id="using-tags">
+  Using tags
+  <a class="anchor" href="#using-tags">#</a>
+</h4>
+<p>A tag can only attach to one image, while one image can have several tags.</p>
+<ul>
+<li>create useful aliases</li>
+<li>different tags for different versioning</li>
+<li>different tags for different software configurations</li>
+</ul>
+<h3 id="finding-and-installing-software">
+  Finding and installing software
+  <a class="anchor" href="#finding-and-installing-software">#</a>
+</h3>
+<p>Find software using <em>index</em>. <em>Docker Hub</em> is one of the public Docker indexes, and is the default registry and index used by docker.</p>
+<h4 id="working-with-docker-registries-from-the-command-line">
+  Working with Docker registries from the command line
+  <a class="anchor" href="#working-with-docker-registries-from-the-command-line">#</a>
+</h4>
+<p><code>docker login</code> before publishing images.</p>
+<h4 id="using-alternative-registries">
+  Using alternative registries
+  <a class="anchor" href="#using-alternative-registries">#</a>
+</h4>
+<p>Registry address is part of the full repository specification.</p>
+<p><code>[REGISTRYHOST:PORT/][USERNAME/]NAME[:TAG]</code></p>
+<p>Just specify the registry host, e.g., <code>docker pull quay.io/dockerinaction/ch3_hello_registry:latest</code></p>
+<h4 id="working-with-images-as-files">
+  Working with images as files
+  <a class="anchor" href="#working-with-images-as-files">#</a>
+</h4>
+<p>Using <code>docker load</code> command.</p>
+<p>Before this, we need to save one image from a loaded image <code>docker save -o filename.tar busybox:latest</code></p>
+<p><img src="/../img/image-20230222213357549.png" alt="image-20230222213357549" /></p>
+<p>Remove image from docker <code>docker rmi busybox</code></p>
+<p>Load it again <code>docker load -i myfile.tar</code></p>
+<p>Check it <code>docker images</code> to list images.</p>
+<h4 id="installing-from-a-dockerfile">
+  Installing from a Dockerfile
+  <a class="anchor" href="#installing-from-a-dockerfile">#</a>
+</h4>
+<p>git clone <a href="https://github.com/dockerinaction/ch3_dockerfile.git">https://github.com/dockerinaction/ch3_dockerfile.git</a></p>
+<p><code>docker build -t dia_ch3/dockerfile:latest ch3_dockerfile</code></p>
+<h4 id="using-docker-hub-from-the-website">
+  Using Docker Hub from the website
+  <a class="anchor" href="#using-docker-hub-from-the-website">#</a>
+</h4>
+<p><a href="https://hub.docker.com">https://hub.docker.com</a></p>
+<h3 id="installation-files-and-isolation">
+  Installation files and isolation
+  <a class="anchor" href="#installation-files-and-isolation">#</a>
+</h3>
+<p>layer: a set of files and file metadata that is packaged and distributed as an atomic unit, called intermediate images.</p>
+<h4 id="image-layers-in-action">
+  Image layers in action
+  <a class="anchor" href="#image-layers-in-action">#</a>
+</h4>
+<h4 id="layer-relationships">
+  Layer relationships
+  <a class="anchor" href="#layer-relationships">#</a>
+</h4>
+<p>Docker can uniquely identifies images and layers, it is able to recognize shared image dependencies between applications and avoid download those dependencies again.</p>
+<p><img src="/../img/image-20230222213532990.png" alt="image-20230222213532990" /></p>
+<h4 id="container-filesystem-abstraction-and-isolation-union-filesystem">
+  Container filesystem abstraction and isolation: Union filesystem
+  <a class="anchor" href="#container-filesystem-abstraction-and-isolation-union-filesystem">#</a>
+</h4>
+<p>Union filesystem (UFS) is used to create mount point and abstract the use of layers.</p>
+<ul>
+<li>When Docker creates a container, that new container will have its own MNT namespace, and a new mount point will be created for the container to the image.</li>
+<li>chroot is used to prevent from referring any other part of the host filesystem in the container.</li>
+</ul>
+<h4 id="benefits-of-this-toolset-and-filesystem-structure">
+  Benefits of this toolset and filesystem structure
+  <a class="anchor" href="#benefits-of-this-toolset-and-filesystem-structure">#</a>
+</h4>
+<ul>
+<li>Common layers need to be installed only once.</li>
+<li>Layers could manage dependencies and separating concerns.</li>
+<li>Create software specializations when you can layer minor changes on top of a basic image.</li>
+</ul>
+<h4 id="weaknesses-of-union-filesystems">
+  Weaknesses of union filesystems
+  <a class="anchor" href="#weaknesses-of-union-filesystems">#</a>
+</h4>
+<ul>
+<li>Often need to translate between the rules of different filesystems.</li>
+</ul>
+<h2 id="chapter-4-working-with-storage-and-volumes">
+  Chapter 4: Working with storage and volumes
+  <a class="anchor" href="#chapter-4-working-with-storage-and-volumes">#</a>
+</h2>
+<p>Manage data with containers: where is the data stored? what happens to that data when you stop the container or remove it?</p>
+<h3 id="file-trees-and-mount-points">
+  File trees and mount points
+  <a class="anchor" href="#file-trees-and-mount-points">#</a>
+</h3>
+<ul>
+<li>
+<p>the image that a container is created from is mounted at that container’s file tree root, or the / point</p>
+</li>
+<li>
+<p>every container has a different set of mount points</p>
+</li>
+<li>
+<p>Containers get access to storage on the host filesystem and share storage between containers: mount nonimage-related</p>
+<p>storage at other points in a container file tree.</p>
+</li>
+<li>
+<p>Three types of storage mounted into containers:</p>
+<ul>
+<li>bind mount</li>
+<li>in-memory storage</li>
+<li>docker volumes</li>
+</ul>
+</li>
+<li>
+<p><img src="/../img/image-20230222213749820.png" alt="image-20230222213749820" /></p>
+</li>
+<li>
+<p><code>--mount</code> flag in docker run and docker create</p>
+</li>
+</ul>
+<h3 id="bind-mounts">
+  Bind mounts
+  <a class="anchor" href="#bind-mounts">#</a>
+</h3>
+<p>Bind mounts attach a user-specified location on the host filesystem to a specific point in a container file tree.</p>
+<ul>
+<li>host provides files or dictionaries need by the program running in a container.</li>
+<li>containerized program produces a file or log need to be processed outside containers.</li>
+</ul>
+<p>An example</p>
+<p><img src="/../img/image-20230222213855016.png" alt="image-20230222213855016" /></p>
+<pre tabindex="0"><code>touch ~/example.log
+cat &gt;~/example.conf &lt;&lt;EOF
 server {
 listen 80;
 server_name localhost;
@@ -463,778 +908,1386 @@ index index.html index.htm;
 }
 }
 EOF
-CONF_SRC=~/example.conf;
+</code></pre><pre tabindex="0"><code>CONF_SRC=~/example.conf;
 CONF_DST=/etc/nginx/conf.d/default.conf;
 LOG_SRC=~/example.log;
 LOG_DST=/var/log/nginx/custom.host.access.log;
-docker run -d &ndash;name diaweb \</p>
-<blockquote>
-<p>&ndash;mount type=bind,src=${CONF_SRC},dst=${CONF_DST},readonly=true <br>
-&ndash;mount type=bind,src=${LOG_SRC},dst=${LOG_DST} <br>
--p 80:80 <br>
+docker run -d --name diaweb \
+--mount type=bind,src=${CONF_SRC},dst=${CONF_DST},readonly=true \
+--mount type=bind,src=${LOG_SRC},dst=${LOG_DST} \
+-p 80:80 \
 nginx:latest
-src : source location on the host file tree (name of the volume, for anonymous volumes, this field is omitted)
-dst : destination location on the container file tree
-readonly=true prevent modifying the content of the volume
-Test: docker exec diaweb sed -i &ldquo;s/listen 80/listen 8080/&rdquo; /etc/nginx/conf.d/default.conf
-Problems:</p>
-</blockquote>
-<p>portable
-conflict with other containers
-In-memory storage
-Private files should use in-memory storage, instead of including in an image or writing them to disk.</p>
-<p>docker run &ndash;rm <br>
-&ndash;mount type=tmpfs,dst=/tmp,tmpfs-size=16k,tmpfs-mode=1770 <br>
-&ndash;entrypoint mount <br>
+</code></pre><ul>
+<li><code>src</code> : source location on the host file tree (name of the volume, for anonymous volumes, this field is omitted)</li>
+<li><code>dst</code> : destination location on the container file tree</li>
+<li><code>readonly=true</code> prevent modifying the content of the volume
+<ul>
+<li>Test: <code>docker exec diaweb sed -i &quot;s/listen 80/listen 8080/&quot; /etc/nginx/conf.d/default.conf </code></li>
+</ul>
+</li>
+</ul>
+<p>Problems:</p>
+<ul>
+<li>portable</li>
+<li>conflict with other containers</li>
+</ul>
+<h3 id="in-memory-storage">
+  In-memory storage
+  <a class="anchor" href="#in-memory-storage">#</a>
+</h3>
+<p>Private files should use in-memory storage, instead of including in an image or writing them to disk.</p>
+<pre tabindex="0"><code>docker run --rm \
+--mount type=tmpfs,dst=/tmp,tmpfs-size=16k,tmpfs-mode=1770 \
+--entrypoint mount \
 alpine:latest -v
-Set the type option on the mount flag to tmpfs.
-File permissions 1770 (1777 for default)
-Size limit 16k
-Docker volumes
-Introduction to volumes
-It is used to organizing data: in disk space that can be accessed by containers.</p>
-<p>do not need to concern the system (fill on any machine with Docker installed).
-easy to clean up for Docker (life cycle)
-It could decouple storage from specialized locations on the filesystem that you might specify with bind mounts, and could run o any machine without considering conflict.</p>
-<p>Using docker volume subcommand set.</p>
-<p>docker volume create <br>
-&ndash;driver local <br>
-&ndash;label example=location <br>
-location-example</p>
-<p>docker volume inspect <br>
-&ndash;format &ldquo;{{json .Mountpoint}}&rdquo; <br>
-location-example</p>
-<p>–-driver local: create a directory to store the contents of volume in a part of the host filesystem under control of the Docker engine.</p>
+</code></pre><ul>
+<li>Set the type option on the mount flag to tmpfs.</li>
+<li>File permissions 1770 (1777 for default)</li>
+<li>Size limit 16k</li>
+</ul>
+<h3 id="docker-volumes">
+  Docker volumes
+  <a class="anchor" href="#docker-volumes">#</a>
+</h3>
+<h4 id="introduction-to-volumes">
+  Introduction to volumes
+  <a class="anchor" href="#introduction-to-volumes">#</a>
+</h4>
+<p>It is used to organizing data: in disk space that can be accessed by containers.</p>
+<ul>
+<li>do not need to concern the system (fill on any machine with Docker installed).</li>
+<li>easy to clean up for Docker (life cycle)</li>
+</ul>
+<p>It could decouple storage from specialized locations on the filesystem that you might specify with bind mounts, and could run o any machine without considering conflict.</p>
+<p>Using <code>docker volume</code> subcommand set.</p>
+<pre tabindex="0"><code>docker volume create \
+--driver local \
+--label example=location \
+location-example
+
+docker volume inspect \
+--format &#34;{{json .Mountpoint}}&#34; \
+location-example
+</code></pre><p><img src="/../img/image-20230222214316761.png" alt="image-20230222214316761" /></p>
+<p><code>–-driver local</code>: create a directory to store the contents of volume in a part of the host filesystem under control of the Docker engine.</p>
+<p><img src="/../img/image-20230222214349293.png" alt="image-20230222214349293" /></p>
 <p>How to share volumes between containers without exposing the exact location of managed containers?</p>
-<p>Volumes provide container-independent data management
-images are appropriate for packaging and distributing relatively static files such as programs (reusable)
-volumes hold dynamic data or specializations (simple to share).
-Polymorphic 多态：using volumes, do not need to modify an image.</p>
-<p>Using volumes with a NoSQL database
-Create a single-node Cassandra cluster, create a keyspace, delete the container, and then recover that keyspace on a new node in another container:</p>
-<p>docker volume create <br>
-&ndash;driver local <br>
-&ndash;label example=cassandra <br>
-cass-shared</p>
-<p>docker run -d <br>
-&ndash;volume cass-shared:/var/lib/cassandra/data <br>
-&ndash;name cass1 <br>
+<h4 id="volumes-provide-container-independent-data-management">
+  Volumes provide container-independent data management
+  <a class="anchor" href="#volumes-provide-container-independent-data-management">#</a>
+</h4>
+<ul>
+<li>images are appropriate for packaging and distributing relatively static files such as programs (reusable)</li>
+<li>volumes hold dynamic data or specializations (simple to share).</li>
+</ul>
+<p>Polymorphic 多态：using volumes, do not need to modify an image.</p>
+<h4 id="using-volumes-with-a-nosql-database">
+  Using volumes with a NoSQL database
+  <a class="anchor" href="#using-volumes-with-a-nosql-database">#</a>
+</h4>
+<p>Create a single-node Cassandra cluster, create a keyspace, delete the container, and then recover that keyspace on a new node in another container:</p>
+<p><img src="/../img/image-20230222214446686.png" alt="image-20230222214446686" /></p>
+<pre tabindex="0"><code>docker volume create \
+--driver local \
+--label example=cassandra \
+cass-shared
+
+docker run -d \
+--volume cass-shared:/var/lib/cassandra/data \
+--name cass1 \
 cassandra:2.2
-Shared mount points and sharing files
-Sharing access to the same set of files between multiple containers.</p>
-<p>Bind mounts methods: may lead to conflict.
-Use volumes: do not need the knowledge of the underlying host filesystem.
-Anonymous volumes and the volumes-from flag
-Volume is created without a human-friendly name, and is assigned a unique identifier to eliminate volume-naming conflicts.</p>
-<p>&ndash;volumes-from : copy the definition from other containers to the new container. (copy the full volume definition, including mount point, permission)</p>
-<p>Situations not suit for &ndash;volumes-from :
-when you need tomount to a different location
-conflict: volumes from different containers with the same mount point</p>
-<p>docker run &ndash;name chomsky &ndash;volume /library/ss <br>
-alpine:latest echo &ldquo;Chomsky collection created.&rdquo;
-docker run &ndash;name lamport &ndash;volume /library/ss <br>
-alpine:latest echo &ldquo;Lamport collection created.&rdquo;</p>
-<p>docker run &ndash;name student <br>
-&ndash;volumes-from chomsky &ndash;volumes-from lamport <br>
-alpine:latest ls -l /library/</p>
-<p>docker inspect -f &ldquo;{{json .Mounts}}&rdquo; student</p>
-<h1 id="only-one-of-the-two-containers-is-mounted">
-  Only one of the two containers is mounted.
-  <a class="anchor" href="#only-one-of-the-two-containers-is-mounted">#</a>
-</h1>
-<p>when you need to change the write permission of a volume
-Cleaning up volumes
-docker volume list to list all the volumes</p>
-<p>docker volume remove VOLUME_NAME/Unique_identifier to remove the volume</p>
-<p>support list argument, such as docker volume remove amazon google microsoft
-volume in use cannot be remove
-docker volume prune delete all volumes that can be deleted</p>
-<p>&ndash;filter : filter
-–-force : without confirmation step
-Advanced storage with volume plugins
-For a cluster of machines, need to choose storage infrastructure, such as network storage</p>
+</code></pre><h3 id="shared-mount-points-and-sharing-files">
+  Shared mount points and sharing files
+  <a class="anchor" href="#shared-mount-points-and-sharing-files">#</a>
+</h3>
+<p>Sharing access to the same set of files between multiple containers.</p>
+<ul>
+<li>Bind mounts methods: may lead to conflict.</li>
+<li>Use volumes: do not need the knowledge of the underlying host filesystem.</li>
+</ul>
+<h4 id="anonymous-volumes-and-the-volumes-from-flag">
+  Anonymous volumes and the volumes-from flag
+  <a class="anchor" href="#anonymous-volumes-and-the-volumes-from-flag">#</a>
+</h4>
+<p>Volume is created without a human-friendly name, and is assigned a unique identifier to eliminate volume-naming conflicts.</p>
+<p><code>--volumes-from</code> : copy the definition from other containers to the new container. (copy the full volume definition, including mount point, permission)</p>
+<ul>
+<li>Situations not suit for <code>--volumes-from</code> :
+<ul>
+<li>when you need tomount to a different location</li>
+<li>conflict: volumes from different containers with the same mount point</li>
+<li>when you need to change the write permission of a volume</li>
+</ul>
+</li>
+</ul>
+<pre tabindex="0"><code>docker run --name chomsky --volume /library/ss \
+alpine:latest echo &#34;Chomsky collection created.&#34;
+docker run --name lamport --volume /library/ss \
+alpine:latest echo &#34;Lamport collection created.&#34;
+
+docker run --name student \
+--volumes-from chomsky --volumes-from lamport \
+alpine:latest ls -l /library/
+
+docker inspect -f &#34;{{json .Mounts}}&#34; student
+
+# Only one of the two containers is mounted.
+</code></pre><h3 id="cleaning-up-volumes">
+  Cleaning up volumes
+  <a class="anchor" href="#cleaning-up-volumes">#</a>
+</h3>
+<p><code>docker volume list</code> to list all the volumes</p>
+<p><code>docker volume remove VOLUME_NAME/Unique_identifier</code> to remove the volume</p>
+<ul>
+<li>support list argument, such as docker volume remove amazon google microsoft</li>
+<li>volume in use cannot be remove</li>
+</ul>
+<p><code>docker volume prune</code> delete all volumes that can be deleted</p>
+<ul>
+<li>&ndash;filter : filter</li>
+<li>–-force : without confirmation step</li>
+</ul>
+<h3 id="advanced-storage-with-volume-plugins">
+  Advanced storage with volume plugins
+  <a class="anchor" href="#advanced-storage-with-volume-plugins">#</a>
+</h3>
+<p>For a cluster of machines, need to choose storage infrastructure, such as network storage</p>
 <p>need to select proper Docker plugin.</p>
-<p>Chapter 5: Single-host networking
-How to connect a container to the network.</p>
-<p>Networking background
-Basics: Protocols, interfaces, and ports
-Protocol: communication and networking in a sort of language, such as HTTP
-Interface: address, represents a location
-IP address: unique, information about their location on their network
-Ethernet interface and loopback interface
-Port: a recipient or a sender
-Bigger picture: Networks, NAT and port forwarding
-bridge: an interface that connects multiple networks so that they can function as a single network.
-selectively forwarding traffic between the connected networks based on another type of network address.
-Docker container networking
-Benefits: 1. keep environment agnosticism 2. adopt specific network implementation</p>
+<h2 id="chapter-5-single-host-networking">
+  Chapter 5: Single-host networking
+  <a class="anchor" href="#chapter-5-single-host-networking">#</a>
+</h2>
+<p>How to connect a container to the network.</p>
+<h3 id="networking-background">
+  Networking background
+  <a class="anchor" href="#networking-background">#</a>
+</h3>
+<h4 id="basics-protocols-interfaces-and-ports">
+  Basics: Protocols, interfaces, and ports
+  <a class="anchor" href="#basics-protocols-interfaces-and-ports">#</a>
+</h4>
+<ul>
+<li>Protocol: communication and networking in a sort of language, such as HTTP</li>
+<li>Interface: address, represents a location
+<ul>
+<li>IP address: unique, information about their location on their network</li>
+<li>Ethernet interface and loopback interface</li>
+</ul>
+</li>
+<li>Port: a recipient or a sender</li>
+</ul>
+<h4 id="bigger-picture-networks-nat-and-port-forwarding">
+  Bigger picture: Networks, NAT and port forwarding
+  <a class="anchor" href="#bigger-picture-networks-nat-and-port-forwarding">#</a>
+</h4>
+<ul>
+<li>bridge: an interface that connects multiple networks so that they can function as a single network.
+<ul>
+<li>selectively forwarding traffic between the connected networks based on another type of network address.</li>
+</ul>
+</li>
+</ul>
+<h3 id="docker-container-networking">
+  Docker container networking
+  <a class="anchor" href="#docker-container-networking">#</a>
+</h3>
+<p>Benefits: 1. keep environment agnosticism 2. adopt specific network implementation</p>
 <p>Problems: hard to determine the IP address of host, and inhibits container to other services outside the container network.</p>
-<p>docker network subcommands</p>
-<p>docker network ls to list all network of Docker.</p>
-<p>bridge: inter-container connectivity for all containers running on the same machine
-host: not create any networking namespace for attached container. Container will interact with host&rsquo;s network like uncontained processes.
-none: no network connectivity
-scope: local, global and swarm
-local: the network is constrained to the machine where the network exists
-global: created on every node in a cluster but not route between them
-swarm: span all of the hosts participating in a Docker swarm
-Creating a user-defined bridge network
-Local to the machine where Docker is installed, creates route between participating containers and the wider network where the host is attached.</p>
-<p>shape bridge network to fit your environment</p>
-<p>docker network create <br>
-&ndash;driver bridge <br>
-&ndash;label project=dockerinaction <br>
-&ndash;label chapter=5 <br>
-&ndash;attachable <br>
-&ndash;scope local <br>
-&ndash;subnet 10.0.42.0/24 <br>
-&ndash;ip-range 10.0.42.128/25 <br>
-user-network</p>
-<p>docker network create <br>
-&ndash;driver bridge <br>
-&ndash;label project=dockerinaction <br>
-&ndash;label chapter=5 <br>
-&ndash;attachable <br>
-&ndash;scope local <br>
-&ndash;subnet 10.0.43.0/24 <br>
-&ndash;ip-range 10.0.43.128/25 <br>
+<p><code>docker network</code> subcommands</p>
+<p><code>docker network ls</code> to list all network of Docker.</p>
+<ul>
+<li>bridge: inter-container connectivity for all containers running on the same machine</li>
+<li>host: not create any networking namespace for attached container. Container will interact with host&rsquo;s network like uncontained processes.</li>
+<li>none: no network connectivity</li>
+<li>scope: local, global and swarm
+<ul>
+<li>local: the network is constrained to the machine where the network exists</li>
+<li>global: created on every node in a cluster but not route between them</li>
+<li>swarm: span all of the hosts participating in a Docker swarm</li>
+</ul>
+</li>
+</ul>
+<h4 id="creating-a-user-defined-bridge-network">
+  Creating a user-defined bridge network
+  <a class="anchor" href="#creating-a-user-defined-bridge-network">#</a>
+</h4>
+<p>Local to the machine where Docker is installed, creates route between participating containers and the wider network where the host is attached.</p>
+<p><img src="/../img/image-20230222221847924.png" alt="image-20230222221847924" /></p>
+<ul>
+<li>shape bridge network to fit your environment</li>
+</ul>
+<pre tabindex="0"><code>docker network create \
+--driver bridge \
+--label project=dockerinaction \
+--label chapter=5 \
+--attachable \
+--scope local \
+--subnet 10.0.42.0/24 \
+--ip-range 10.0.42.128/25 \
+user-network
+
+docker network create \
+--driver bridge \
+--label project=dockerinaction \
+--label chapter=5 \
+--attachable \
+--scope local \
+--subnet 10.0.43.0/24 \
+--ip-range 10.0.43.128/25 \
 user-network2
-attach a running container to more than one network</p>
-<p>docker run -it <br>
-&ndash;network user-network <br>
-&ndash;name network-explorer <br>
-alpine:3.8 <br>
-sh</p>
-<p>ip -f inet -4 -o addr</p>
-<p>docker network connect <br>
-user-network2 <br>
-network-explorer</p>
-<p>ip -f inet -4 -o addr
-nmap -sn 10.0.42.* -sn 10.0.43.* -oG /dev/stdout | grep Status
-what those networks look like to running software inside an attached container</p>
-<p>docker run -d <br>
-&ndash;name lighthouse <br>
-&ndash;network user-network2 <br>
-alpine:3.8 <br>
-sleep 1d</p>
-<p>nmap -sn 10.0.42.* -sn 10.0.43.* -oG /dev/stdout | grep Statu
-For situations that route traffic between containers on different machines, can use underlay networks provided by the macvlan or ipvlan network drivers.</p>
-<p>or use swarm mode
-Special container networks: host and none
-software inside the container have the same degree of access to the host network as software outside container</p>
-<p>docker run &ndash;rm <br>
-&ndash;network host <br>
+</code></pre><ul>
+<li>attach a running container to more than one network</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-docker" data-lang="docker"><span style="display:flex;"><span>--network user-network <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--name network-explorer <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>alpine:3.8 <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>sh<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>ip -f inet -4 -o addr<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>docker network connect <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>user-network2 <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>network-explorer<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>ip -f inet -4 -o addr<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>nmap -sn 10.0.42.* -sn 10.0.43.* -oG /dev/stdout | grep Status<span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><ul>
+<li>what those networks look like to running software inside an attached container</li>
+</ul>
+<pre tabindex="0"><code>docker run -d \
+--name lighthouse \
+--network user-network2 \
+alpine:3.8 \
+sleep 1d
+
+nmap -sn 10.0.42.* -sn 10.0.43.* -oG /dev/stdout | grep Statu
+</code></pre><p>For situations that route traffic between containers on different machines, can use underlay networks provided by the macvlan or ipvlan network drivers.</p>
+<ul>
+<li>or use swarm mode</li>
+</ul>
+<h3 id="special-container-networks-host-and-none">
+  Special container networks: host and none
+  <a class="anchor" href="#special-container-networks-host-and-none">#</a>
+</h3>
+<ul>
+<li>software inside the container have the same degree of access to the host network as software outside container</li>
+</ul>
+<pre tabindex="0"><code>docker run --rm \
+--network host \
 alpine:3.8 ip -o addr
-software in the container cannot reach anything outside the container (network isolate)</p>
-<p>docker run &ndash;rm <br>
-&ndash;network none <br>
-alpine:3.8 ip -o addr</p>
-<p>docker run &ndash;rm <br>
-&ndash;network none <br>
-alpine:3.8 <br>
+</code></pre><ul>
+<li>software in the container cannot reach anything outside the container (network isolate)</li>
+</ul>
+<pre tabindex="0"><code>docker run --rm \
+--network none \
+alpine:3.8 ip -o addr
+
+docker run --rm \
+--network none \
+alpine:3.8 \
 ping -w 2 1.1.1.1
-Handling inbound traffic with NodePort publishing
-Need to tell Docker how to forward traffic from the external network interfaces: specify TCP or UDP port.</p>
+</code></pre><h3 id="handling-inbound-traffic-with-nodeport-publishing">
+  Handling inbound traffic with NodePort publishing
+  <a class="anchor" href="#handling-inbound-traffic-with-nodeport-publishing">#</a>
+</h3>
+<p>Need to tell Docker how to forward traffic from the external network interfaces: specify TCP or UDP port.</p>
 <p>NodePort publishing: match Docker and other ecosystem projects.</p>
 <p>Provided at container creation time and cannot be changed later docker run/create &ndash;publish colon-delimited string argument.</p>
 <p>Examples:</p>
-<p>docker run &ndash;rm <br>
--p 8080 <br>
-alpine:3.8 echo &ldquo;forward ephemeral TCP -&gt; container TCP 8080&rdquo;
-Host operating system will select a random host port, and traffic will be routed to port 8080 in the container.
-Since ports are scarce resources, and this way will avoid potential conflicts.
-Programs running inside a container do not know which port is being forwarded from the host
-use docker port listener to look up port mappings
-lookup special container port and protocol</p>
-<p>docker run -d <br>
--p 8080 <br>
--p 3000 <br>
--p 7500 <br>
-&ndash;name multi-listener <br>
-alpine:3.8 sleep 300</p>
-<p>docker port multi-listener 3000
-Container networking caveats and customizations
-No firewalls or network policies
-Docker bridge networks do not provide any network firewall or access-control functionality.</p>
-<p>Custom DNS configuration
-at /etc/hosts inside your container</p>
-<p>docker run &ndash;hostname  set hostname of a new container, other containers do not know this hostname.
-docker run &ndash; dns  use an external DNS server
-docker run &ndash;dns-search=[] provide a default hostname suffix.
-e.g., docker run &ndash;rm &ndash;dns-search docker.com alpine:3.8 nslookup hub  will resolve the IP addr of hob.docker.com
-docker run &ndash;add-host
-Externalizing network management
-use Docker none network + third party container-aware tools.</p>
-<p>Chapter6: Limiting risk with resource controls
-Set resource allowances
-By default, Docker containers may use unlimited CPU, memory, and device I/O resources.</p>
-<p>Memory limits
-docker run/create &ndash;memory <!-- raw HTML omitted --><!-- raw HTML omitted --> where unit = b, k, m or g
-Note that they are not reservations, and only a protection from overconsumption.
-Is the memory enough for the container? docker stats CONTAINER_NAME
-Some programs may fail with a memory access fault, whereas others may start writing out-of-memory errors to their logging.
-&ndash;restart
-CPU
-specify the relative weight of a container to other containers
-&ndash;cpu-shares flag.
-Only enforced only when there is contention for time on the CPU
-limit the total amount of CPU used by a container
-&ndash;cpus the number of CPU cores the container should be able to use
-enforced
-assign a container to a specific CPU set.
-avoid context switch
-Access to devices
-More like resource-authorization control than a limit.</p>
-<p>&ndash;device : + a map between the device file on the host operating system and the location inside the new container</p>
-<p>Sharing memory
-Docker creates a unique IPC namespace for each container by default, which prevents processes in one container from accessing the memory on the host or in other containers</p>
-<p>Sharing IPC primitives between containers
-&ndash;ipc flag</p>
-<p>run programs that communicate with shared memory in different containers
-create a new container in the same IPC namespace as another target container</p>
-<p>sharing memory with host &ndash;ipc=host
-Understanding users
-User is specified by the image metadata by default, often the root user.</p>
-<p>Working with the run-as user
-docker inspect &ndash;format &ldquo;{{.Config.User}}&rdquo; busybox:1.29 : if blank, the container will default to running as the root user.</p>
-<p>user might be changed
-docker container run &ndash;rm &ndash;entrypoint &quot;&quot; busybox:1.29 whoami</p>
-<p>docker container run &ndash;rm &ndash;entrypoint &quot;&quot; busybox:1.29 id</p>
+<pre tabindex="0"><code>docker run --rm \
+-p 8080 \
+alpine:3.8 echo &#34;forward ephemeral TCP -&gt; container TCP 8080&#34;
+</code></pre><ul>
+<li>
+<p>Host operating system will select a random host port, and traffic will be routed to port 8080 in the container.</p>
+</li>
+<li>
+<p>Since ports are scarce resources, and this way will avoid potential conflicts.</p>
+</li>
+<li>
+<p>Programs running inside a container do not know which port is being forwarded from the host</p>
+<ul>
+<li>
+<p>use docker port listener to look up port mappings</p>
+</li>
+<li>
+<p>lookup special container port and protocol</p>
+</li>
+<li>
+<pre tabindex="0"><code>docker run -d \
+-p 8080 \
+-p 3000 \
+-p 7500 \
+--name multi-listener \
+alpine:3.8 sleep 300  
+
+docker port multi-listener 3000
+</code></pre></li>
+</ul>
+</li>
+</ul>
+<h3 id="container-networking-caveats-and-customizations">
+  Container networking caveats and customizations
+  <a class="anchor" href="#container-networking-caveats-and-customizations">#</a>
+</h3>
+<h4 id="no-firewalls-or-network-policies">
+  No firewalls or network policies
+  <a class="anchor" href="#no-firewalls-or-network-policies">#</a>
+</h4>
+<p>Docker bridge networks do not provide any network firewall or access-control functionality.</p>
+<h4 id="custom-dns-configuration">
+  Custom DNS configuration
+  <a class="anchor" href="#custom-dns-configuration">#</a>
+</h4>
+<p>at /etc/hosts inside your container</p>
+<ul>
+<li><code>docker run --hostname</code>  set hostname of a new container, other containers do not know this hostname.</li>
+<li><code>docker run -- dns</code>  use an external DNS server</li>
+<li><code>docker run --dns-search=[]</code> provide a default hostname suffix.
+<ul>
+<li>e.g., <code>docker run --rm --dns-search docker.com alpine:3.8 nslookup hub</code>  will resolve the IP addr of hob.docker.com</li>
+</ul>
+</li>
+<li><code>docker run --add-host</code></li>
+</ul>
+<h4 id="externalizing-network-management">
+  Externalizing network management
+  <a class="anchor" href="#externalizing-network-management">#</a>
+</h4>
+<p>use Docker <code>none</code> network + third party container-aware tools.</p>
+<h2 id="chapter6-limiting-risk-with-resource-controls">
+  Chapter6: Limiting risk with resource controls
+  <a class="anchor" href="#chapter6-limiting-risk-with-resource-controls">#</a>
+</h2>
+<h3 id="set-resource-allowances">
+  Set resource allowances
+  <a class="anchor" href="#set-resource-allowances">#</a>
+</h3>
+<p>By default, Docker containers may use unlimited CPU, memory, and device I/O resources.</p>
+<h4 id="memory-limits">
+  Memory limits
+  <a class="anchor" href="#memory-limits">#</a>
+</h4>
+<ul>
+<li><code>docker run/create --memory &lt;number&gt;&lt;optional unit&gt; where unit = b, k, m or g </code></li>
+<li>Note that they are not reservations, and only a protection from overconsumption.</li>
+<li>Is the memory enough for the container? docker stats CONTAINER_NAME</li>
+<li>Some programs may fail with a memory access fault, whereas others may start writing out-of-memory errors to their logging.
+<ul>
+<li>&ndash;restart</li>
+</ul>
+</li>
+</ul>
+<h4 id="cpu">
+  CPU
+  <a class="anchor" href="#cpu">#</a>
+</h4>
+<ul>
+<li>specify the relative weight of a container to other containers
+<ul>
+<li><code>--cpu-shares</code> flag.</li>
+<li>Only enforced only when there is contention for time on the CPU</li>
+</ul>
+</li>
+<li>limit the total amount of CPU used by a container
+<ul>
+<li><code>--cpus</code> the number of CPU cores the container should be able to use</li>
+<li>enforced</li>
+</ul>
+</li>
+<li>assign a container to a specific CPU set.
+<ul>
+<li>avoid context switch</li>
+</ul>
+</li>
+</ul>
+<h4 id="access-to-devices">
+  Access to devices
+  <a class="anchor" href="#access-to-devices">#</a>
+</h4>
+<p>More like resource-authorization control than a limit.</p>
+<p><code>--device</code> : + a map between the device file on the host operating system and the location inside the new container</p>
+<h3 id="sharing-memory">
+  Sharing memory
+  <a class="anchor" href="#sharing-memory">#</a>
+</h3>
+<p>Docker creates a unique IPC namespace for each container by default, which prevents processes in one container from accessing the memory on the host or in other containers</p>
+<h4 id="sharing-ipc-primitives-between-containers">
+  Sharing IPC primitives between containers
+  <a class="anchor" href="#sharing-ipc-primitives-between-containers">#</a>
+</h4>
+<p><code>--ipc</code> flag</p>
+<ul>
+<li>run programs that communicate with shared memory in different containers</li>
+<li>create a new container in the same IPC namespace as another target container</li>
+</ul>
+<p><img src="/../img/image-20230222222757363.png" alt="image-20230222222757363" /></p>
+<ul>
+<li>sharing memory with host <code>--ipc=host </code></li>
+</ul>
+<h3 id="understanding-users">
+  Understanding users
+  <a class="anchor" href="#understanding-users">#</a>
+</h3>
+<p>User is specified by the image metadata by default, often the root user.</p>
+<h4 id="working-with-the-run-as-user">
+  Working with the run-as user
+  <a class="anchor" href="#working-with-the-run-as-user">#</a>
+</h4>
+<p><code>docker inspect --format &quot;{{.Config.User}}&quot; busybox:1.29</code> : if blank, the container will default to running as the root user.</p>
+<ul>
+<li>user might be changed</li>
+</ul>
+<p><code>docker container run --rm --entrypoint &quot;&quot; busybox:1.29 whoami </code></p>
+<p><code>docker container run --rm --entrypoint &quot;&quot; busybox:1.29 id </code></p>
 <p>To run as specific user when creating the container, the username must exist on the image you are using.</p>
-<p>get a list of available user in an image with docker container run &ndash;rm busybox:1.29 awk -F: &lsquo;$0=$1&rsquo; /etc/passwd
-docker container run &ndash;rm &ndash;user nobody busybox:1.29 id
-Users and volumes
-User ID space is shared: both root on the host and root in the container have user ID 0.</p>
-<p>container&rsquo;s root can access a file owned by root on the host
-do not mount the file into that container with a volume
-echo &ldquo;e=mc^2&rdquo; &gt; garbage
+<ul>
+<li>get a list of available user in an image with <code>docker container run --rm busybox:1.29 awk -F: '$0=$1' /etc/passwd </code></li>
+<li><code>docker container run --rm --user nobody busybox:1.29 id </code></li>
+</ul>
+<h4 id="users-and-volumes">
+  Users and volumes
+  <a class="anchor" href="#users-and-volumes">#</a>
+</h4>
+<p>User ID space is shared: both root on the host and root in the container have user ID 0.</p>
+<ul>
+<li>
+<p>container&rsquo;s root can access a file owned by root on the host</p>
+</li>
+<li>
+<p>do not mount the file into that container with a volume</p>
+<pre tabindex="0"><code>echo &#34;e=mc^2&#34; &gt; garbage
 chmod 600 garbage
 sudo chown root garbage
-docker container run &ndash;rm -v &ldquo;$(pwd)&quot;/garbage:/test/garbage <br>
--u nobody <br>
+docker container run --rm -v &#34;$(pwd)&#34;/garbage:/test/garbage \
+-u nobody \
 ubuntu:16.04 cat /test/garbage
-docker container run &ndash;rm -v &ldquo;$(pwd)&quot;/garbage:/test/garbage <br>
--u root ubuntu:16.04 cat /test/garbage</p>
-<h1 id="outputs-emc2">
-  Outputs: &ldquo;e=mc^2&rdquo;
-  <a class="anchor" href="#outputs-emc2">#</a>
-</h1>
+docker container run --rm -v &#34;$(pwd)&#34;/garbage:/test/garbage \
+-u root ubuntu:16.04 cat /test/garbage
+
+# Outputs: &#34;e=mc^2&#34;
+</code></pre></li>
+</ul>
 <p>Specify the desired user and group ID to avoid file permission conflicts.</p>
-<p>mkdir logFiles
+<pre tabindex="0"><code>mkdir logFiles
 sudo chown 2000:2000 logFiles
-docker container run &ndash;rm -v &ldquo;$(pwd)&quot;/logFiles:/logFiles <br>
--u 2000:2000 ubuntu:16.04 <br>
-/bin/bash -c &ldquo;echo This is important info &gt; /logFiles/important.log&rdquo;
-docker container run &ndash;rm -v &ldquo;$(pwd)&quot;/logFiles:/logFiles <br>
--u 2000:2000 ubuntu:16.04 <br>
-/bin/bash -c &ldquo;echo More info &raquo; /logFiles/important.log&rdquo;
-Be careful about which user can control the Docker daemon.</p>
-<p>Introduction to the Linux user namespace and UID remapping
-By default, Docker containers do not use the USR namespace</p>
-<p>A container running with a user ID that is the same as a user on the host machine has the same host file permissions as that user.
-When user namespace is enable: UID namespace remapping</p>
-<p>remap to unprivileged UID
-dockremap user
-Adjusting OS feature access with capabilities
-Capabilities: OS feature authorization</p>
+docker container run --rm -v &#34;$(pwd)&#34;/logFiles:/logFiles \
+-u 2000:2000 ubuntu:16.04 \
+/bin/bash -c &#34;echo This is important info &gt; /logFiles/important.log&#34;
+docker container run --rm -v &#34;$(pwd)&#34;/logFiles:/logFiles \
+-u 2000:2000 ubuntu:16.04 \
+/bin/bash -c &#34;echo More info &gt;&gt; /logFiles/important.log&#34;
+</code></pre><p>Be careful about which user can control the Docker daemon.</p>
+<h4 id="introduction-to-the-linux-user-namespace-and-uid-remapping">
+  Introduction to the Linux user namespace and UID remapping
+  <a class="anchor" href="#introduction-to-the-linux-user-namespace-and-uid-remapping">#</a>
+</h4>
+<p>By default, Docker containers do not use the USR namespace</p>
+<ul>
+<li>A container running with a user ID that is the same as a user on the host machine has the same host file permissions as that user.</li>
+</ul>
+<p>When user namespace is enable: UID namespace remapping</p>
+<ul>
+<li>remap to unprivileged UID</li>
+<li><code>dockremap</code> user</li>
+</ul>
+<h3 id="adjusting-os-feature-access-with-capabilities">
+  Adjusting OS feature access with capabilities
+  <a class="anchor" href="#adjusting-os-feature-access-with-capabilities">#</a>
+</h3>
+<p>Capabilities: OS feature authorization</p>
 <p>List all default caoabilities:</p>
-<p>docker container run &ndash;rm -u nobody <br>
-ubuntu:16.04 <br>
-/bin/bash -c &ldquo;capsh &ndash;print | grep net_raw&rdquo;</p>
-<p>&ndash;cap-drop : drop capabilities during container run/create</p>
-<p>&ndash;cap-add : add capabilities</p>
-<p>Running a container with full privileges
-Run a system administration task: privileged containers</p>
+<pre tabindex="0"><code>docker container run --rm -u nobody \
+ubuntu:16.04 \
+/bin/bash -c &#34;capsh --print | grep net_raw&#34;
+</code></pre><p><code>--cap-drop</code> : drop capabilities during container run/create</p>
+<p><code>--cap-add</code> : add capabilities</p>
+<h3 id="running-a-container-with-full-privileges">
+  Running a container with full privileges
+  <a class="anchor" href="#running-a-container-with-full-privileges">#</a>
+</h3>
+<p>Run a system administration task: privileged containers</p>
 <p>Privileged containers maintain their filesystem and network isolation but have full access to shared memory and devices and possess full system capabilities.</p>
-<p>&ndash;privileged for docker container create/run</p>
-<p>Strengthening containers with enhanced tools
-Specifying additional security options &ndash;security-opt</p>
+<p><code>--privileged</code> for docker container create/run</p>
+<h3 id="strengthening-containers-with-enhanced-tools">
+  Strengthening containers with enhanced tools
+  <a class="anchor" href="#strengthening-containers-with-enhanced-tools">#</a>
+</h3>
+<p>Specifying additional security options &ndash;security-opt</p>
 <p>SELinux: labeling</p>
 <p>AppArmor: file path</p>
-<p>Building use-case-appropriate containers
-Start with the most isolated container you can build and justify reasons for weakening those restrictions.</p>
+<h3 id="building-use-case-appropriate-containers">
+  Building use-case-appropriate containers
+  <a class="anchor" href="#building-use-case-appropriate-containers">#</a>
+</h3>
+<p>Start with the most isolated container you can build and justify reasons for weakening those restrictions.</p>
 <p>Or use default container construction.</p>
-<p>Applications
-running as a user with limited permissions
-limit the system capabilities
-set limits on how much of the CPU and memory the application can use
-specifically whitelist devices that it can access
-High-level system services
-Often require privileged access, including cron, syslogd, sshd and so on.</p>
-<p>Use capabilities to tune their access.</p>
-<p>Low-level system services
-Require privileged access, including devices and system&rsquo;s network stack. Rare to run inside containers.</p>
-<p>Used for short-running configuration containers: change the configuration with a privileged containers.</p>
-<p>Part 2: Packaging software for distribution
-Chapter 7: Packaging software in images
-Building Docker images from a container</p>
-<p>Tips: docker run is the same as docker container run. <a href="https://stackoverflow.com/questions/51247609/difference-between-docker-run-and-docker-container-run">https://stackoverflow.com/questions/51247609/difference-between-docker-run-and-docker-container-run</a></p>
-<p>docker container diff CONTAINER_NAME review the list of files that have been modified in a container (added A, changed C, deleted D)
-docker container commit  commit changes to new image
--a flag: author
--m flag: commit message
-add &ndash;entrypoint
-Parameters that carry forward with an image created from the container.<br>
-all environment variables
-working directory
-the set of exposed ports
-all volume definitions
-the container entrypoint
-command and arguments
-Note: If not specifically set for the container, the values will be inherited from the original image
-Going deep on Docker images and layers
-Exploring union filesystems
-Each time a change is made to a union filesystem, that change is recorded on a new layer on top of all of the others</p>
-<p>When reading a file, the file will be read from the topmost layer where it exist.</p>
-<p>If a file was not created or changed on the top layer, the read will fall through the layers until it reaches a layer where that file does exist
-When a file is deleted, a delete record is written to the top layer, which hides any versions of that file on lower layers.</p>
-<p>When a file is changed, that change is written to the top layer, which again hides any versions of that file on lower layers</p>
-<p>Reintroducing images, layers, repositories, and tags
-Metadata of layer: generated identifier, identifier of the layer below it, execution context.</p>
-<p>Image: stack of layers, constructed by starting with a given top layer and then following all the links</p>
-<p>docker commit [OPTIONS] CONTAINER [REPOSITORY[:TAG]] commit container with name and tag.</p>
-<p>docker tag  copy image by creating a new tag or repo from existing one.</p>
-<p>All layers below the writable layer created for a container are immutable.</p>
-<p>they can never be modified
-make individual layers reusable
-share access to images instead of creating independent copies for every container
-any time making changes to an image, you need to add a new layer, and old layers are never removed.
-Managing image size and layer limits
-Union filesystem makes a file as deleted by actually adding a file to the top layer.</p>
-<p>docker image history IMAGE show the history of an image.</p>
-<p>Exporting and importing flat filesystems
-image &amp; TAR file: bad idea, will lose the original image&rsquo;s metadata and change history.</p>
-<p>docker image save save the image to a TAR file.
-docker image import import the TAR file into docker.
-docker import -c &ldquo;ENTRYPOINT [&quot;/hello&quot;]&rdquo; - <br>
-dockerinaction/ch7_static &lt; static_hello.tar
--c specify a Dockerfile command</p>
+<h4 id="applications">
+  Applications
+  <a class="anchor" href="#applications">#</a>
+</h4>
 <ul>
-<li>at the end of the first line: the content of the tarball will be streamed through stdin. This position can be file/URL/-
-small size, only one layer (called flat image), no layer reuse
-use creating branch
-docker container export Export a container&rsquo;s filesystem as a tar archive</li>
+<li>running as a user with limited permissions</li>
+<li>limit the system capabilities</li>
+<li>set limits on how much of the CPU and memory the application can use</li>
+<li>specifically whitelist devices that it can access</li>
 </ul>
-<p>docker cp  Copy files/folders between a container and the local filesystem</p>
-<p>Versioning best practices</p>
-<p>latest: default tag, should point to the latest stable build of its software instead of the true latest.</p>
-<p>Each row represents a distinct image.</p>
-<p>Chapter 8: Building images automatically with Dockerfiles
-Dockerfile: text file containing instructions for building an image.</p>
-<p>Packaging Git with Dockerfile</p>
-<h1 id="an-example-dockerfile-for-installing-git-on-ubuntu">
-  An example Dockerfile for installing Git on Ubuntu
-  <a class="anchor" href="#an-example-dockerfile-for-installing-git-on-ubuntu">#</a>
+<h4 id="high-level-system-services">
+  High-level system services
+  <a class="anchor" href="#high-level-system-services">#</a>
+</h4>
+<p>Often require privileged access, including cron, syslogd, sshd and so on.</p>
+<p>Use capabilities to tune their access.</p>
+<h4 id="low-level-system-services">
+  Low-level system services
+  <a class="anchor" href="#low-level-system-services">#</a>
+</h4>
+<p>Require privileged access, including devices and system&rsquo;s network stack. Rare to run inside containers.</p>
+<p>Used for short-running configuration containers: change the configuration with a privileged containers.</p>
+<h1 id="part-2-packaging-software-for-distribution">
+  Part 2: Packaging software for distribution
+  <a class="anchor" href="#part-2-packaging-software-for-distribution">#</a>
 </h1>
-<p>FROM ubuntu:latest
-LABEL maintainer=&ldquo;<a href="mailto:dia@allingeek.com">dia@allingeek.com</a>&rdquo;
+<h2 id="chapter-7-packaging-software-in-images">
+  Chapter 7: Packaging software in images
+  <a class="anchor" href="#chapter-7-packaging-software-in-images">#</a>
+</h2>
+<h3 id="building-docker-images-from-a-container">
+  Building Docker images from a container
+  <a class="anchor" href="#building-docker-images-from-a-container">#</a>
+</h3>
+<p><img src="/../img/image-20230222223334025.png" alt="image-20230222223334025" /></p>
+<p>Tips: <code>docker run</code> is the same as <code>docker container run</code>. <a href="https://stackoverflow.com/questions/51247609/difference-between-docker-run-and-docker-container-run">https://stackoverflow.com/questions/51247609/difference-between-docker-run-and-docker-container-run</a></p>
+<ul>
+<li><code>docker container diff CONTAINER_NAME</code> review the list of files that have been modified in a container (added A, changed C, deleted D)</li>
+<li><code>docker container commit</code>  commit changes to new image
+<ul>
+<li><code>-a</code> flag: author</li>
+<li><code>-m</code> flag: commit message</li>
+<li>add <code>--entrypoint</code></li>
+</ul>
+</li>
+<li>Parameters that carry forward with an image created from the container.
+<ul>
+<li>all environment variables</li>
+<li>working directory</li>
+<li>the set of exposed ports</li>
+<li>all volume definitions</li>
+<li>the container entrypoint</li>
+<li>command and arguments</li>
+<li>Note: If not specifically set for the container, the values will be inherited from the original image</li>
+</ul>
+</li>
+</ul>
+<h3 id="going-deep-on-docker-images-and-layers">
+  Going deep on Docker images and layers
+  <a class="anchor" href="#going-deep-on-docker-images-and-layers">#</a>
+</h3>
+<h4 id="exploring-union-filesystems">
+  Exploring union filesystems
+  <a class="anchor" href="#exploring-union-filesystems">#</a>
+</h4>
+<p>Each time a change is made to a union filesystem, that change is recorded on a new layer on top of all of the others</p>
+<p><img src="/../img/image-20230222223754780.png" alt="image-20230222223754780" /></p>
+<p>When reading a file, the file will be read from the topmost layer where it exist.</p>
+<ul>
+<li>If a file was not created or changed on the top layer, the read will fall through the layers until it reaches a layer where that file does exist</li>
+</ul>
+<p>When a file is deleted, a delete record is written to the top layer, which hides any versions of that file on lower layers.</p>
+<p>When a file is changed, that change is written to the top layer, which again hides any versions of that file on lower layers</p>
+<p><img src="/../img/image-20230222223830583.png" alt="image-20230222223830583" /></p>
+<h4 id="reintroducing-images-layers-repositories-and-tags">
+  Reintroducing images, layers, repositories, and tags
+  <a class="anchor" href="#reintroducing-images-layers-repositories-and-tags">#</a>
+</h4>
+<p>Metadata of layer: generated identifier, identifier of the layer below it, execution context.</p>
+<p>Image: stack of layers, constructed by starting with a given top layer and then following all the links</p>
+<p><img src="/../img/image-20230222223900823.png" alt="image-20230222223900823" /></p>
+<p><code>docker commit [OPTIONS] CONTAINER [REPOSITORY[:TAG]]</code> commit container with name and tag.</p>
+<p><code>docker tag</code>  copy image by creating a new tag or repo from existing one.</p>
+<p>All layers below the writable layer created for a container are immutable.</p>
+<ul>
+<li>they can never be modified</li>
+<li>make individual layers reusable</li>
+<li>share access to images instead of creating independent copies for every container</li>
+<li>any time making changes to an image, you need to add a new layer, and old layers are never removed.</li>
+</ul>
+<h4 id="managing-image-size-and-layer-limits">
+  Managing image size and layer limits
+  <a class="anchor" href="#managing-image-size-and-layer-limits">#</a>
+</h4>
+<p>Union filesystem makes a file as deleted by actually adding a file to the top layer.</p>
+<p><code>docker image history IMAGE</code> show the history of an image.</p>
+<h3 id="exporting-and-importing-flat-filesystems">
+  Exporting and importing flat filesystems
+  <a class="anchor" href="#exporting-and-importing-flat-filesystems">#</a>
+</h3>
+<p>image &amp; TAR file: bad idea, will lose the original image&rsquo;s metadata and change history.</p>
+<ul>
+<li>
+<p><code>docker image save</code> save the image to a TAR file.</p>
+</li>
+<li>
+<p><code>docker image import</code> import the TAR file into docker.</p>
+<ul>
+<li>
+<pre tabindex="0"><code>docker import -c &#34;ENTRYPOINT [\&#34;/hello\&#34;]&#34; - \
+dockerinaction/ch7_static &lt; static_hello.tar
+</code></pre></li>
+<li>
+<p><code>-c</code> specify a Dockerfile command</p>
+</li>
+<li>
+<p>at the end of the first line: the content of the tarball will be streamed through stdin. This position can be file/URL/-</p>
+</li>
+<li>
+<p>small size, only one layer (called flat image), no layer reuse</p>
+</li>
+</ul>
+</li>
+<li>
+<p>use creating branch</p>
+</li>
+</ul>
+<p><code>docker container export</code> Export a container&rsquo;s filesystem as a tar archive</p>
+<p><code>docker cp</code>  Copy files/folders between a container and the local filesystem</p>
+<h3 id="versioning-best-practices">
+  Versioning best practices
+  <a class="anchor" href="#versioning-best-practices">#</a>
+</h3>
+<p><img src="/../img/image-20230222224140407.png" alt="image-20230222224140407" /></p>
+<p>latest: default tag, should point to the latest stable build of its software instead of the true latest.</p>
+<p><img src="/../img/image-20230222224206017.png" alt="image-20230222224206017" /></p>
+<p>Each row represents a distinct image.</p>
+<h2 id="chapter-8-building-images-automatically-with-dockerfiles">
+  Chapter 8: Building images automatically with Dockerfiles
+  <a class="anchor" href="#chapter-8-building-images-automatically-with-dockerfiles">#</a>
+</h2>
+<p>Dockerfile: text file containing instructions for building an image.</p>
+<h3 id="packaging-git-with-dockerfile">
+  Packaging Git with Dockerfile
+  <a class="anchor" href="#packaging-git-with-dockerfile">#</a>
+</h3>
+<pre tabindex="0"><code># An example Dockerfile for installing Git on Ubuntu
+
+FROM ubuntu:latest
+LABEL maintainer=&#34;dia@allingeek.com&#34;
 RUN apt-get update &amp;&amp; apt-get install -y git
-ENTRYPOINT [&ldquo;git&rdquo;]
-docker image build &ndash;tag ubuntu-git:auto .</p>
-<p>#: comments
-The first instruction of Dockerfile must be FROM
-. : the location of the Dockerfile is the current directory.
-&ndash;file specify the name of Dockerfile, it usually be xxxx.df
-–quite / -q suppress the output of the build process
-The use of caching: the builder can cache the results of each step. If a problem occurs after several steps, the builder can restart from the same position after the problem has been fixed.</p>
-<p>&ndash;no-cache : disable caching
-A Dockerfile primer
-Metadata instructions
-Benefits of using Dockerfile: simplify copying files from host computer into an image</p>
-<p>define which files should never be copied into any images: .dockerignore
-Each Dockerfile instruction will result in a new layer being created, so merge instructions to minimize the size of images and layer count when possible.</p>
-<p>FROM debian:buster-20190910
-LABEL maintainer=&ldquo;<a href="mailto:dia@allingeek.com">dia@allingeek.com</a>&rdquo;
-RUN groupadd -r -g 2200 example &amp;&amp; <br>
+ENTRYPOINT [&#34;git&#34;]
+</code></pre><p><code>docker image build --tag ubuntu-git:auto . </code></p>
+<ul>
+<li>#: comments</li>
+<li>The first instruction of Dockerfile must be FROM</li>
+<li>. : the location of the Dockerfile is the current directory.</li>
+<li>&ndash;file specify the name of Dockerfile, it usually be xxxx.df</li>
+<li>–quite / -q suppress the output of the build process</li>
+</ul>
+<p>The use of <em>caching</em>: the builder can cache the results of each step. If a problem occurs after several steps, the builder can restart from the same position after the problem has been fixed.</p>
+<ul>
+<li><code>--no-cache</code> : disable caching</li>
+</ul>
+<h3 id="a-dockerfile-primer">
+  A Dockerfile primer
+  <a class="anchor" href="#a-dockerfile-primer">#</a>
+</h3>
+<h4 id="metadata-instructions">
+  Metadata instructions
+  <a class="anchor" href="#metadata-instructions">#</a>
+</h4>
+<p>Benefits of using Dockerfile: simplify copying files from host computer into an image</p>
+<ul>
+<li>define which files should <em>never</em> be copied into any images: <code>.dockerignore </code></li>
+</ul>
+<p>Each Dockerfile instruction will result in a new layer being created, so merge instructions to minimize the size of images and layer count when possible.</p>
+<pre tabindex="0"><code>FROM debian:buster-20190910
+LABEL maintainer=&#34;dia@allingeek.com&#34;
+RUN groupadd -r -g 2200 example &amp;&amp; \
 useradd -rM -g example -u 2200 example
-ENV APPROOT=&quot;/app&rdquo; <br>
-APP=&ldquo;mailer.sh&rdquo; <br>
-VERSION=&ldquo;0.6&rdquo;
-LABEL base.name=&ldquo;Mailer Archetype&rdquo; <br>
-base.version=&quot;${VERSION}&rdquo;
+ENV APPROOT=&#34;/app&#34; \
+APP=&#34;mailer.sh&#34; \
+VERSION=&#34;0.6&#34;
+LABEL base.name=&#34;Mailer Archetype&#34; \
+base.version=&#34;${VERSION}&#34;
 WORKDIR $APPROOT
 ADD . $APPROOT
-ENTRYPOINT [&quot;/app/mailer.sh&rdquo;]
-EXPOSE 33333</p>
-<h1 id="do-not-set-the-default-user-in-the-base-otherwise">
-  Do not set the default user in the base otherwise
-  <a class="anchor" href="#do-not-set-the-default-user-in-the-base-otherwise">#</a>
-</h1>
-<h1 id="implementations-will-not-be-able-to-update-the-image">
-  implementations will not be able to update the image
-  <a class="anchor" href="#implementations-will-not-be-able-to-update-the-image">#</a>
-</h1>
-<h1 id="user-exampleexample">
-  USER example:example
-  <a class="anchor" href="#user-exampleexample">#</a>
-</h1>
-<p>Some Dockerfile instructions:</p>
-<p>FROM : set the layer stack to start from which image.
-ENV : set environment variables for an image, similar to &ndash;env flag on docker container run/create
-can also be used in other instructions in this Dockerfile
-LABEL : defile key:value pairs, similar to &ndash;label on docker run/create<br>
-add additional metadata, will be available to process running inside a container
-WORKDIR : set default working directory
-EXPOSE : open TCP port
-ENTRYPOINT : set the executable to run at container startup
-has two forms: shell form and exec form
-if the shell form is used, all other arguments provided by CMD instruction or extra arguments will be ignored.
-app/mailer.sh does not exist
-USER set user and group for further build steps
-set up user and group accounts in base image
-let the implementations set the default user
-use docker inspect to inspect the environment variables of the image.
-ENV, LABEL, WORKDIR, VOLUME, EXPOSE, ADD, COPY
-Filesystem Instructions
-Some instructions that modify the filesystem</p>
-<p>FROM dockerinaction/mailer-base:0.6
-RUN apt-get update &amp;&amp; <br>
+ENTRYPOINT [&#34;/app/mailer.sh&#34;]
+EXPOSE 33333
+
+# Do not set the default user in the base otherwise
+
+# implementations will not be able to update the image
+
+# USER example:example
+</code></pre><p>Some Dockerfile instructions:</p>
+<ul>
+<li><code>FROM</code> : set the layer stack to start from which image.</li>
+<li><code>ENV</code> : set environment variables for an image, similar to &ndash;env flag on docker container run/create
+<ul>
+<li>can also be used in other instructions in this Dockerfile</li>
+</ul>
+</li>
+<li><code>LABEL</code> : defile key:value pairs, similar to &ndash;label on docker run/create
+<ul>
+<li>add additional metadata, will be available to process running inside a container</li>
+</ul>
+</li>
+<li><code>WORKDIR</code> : set default working directory</li>
+<li><code>EXPOSE</code> : open TCP port</li>
+<li><code>ENTRYPOINT</code> : set the executable to run at container startup
+<ul>
+<li>has two forms: shell form and exec form</li>
+<li>if the shell form is used, all other arguments provided by CMD instruction or extra arguments will be ignored.</li>
+<li><code>app/mailer.sh</code> does not exist</li>
+</ul>
+</li>
+<li><code>USER</code> set user and group for further build steps
+<ul>
+<li>set up user and group accounts in base image</li>
+<li>let the implementations set the default user</li>
+</ul>
+</li>
+<li>use <code>docker inspect</code> to inspect the environment variables of the image.
+<ul>
+<li><code>ENV, LABEL, WORKDIR, VOLUME, EXPOSE, ADD, COPY</code></li>
+</ul>
+</li>
+</ul>
+<h4 id="filesystem-instructions">
+  Filesystem Instructions
+  <a class="anchor" href="#filesystem-instructions">#</a>
+</h4>
+<p>Some instructions that modify the filesystem</p>
+<pre tabindex="0"><code>FROM dockerinaction/mailer-base:0.6
+RUN apt-get update &amp;&amp; \
 apt-get install -y netcat
-COPY [&rdquo;./log-impl&quot;, &ldquo;${APPROOT}&rdquo;]
-RUN chmod a+x ${APPROOT}/${APP} &amp;&amp; <br>
+COPY [&#34;./log-impl&#34;, &#34;${APPROOT}&#34;]
+RUN chmod a+x ${APPROOT}/${APP} &amp;&amp; \
 chown example:example /var/log
 USER example:example
-VOLUME [&quot;/var/log&quot;]
-CMD [&quot;/var/log/mailer.log&quot;]
-docker image build -t dockerinaction/mailer-logging -f mailer-logging.df .</p>
-<p>COPY : at least two argus, source files + destination
-file ownership set to root
-support shell style and exec style arguments (exec is better)
-ADD :
-fetch remote source files if a URL is specified (not good, did not provide mechanism for cleaning up unused files and results in additional layers)
-extract the files of any resource determined to be an archive file (auto-extraction)
-VOLUME :
-similar to &ndash;volume on docker run/create
-CMD :
-related to ENTRYPOINT</p>
-<p>represents an argument list for entrypoint
-if no ENTRYPOINT is set, ignore this instruction
-If ENTRYPOINT is set and using exec form, you use CMD to set default arguments.
-Tip: what is shell style and exec style?</p>
-<p>shell style: looks like a shell command with whitespace-delimited arguments
-can use &ldquo;&quot; to continue a single instruction onto the next line
-e.g.:</p>
-<p>RUN &lsquo;source $HOME/.bashrc;\
-echo $HOME '
-exec form: a string array in which the first value is the command to execute, the remaining values are argus.
-e.g.: RUN [&quot;/bin/bash&rdquo;, &ldquo;-c&rdquo;, &ldquo;echo hello&rdquo;]
-Injecting downstream build-time behavior
-ONBUILD :  defines other instructions to execute if the resulting image is used as a base for another build.</p>
-<p>recorded in the resulting image&rsquo;s metadata under ContainerConfig.OnBuild
-in the downstream Dockerfiles, those ONBUILD instructions are executed after FROM instruction and before the next instruction.
-Creating maintainable Dockerfiles
-ARG : define variable that users can provide to Docker when building an image.</p>
-<p>&ndash;build-arg <!-- raw HTML omitted -->=<!-- raw HTML omitted -->
-Multistage Dockerfile: a Dockerfile that has multiple FROM instructions</p>
-<p>each FROM instruction makes a new build stage
-FROM &hellip; AS <!-- raw HTML omitted -->  to name build stage, this name can be used in subsequent FROM and COPY &ndash;from=&lt;name|index&gt;
-example:</p>
-<p>#################################################</p>
-<h1 id="define-a-builder-stage-and-build-app-inside-it">
-  Define a Builder stage and build app inside it
-  <a class="anchor" href="#define-a-builder-stage-and-build-app-inside-it">#</a>
-</h1>
-<p>FROM golang:1-alpine as builder</p>
-<h1 id="install-ca-certificates">
-  Install CA Certificates
-  <a class="anchor" href="#install-ca-certificates">#</a>
-</h1>
-<p>RUN apk update &amp;&amp; apk add ca-certificates</p>
-<h1 id="copy-source-into-builder">
-  Copy source into Builder
-  <a class="anchor" href="#copy-source-into-builder">#</a>
-</h1>
-<p>ENV HTTP_CLIENT_SRC=$GOPATH/src/dia/http-client/
+VOLUME [&#34;/var/log&#34;]
+CMD [&#34;/var/log/mailer.log&#34;]
+</code></pre><p><code>docker image build -t dockerinaction/mailer-logging -f mailer-logging.df . </code></p>
+<ul>
+<li><code>COPY</code> : at least two argus, source files + destination
+<ul>
+<li>file ownership set to root</li>
+<li>support shell style and exec style arguments (exec is better)</li>
+</ul>
+</li>
+<li><code>ADD</code> :
+<ul>
+<li>fetch remote source files if a URL is specified (not good, did not provide mechanism for cleaning up unused files and results in additional layers)</li>
+<li>extract the files of any resource determined to be an archive file (auto-extraction)</li>
+</ul>
+</li>
+<li><code>VOLUME</code> :
+<ul>
+<li>similar to <code>--volume</code> on <code>docker run/create</code></li>
+</ul>
+</li>
+<li><code>CMD</code> :
+<ul>
+<li>related to <code>ENTRYPOINT </code></li>
+<li><img src="/../img/image-20230222224738833.png" alt="image-20230222224738833" /></li>
+<li>represents an argument list for entrypoint
+<ul>
+<li>if no <code>ENTRYPOINT</code> is set, ignore this instruction</li>
+<li>If <code>ENTRYPOINT</code> is set and using exec form, you use <code>CMD</code> to set default arguments.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>Tip: what is shell style and exec style?</p>
+<ul>
+<li>
+<p>shell style: looks like a shell command with whitespace-delimited arguments</p>
+<ul>
+<li>
+<p><code>RUN &lt;command&gt;</code> shell form, the command is run in a shell, which by default is <code>/bin/sh -c</code> on linux or <code>cmd /S /C</code> on windows</p>
+</li>
+<li>
+<p>can use &ldquo;\&rdquo; to continue a single instruction onto the next line</p>
+</li>
+<li>
+<p>e.g.:</p>
+<p><code>RUN 'source $HOME/.bashrc;\  echo $HOME '</code></p>
+</li>
+</ul>
+</li>
+<li>
+<p>exec form: a string array in which the first value is the command to execute, the remaining values are argus.</p>
+<ul>
+<li><code>RUN [&quot;executable&quot;, &quot;param1&quot;, &quot;param2&quot;]</code></li>
+<li>e.g.: <code>RUN [&quot;/bin/bash&quot;, &quot;-c&quot;, &quot;echo hello&quot;]</code></li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<h3 id="injecting-downstream-build-time-behavior">
+  Injecting downstream build-time behavior
+  <a class="anchor" href="#injecting-downstream-build-time-behavior">#</a>
+</h3>
+<p><code>ONBUILD</code> :  defines other instructions to execute if the resulting image is used as a base for another build.</p>
+<ul>
+<li>recorded in the resulting image&rsquo;s metadata under <code>ContainerConfig.OnBuild </code></li>
+<li>in the downstream Dockerfiles, those <code>ONBUILD</code> instructions are executed after FROM instruction and before the next instruction.</li>
+</ul>
+<h4 id="creating-maintainable-dockerfiles">
+  Creating maintainable Dockerfiles
+  <a class="anchor" href="#creating-maintainable-dockerfiles">#</a>
+</h4>
+<p><code>ARG</code> : define variable that users can provide to Docker when building an image.</p>
+<ul>
+<li><code>--build-arg &lt;varname&gt;=&lt;value&gt;</code></li>
+</ul>
+<p><em>Multistage Dockerfile</em>: a Dockerfile that has multiple FROM instructions</p>
+<ul>
+<li>each <code>FROM</code> instruction makes a new build stage</li>
+<li><code>FROM ... AS &lt;name&gt;</code>  to name build stage, this name can be used in subsequent <code>FROM</code> and <code>COPY --from=&lt;name|index&gt; </code></li>
+</ul>
+<p>example:</p>
+<pre tabindex="0"><code>#################################################
+
+# Define a Builder stage and build app inside it
+
+FROM golang:1-alpine as builder
+
+# Install CA Certificates
+
+RUN apk update &amp;&amp; apk add ca-certificates
+
+# Copy source into Builder
+
+ENV HTTP_CLIENT_SRC=$GOPATH/src/dia/http-client/
 COPY . $HTTP_CLIENT_SRC
-WORKDIR $HTTP_CLIENT_SRC</p>
-<h1 id="build-http-client">
-  Build HTTP Client
-  <a class="anchor" href="#build-http-client">#</a>
-</h1>
-<p>RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 <br>
+WORKDIR $HTTP_CLIENT_SRC
+
+# Build HTTP Client
+
+RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 \
 go build -v -o /go/bin/http-client
-#################################################</p>
-<h1 id="define-a-stage-to-build-a-runtime-image">
-  Define a stage to build a runtime image.
-  <a class="anchor" href="#define-a-stage-to-build-a-runtime-image">#</a>
-</h1>
-<p>FROM scratch as runtime
-ENV PATH=&quot;/bin&quot;</p>
-<h1 id="copy-ca-certificates-and-application-binary-from-builder-stage">
-  Copy CA certificates and application binary from builder stage
-  <a class="anchor" href="#copy-ca-certificates-and-application-binary-from-builder-stage">#</a>
-</h1>
-<p>COPY &ndash;from=builder <br>
+#################################################
+
+# Define a stage to build a runtime image.
+
+FROM scratch as runtime
+ENV PATH=&#34;/bin&#34;
+
+# Copy CA certificates and application binary from builder stage
+
+COPY --from=builder \
 /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/ca-certificates.crt
-COPY &ndash;from=builder /go/bin/http-client /http-client
-ENTRYPOINT [&quot;/http-client&quot;]
-Using startup scripts and multiprocess containers
-Environmental preconditions validation
-failing fast and precondition validation are best practices in software design.</p>
+COPY --from=builder /go/bin/http-client /http-client
+ENTRYPOINT [&#34;/http-client&#34;]
+</code></pre><h3 id="using-startup-scripts-and-multiprocess-containers">
+  Using startup scripts and multiprocess containers
+  <a class="anchor" href="#using-startup-scripts-and-multiprocess-containers">#</a>
+</h3>
+<h4 id="environmental-preconditions-validation">
+  Environmental preconditions validation
+  <a class="anchor" href="#environmental-preconditions-validation">#</a>
+</h4>
+<p>failing fast and precondition validation are best practices in software design.</p>
 <p>Image author can introduce environment and dependency validation prior to execution of the main task, and to better inform user if the container is failed.</p>
-<p>e.g., WordPress use a script as the container entrypoint to validate environment variables and container links.
-The startup process could validate</p>
-<p>Presumed links (and aliases)
-Environment variables
-Secrets
-Network access
-Network port availability
-Root filesystem mount parameters (read-write or read-only)
-Volumes
-Current user
-Can use shell scripts to finish the above validations.</p>
+<ul>
+<li>e.g., WordPress use a script as the container entrypoint to validate environment variables and container links.</li>
+</ul>
+<p>The startup process could validate</p>
+<ul>
+<li>Presumed links (and aliases)</li>
+<li>Environment variables</li>
+<li>Secrets</li>
+<li>Network access</li>
+<li>Network port availability</li>
+<li>Root filesystem mount parameters (read-write or read-only)</li>
+<li>Volumes</li>
+<li>Current user</li>
+</ul>
+<p>Can use shell scripts to finish the above validations.</p>
 <p>Example: validate either another container has been linked to the web alias and has exposed port 80, or the WEB_HOST environment variable has been defined:</p>
-<p>#!/bin/bash
+<pre tabindex="0"><code>#!/bin/bash
 set -e
-if [ -n &ldquo;$WEB_PORT_80_TCP&rdquo; ]; then
-if [ -z &ldquo;$WEB_HOST&rdquo; ]; then
-WEB_HOST=&lsquo;web&rsquo;
-else
-echo &gt;&amp;2 &lsquo;[WARN]: Linked container, &ldquo;web&rdquo; overridden by $WEB_HOST.&rsquo;
-echo &gt;&amp;2 &ldquo;===&gt; Connecting to WEB_HOST ($WEB_HOST)&rdquo;
+if [ -n &#34;$WEB_PORT_80_TCP&#34; ]; then
+  if [ -z &#34;$WEB_HOST&#34; ]; then
+    WEB_HOST=&#39;web&#39;
+  else
+    echo &gt;&amp;2 &#39;[WARN]: Linked container, &#34;web&#34; overridden by $WEB_HOST.&#39;
+    echo &gt;&amp;2 &#34;===&gt; Connecting to WEB_HOST ($WEB_HOST)&#34;
+  fi
 fi
+if [ -z &#34;$WEB_HOST&#34; ]; then
+  echo &gt;&amp;2 &#39;[ERROR]: specify container to link; &#34;web&#34; or WEB_HOST env var&#39;
+  exit 1
 fi
-if [ -z &ldquo;$WEB_HOST&rdquo; ]; then
-echo &gt;&amp;2 &lsquo;[ERROR]: specify container to link; &ldquo;web&rdquo; or WEB_HOST env var&rsquo;
-exit 1
-fi
-exec &ldquo;$@&rdquo; # run the default command
-The same containers may fail later for other reasons →  can combine startup scripts with container restart policies.</p>
-<p>Initialization processes
-Initialization (init) process in UNIX-based computers to start all the other system services, keep them running, and shut them down.</p>
+exec &#34;$@&#34; # run the default command
+</code></pre><p>The same containers may fail later for other reasons →  can combine startup scripts with container restart policies.</p>
+<h4 id="initialization-processes">
+  Initialization processes
+  <a class="anchor" href="#initialization-processes">#</a>
+</h4>
+<p>Initialization (init) process in UNIX-based computers to start all the other system services, keep them running, and shut them down.</p>
 <p>Use light-weight init-style system for container as entrypoint, such as runit, tini, BusyBox init, Supervisord, and DAEMON tools.</p>
-<p>&ndash;init: tini program by default
-evaluate using which init program.
-The purpose and use of health checks
-Health checks: check whether the application running inside the container is able to perform its function.</p>
+<ul>
+<li><code>--init</code>: <code>tini</code> program by default</li>
+<li>evaluate using which init program.</li>
+</ul>
+<h5 id="the-purpose-and-use-of-health-checks">
+  The purpose and use of health checks
+  <a class="anchor" href="#the-purpose-and-use-of-health-checks">#</a>
+</h5>
+<p>Health checks: check whether the application running inside the container is able to perform its function.</p>
 <p>health check command:</p>
-<p>HEALTHCHECK instruction in Dockerfile: should be reliable, lightweight, and not interfere with the operation of the main application because it will be executed frequently (every 30 seconds by default)
-0: success, 1: unhealthy, 2: reserved
-three failed checks from healthy to unhealthy
-|| exit 1</p>
-<p>Time-out : a time-out for health check command to run and exit
-Start period : grace period
-docker run &ndash;health-cmd
-override the health check defined in the image if exists.
-Building hardened application images
-Hardening an image means reducing the attack surface inside any Docker containers based on it.</p>
+<ul>
+<li><code>HEALTHCHECK </code>instruction in Dockerfile: should be reliable, lightweight, and not interfere with the operation of the main application because it will be executed frequently (every 30 seconds by default)
+<ul>
+<li>0: success, 1: unhealthy, 2: reserved
+<ul>
+<li>three failed checks from healthy to unhealthy</li>
+</ul>
+</li>
+<li><code>|| exit 1</code></li>
+<li><code>Time-out</code> : a time-out for health check command to run and exit</li>
+<li><code>Start period</code> : grace period</li>
+</ul>
+</li>
+<li><code>docker run --health-cmd </code>
+<ul>
+<li>override the health check defined in the image if exists.</li>
+</ul>
+</li>
+</ul>
+<h3 id="building-hardened-application-images">
+  Building hardened application images
+  <a class="anchor" href="#building-hardened-application-images">#</a>
+</h3>
+<p><em>Hardening</em> an image means reducing the attack surface inside any Docker containers based on it.</p>
 <p>Strategy:</p>
-<p>minimize the software included with the container
-enforce that your images are built from a specific image
-have a sensible default user
-eliminate a common path for root user escalation from programs with SUID or SGID attributes set
-Content-addressable image identifiers
-Content-addressable image identifier (CAIID) refers to a specific layer containing specific content, to enforce a build from a specific and unchanging starting point.</p>
+<ul>
+<li>minimize the software included with the container</li>
+<li>enforce that your images are built from a specific image</li>
+<li>have a sensible default user</li>
+<li>eliminate a common path for root user escalation from programs with SUID or SGID attributes set</li>
+</ul>
+<h4 id="content-addressable-image-identifiers">
+  Content-addressable image identifiers
+  <a class="anchor" href="#content-addressable-image-identifiers">#</a>
+</h4>
+<p>Content-addressable image identifier (CAIID) refers to a specific layer containing specific content, to enforce a build from a specific and unchanging starting point.</p>
+<p><img src="/../img/image-20230222230337266.png" alt="image-20230222230337266" /></p>
 <p>Append an symbol @ followed by the digest in place of the standard tag position</p>
 <p>Useful when incorporating known updates to a base into your images and identifying the exact build of the software running on your computer.</p>
 <p>Prevent from changing without your knowledge.</p>
-<p>User permissions
-Docker cannot prevent from user run with root permission.</p>
-<p>USER instruction in Dockerfile to set user and group, similar to docker container run/create .</p>
+<h4 id="user-permissions">
+  User permissions
+  <a class="anchor" href="#user-permissions">#</a>
+</h4>
+<p>Docker cannot prevent from user run with root permission.</p>
+<p><em>USER</em> instruction in Dockerfile to set user and group, similar to <code>docker container run/create .</code></p>
 <p>The key is to determine the earliest appropriate time to drop privileges.</p>
-<p>too early: active user may not have permission to complete the instructions in Dockerfile
-Also need to consider the permissions and capabilities needed at runtime, such as system port range (1-1024)
-Which user should be dropped into?</p>
+<ul>
+<li>too early: active user may not have permission to complete the instructions in Dockerfile</li>
+<li>Also need to consider the permissions and capabilities needed at runtime, such as system port range (1-1024)</li>
+</ul>
+<p>Which user should be dropped into?</p>
+<ul>
+<li>
 <p>image user do not know about Docker daemon configuration about namespace remap.</p>
-<p>gosu
-SUID and SGID permissions
-SUID: file will always execute as its owner, such as /usr/bin/passwd.</p>
+</li>
+<li>
+<p><img src="/../img/image-20230222230441054.png" alt="image-20230222230441054" /></p>
+</li>
+<li>
+<p>gosu</p>
+</li>
+</ul>
+<h4 id="suid-and-sgid-permissions">
+  SUID and SGID permissions
+  <a class="anchor" href="#suid-and-sgid-permissions">#</a>
+</h4>
+<p>SUID: file will always execute as its owner, such as /usr/bin/passwd.</p>
 <p>Have the risk of compromise the root account inside a container.</p>
 <p>The files with SUID and SGID are rarely required for application use cases.</p>
 <p>Unset the SUID and SGID permission for all files in current image:</p>
-<p>RUN for i in $(find / -type f ( -perm /u=s -o -perm /g=s )); <br>
-do chmod ug-s $i; done</p>
-<p>Chapter 9: Public and private software distribution
-Choosing a distribution method
-How to choose the appropriate method for your situation.</p>
-<p>A distribution spectrum</p>
-<p>Selection criteria
-Cost
-Visibility: secret projects or public works
-Transportation: transportation speed and bandwidth overhead
-Longevity
-Availability
-&hellip;
-Publishing with hosted registries
-Hosted registry: a Docker registry service that is owned and operated by a third-party vendor.</p>
-<p>e.g., Docker Hub, Quay.io, Google Container Registry
-by default, Docker publishes to Docker Hub
-Publishing with public repositories: &ldquo;Hello World!&rdquo; via Docker Hub
-docker login  Maintains a map of your credentials for registries that you authenticate.</p>
-<p>docker image push insert Docker Hub username&gt;/hello-dockerfile  Push your repo to the host registry.</p>
-<p>docker search username Searching repo owned by specific user.</p>
-<p>Private hosted repositories
-Before you can use docker image pull  or docker container run to install an image from a private repository, you need to authenticate with the registry where the repository is hosted</p>
-<p>Introducing private registries
-Using Docker&rsquo;s registry software</p>
-<p>Using the registry image
-Start a local registry in a container:</p>
-<p>docker run -d -p 5000:5000 -v &ldquo;$(pwd)&quot;/data:/tmp/registry-dev &ndash;restart=always &ndash;name local-registry registry:2
+<pre tabindex="0"><code>RUN for i in $(find / -type f \( -perm /u=s -o -perm /g=s \)); \
+do chmod ug-s $i; done
+</code></pre><h3 id="chapter-9-public-and-private-software-distribution">
+  Chapter 9: Public and private software distribution
+  <a class="anchor" href="#chapter-9-public-and-private-software-distribution">#</a>
+</h3>
+<h3 id="choosing-a-distribution-method">
+  Choosing a distribution method
+  <a class="anchor" href="#choosing-a-distribution-method">#</a>
+</h3>
+<p>How to choose the appropriate method for your situation.</p>
+<h4 id="a-distribution-spectrum">
+  A distribution spectrum
+  <a class="anchor" href="#a-distribution-spectrum">#</a>
+</h4>
+<!-- raw HTML omitted -->
+<h4 id="selection-criteria">
+  Selection criteria
+  <a class="anchor" href="#selection-criteria">#</a>
+</h4>
+<ul>
+<li>Cost</li>
+<li>Visibility: secret projects or public works</li>
+<li>Transportation: transportation speed and bandwidth overhead</li>
+<li>Longevity</li>
+<li>Availability</li>
+<li>&hellip;</li>
+</ul>
+<h3 id="publishing-with-hosted-registries">
+  Publishing with hosted registries
+  <a class="anchor" href="#publishing-with-hosted-registries">#</a>
+</h3>
+<p>Hosted registry: a Docker registry service that is owned and operated by a third-party vendor.</p>
+<ul>
+<li>e.g., Docker Hub, Quay.io, Google Container Registry</li>
+<li>by default, Docker publishes to Docker Hub</li>
+</ul>
+<h4 id="publishing-with-public-repositories-hello-world-via-docker-hub">
+  Publishing with public repositories: &ldquo;Hello World!&rdquo; via Docker Hub
+  <a class="anchor" href="#publishing-with-public-repositories-hello-world-via-docker-hub">#</a>
+</h4>
+<p><code>docker login</code>  Maintains a map of your credentials for registries that you authenticate.</p>
+<p><code>docker image push insert Docker Hub username&gt;/hello-dockerfile</code>  Push your repo to the host registry.</p>
+<p><code>docker search username</code> Searching repo owned by specific user.</p>
+<h4 id="private-hosted-repositories">
+  Private hosted repositories
+  <a class="anchor" href="#private-hosted-repositories">#</a>
+</h4>
+<p>Before you can use <code>docker image pull</code>  or <code>docker container run</code> to install an image from a private repository, you need to authenticate with the registry where the repository is hosted</p>
+<h3 id="introducing-private-registries">
+  Introducing private registries
+  <a class="anchor" href="#introducing-private-registries">#</a>
+</h3>
+<p>Using Docker&rsquo;s registry software</p>
+<h4 id="using-the-registry-image">
+  Using the registry image
+  <a class="anchor" href="#using-the-registry-image">#</a>
+</h4>
+<p>Start a local registry in a container:</p>
+<pre tabindex="0"><code>docker run -d -p 5000:5000 -v &#34;$(pwd)&#34;/data:/tmp/registry-dev --restart=always --name local-registry registry:2
 docker image tag dockerinaction/ch9_registry_bound localhost:5000/dockerinaction/ch9_registry_bound
 docker image push localhost:5000/dockerinaction/ch9_registry_bound
-Where can we find the image localhost:5000/dockerinaction/ch9_registry_bound?</p>
-<p>Registry stores the image on /var/lib/registry on its union filesystem, which is volume on the host filesystem by default. So we can find it in the volume of local-registry container. Use docker volume ls to list all the volumes. Use docker volume inspect xxx to display detailed information on the volume.</p>
-<p>Note that we can use -v xxx:/var/lib/registry to mount the /var/lib/registry on a specific location.</p>
-<p>For &ldquo;$(pwd)&quot;/data:/tmp/registry-dev , mount the volume into the container. The first part &ldquo;$(pwd)&quot;/data is the location of the volume on host machine, the second part is the location on the container union filesystem. Note that in this example, we did not mount /var/lib/registry on this location, so we cannot find the image push to the registry on &ldquo;$(pwd)&quot;/data .</p>
-<p>When you’ve started the registry, you can use it like any other registry with docker pull, run, tag, push commands.</p>
+</code></pre><p>Where can we find the image <code>localhost:5000/dockerinaction/ch9_registry_bound</code>?</p>
+<p><img src="/../img/image-20230222231332820.png" alt="image-20230222231332820" /></p>
+<ul>
+<li>
+<p>Registry stores the image on <code>/var/lib/registry</code> on its union filesystem, which is volume on the host filesystem by default. So we can find it in the volume of local-registry container. Use <code>docker volume ls</code> to list all the volumes. Use <code>docker volume inspect xxx</code> to display detailed information on the volume.</p>
+</li>
+<li>
+<p>Note that we can use<code> -v xxx:/var/lib/registry</code> to mount the <code>/var/lib/registry</code> on a specific location.</p>
+</li>
+</ul>
+<p>For <code>&quot;$(pwd)&quot;/data:/tmp/registry-dev</code> , mount the volume into the container. The first part <code>&quot;$(pwd)&quot;/data</code> is the location of the volume on host machine, the second part is the location on the container union filesystem. Note that in this example, we did not mount <code>/var/lib/registry</code> on this location, so we cannot find the image push to the registry on<code> &quot;$(pwd)&quot;/data</code> .</p>
+<p>When you’ve started the registry, you can use it like any other registry with <code>docker pull, run, tag, push commands</code>.</p>
 <p>Conduct tight version control: pull images from external sources such as Docker Hub and copy them into their own registry. To ensure that an important image does not change or disappear
 unexpectedly when the author updates or removes the source image.</p>
-<p>Consuming images from your registry
-docker image rm dockerinaction/ch9_registry_bound localhost:5000/dockerinaction/ch9_registry_bound</p>
-<p>docker image pull localhost:5000/dockerinaction/ch9_registry_bound
-This will prevent remote Docker clients from using your registry.</p>
-<p>Manual image publishing and distribution
-Work with images as files.</p>
-<p>docker image save  + docker container export</p>
-<p>docker image load + docker image import</p>
-<p>Image source-distribution workflows
-Using github.</p>
+<h4 id="consuming-images-from-your-registry">
+  Consuming images from your registry
+  <a class="anchor" href="#consuming-images-from-your-registry">#</a>
+</h4>
+<pre tabindex="0"><code>docker image rm dockerinaction/ch9_registry_bound localhost:5000/dockerinaction/ch9_registry_bound
+
+docker image pull localhost:5000/dockerinaction/ch9_registry_bound
+</code></pre><p>This will prevent remote Docker clients from using your registry.</p>
+<h3 id="manual-image-publishing-and-distribution">
+  Manual image publishing and distribution
+  <a class="anchor" href="#manual-image-publishing-and-distribution">#</a>
+</h3>
+<p>Work with images as files.</p>
+<p><code>docker image save  + docker container export </code></p>
+<p><code>docker image load + docker image import </code></p>
+<p><img src="/../img/image-20230222231721784.png" alt="image-20230222231721784" /></p>
+<h3 id="image-source-distribution-workflows">
+  Image source-distribution workflows
+  <a class="anchor" href="#image-source-distribution-workflows">#</a>
+</h3>
+<p>Using github.</p>
 <p>Much flexible.</p>
-<p>Chapter 10: Image pipelines
-Image build pipeline: preparing image material, building an image, testing, publishing images to registries.</p>
-<p>Goals of an image build pipeline</p>
+<h2 id="chapter-10-image-pipelines">
+  Chapter 10: Image pipelines
+  <a class="anchor" href="#chapter-10-image-pipelines">#</a>
+</h2>
+<p>Image build pipeline: preparing image material, building an image, testing, publishing images to registries.</p>
+<h3 id="goals-of-an-image-build-pipeline">
+  Goals of an image build pipeline
+  <a class="anchor" href="#goals-of-an-image-build-pipeline">#</a>
+</h3>
+<p><img src="/../img/image-20230222231810155.png" alt="image-20230222231810155" /></p>
 <p>Application artifacts: runtime scripts and configuration files produced by software authors.</p>
 <p>CI tools.</p>
-<p>Patterns for building images
-How many images an application includes?</p>
-<p>All-in-One
-Build plus Runtime
-Build plus Multiple Runtimes</p>
-<p>All-in-one images
-Build the application into an image.</p>
+<h3 id="patterns-for-building-images">
+  Patterns for building images
+  <a class="anchor" href="#patterns-for-building-images">#</a>
+</h3>
+<p>How many images an application includes?</p>
+<ul>
+<li>All-in-One</li>
+<li>Build plus Runtime</li>
+<li>Build plus Multiple Runtimes</li>
+</ul>
+<p><img src="/../img/image-20230222232041386.png" alt="image-20230222232041386" /></p>
+<h4 id="all-in-one-images">
+  All-in-one images
+  <a class="anchor" href="#all-in-one-images">#</a>
+</h4>
+<p>Build the application into an image.</p>
 <p>Downsides:</p>
-<ol>
+<ul>
 <li>
 <p>contain more tools than necessary, easy for attackers</p>
 </li>
 <li>
 <p>the size will be large (708MB)</p>
 </li>
-</ol>
-<p>ENTRYPOINT [&ldquo;java&rdquo;,&quot;-jar&rdquo;,&quot;/app.jar&rdquo;]</p>
-<p>Separate build and runtime images
-The build-specific tools such as Maven and intermediate artifacts are no longer included in the runtime image.</p>
-<p>Much smaller size (from 708MB to 401MB)
-Smaller attack surface.
-Variations of runtime image via multi-stage builds
-Multi-stage builds can be used to keep the specialized image synchronized with the application image and avoid duplication of image definitions.</p>
+</ul>
+<p><code>ENTRYPOINT [&quot;java&quot;,&quot;-jar&quot;,&quot;/app.jar&quot;] </code></p>
+<h4 id="separate-build-and-runtime-images">
+  Separate build and runtime images
+  <a class="anchor" href="#separate-build-and-runtime-images">#</a>
+</h4>
+<p>The build-specific tools such as Maven and intermediate artifacts are no longer included in the runtime image.</p>
+<ul>
+<li>Much smaller size (from 708MB to 401MB)</li>
+<li>Smaller attack surface.</li>
+</ul>
+<h4 id="variations-of-runtime-image-via-multi-stage-builds">
+  Variations of runtime image via multi-stage builds
+  <a class="anchor" href="#variations-of-runtime-image-via-multi-stage-builds">#</a>
+</h4>
+<p>Multi-stage builds can be used to keep the specialized image synchronized with the application image and avoid duplication of image definitions.</p>
 <p>Name a build stage:</p>
-<p>easily to mention the stage by other stages.
-build processes can build a stage by specifying that name as a build target.
-docker image build &ndash;target : select the stage to build the image.</p>
+<ul>
+<li>easily to mention the stage by other stages.</li>
+<li>build processes can build a stage by specifying that name as a build target.</li>
+</ul>
+<p><code>docker image build --target</code> : select the stage to build the image.</p>
 <p>If do not specify a build stage, docker will build image from the last stage defined in the Dockerfile.</p>
-<p>Add a trivial build stage at the end of the Dockerfile.</p>
-<h1 id="ensure-app-image-is-the-default-image-built-with-this-dockerfile">
-  Ensure app-image is the default image built with this Dockerfile
-  <a class="anchor" href="#ensure-app-image-is-the-default-image-built-with-this-dockerfile">#</a>
-</h1>
-<p>FROM app-image as default
-Record metadata at image build time
-Use LABEL instruction to capture metadata, at least including:</p>
-<p>application name
-application version
-build date and time
-version-control commit identifier
-Commonly used labels <a href="http://label-schema.org/rc1/">http://label-schema.org/rc1/</a>: label schema, e.g., LABEL org.label-schema.version=&quot;${BUILD_ID}&rdquo;</p>
-<p>Orchestrating the build with make
-Make: used to build programs, understands dependencies between the steps of a build process.</p>
+<ul>
+<li>Add a trivial build stage at the end of the Dockerfile.</li>
+</ul>
+<pre tabindex="0"><code># Ensure app-image is the default image built with this Dockerfile
+
+FROM app-image as default
+</code></pre><h3 id="record-metadata-at-image-build-time">
+  Record metadata at image build time
+  <a class="anchor" href="#record-metadata-at-image-build-time">#</a>
+</h3>
+<p>Use <code>LABEL</code> instruction to capture metadata, at least including:</p>
+<ul>
+<li>application name</li>
+<li>application version</li>
+<li>build date and time</li>
+<li>version-control commit identifier</li>
+</ul>
+<p>Commonly used labels <a href="http://label-schema.org/rc1/">http://label-schema.org/rc1/</a>: label schema, e.g.,<code>LABEL org.label-schema.version=&quot;${BUILD_ID}&quot;</code></p>
+<h4 id="orchestrating-the-build-with-make">
+  Orchestrating the build with make
+  <a class="anchor" href="#orchestrating-the-build-with-make">#</a>
+</h4>
+<p>Make: used to build programs, understands dependencies between the steps of a build process.</p>
+<p><img src="/../img/image-20230222232312601.png" alt="image-20230222232312601" /></p>
 <p>Steps: gathering metadata, building application, building, testing, tagging the image.</p>
 <p>Use linting tool named hadolint to check Dockerfile.</p>
-<p>Testing images in a build pipeline
-Container Structure Test tool (CST) <a href="https://github.com/GoogleContainerTools/container-structure-test">https://github.com/GoogleContainerTools/container-structure-test</a> verifies the construction of a Docker image.</p>
-<p>verify desired file permissions and ownership, commands execute with expected output, and the image contains particular metadata such as a label or command
-the tool operates on arbitrary images without requiring any tooling or libraries to be included inside the image.
-Patterns for tagging images
-Important image-tagging features:</p>
-<p>Tags are human-readable
-Multiple tags may point to a single image ID
-Tags are mutable and may be moved between images.
-Background
-Image tag mutation is commonly used to identify the latest image in a series.</p>
+<h3 id="testing-images-in-a-build-pipeline">
+  Testing images in a build pipeline
+  <a class="anchor" href="#testing-images-in-a-build-pipeline">#</a>
+</h3>
+<p>Container Structure Test tool (CST) <a href="https://github.com/GoogleContainerTools/container-structure-test">https://github.com/GoogleContainerTools/container-structure-test</a> verifies the construction of a Docker image.</p>
+<ul>
+<li>verify desired file permissions and ownership, commands execute with expected output, and the image contains particular metadata such as a label or command</li>
+<li>the tool operates on arbitrary images without requiring any tooling or libraries to be included inside the image.</li>
+</ul>
+<h3 id="patterns-for-tagging-images">
+  Patterns for tagging images
+  <a class="anchor" href="#patterns-for-tagging-images">#</a>
+</h3>
+<p>Important image-tagging features:</p>
+<ul>
+<li>Tags are human-readable</li>
+<li>Multiple tags may point to a single image ID</li>
+<li>Tags are mutable and may be moved between images.</li>
+</ul>
+<h4 id="background">
+  Background
+  <a class="anchor" href="#background">#</a>
+</h4>
+<p>Image tag mutation is commonly used to identify the latest image in a series.</p>
 <p>However, it is difficult to identify what does the latest lag mean?</p>
-<p>Continuous delivery with unique tags
-Using unique BUILD_ID tag.</p>
+<h4 id="continuous-delivery-with-unique-tags">
+  Continuous delivery with unique tags
+  <a class="anchor" href="#continuous-delivery-with-unique-tags">#</a>
+</h4>
+<p>Using unique BUILD_ID tag.</p>
 <p>Inconvenient for users.</p>
-<p>Configuration image per deployment stage
-A generic, environment-agnostic application image.
-A set of environment-specific configuration image.
-Semantic versioning
-A version number of the form Major.Minor.Patch. Author could increment the following:</p>
-<p>Major version when making incompatible API changes
-Minor version when adding functionality in a backward-compatible manner
-Patch version when making backward-compatible bug fixes
-make tag BUILD_ID=$BUILD_ID TAG=1.0.0</p>
-<p>Higher-level abstractions and orchestration
-Chapter 11: Service with Docker and Compose
-Service: any processes, functionality, or data that must be discoverable and available over a network is called a service.</p>
-<p>A service &ldquo;Hello World!&rdquo;
-Docker services are available only when Docker is running in swarm mode.</p>
-<p>docker swarm init</p>
-<p>docker service create &ndash;publish 8080:80 &ndash;name hello-world dockerinaction/ch11_service_hw:v1</p>
+<h4 id="configuration-image-per-deployment-stage">
+  Configuration image per deployment stage
+  <a class="anchor" href="#configuration-image-per-deployment-stage">#</a>
+</h4>
+<ul>
+<li>A generic, environment-agnostic application image.</li>
+<li>A set of environment-specific configuration image.</li>
+</ul>
+<h4 id="semantic-versioning">
+  Semantic versioning
+  <a class="anchor" href="#semantic-versioning">#</a>
+</h4>
+<p>A version number of the form Major.Minor.Patch. Author could increment the following:</p>
+<ul>
+<li>Major version when making incompatible API changes</li>
+<li>Minor version when adding functionality in a backward-compatible manner</li>
+<li>Patch version when making backward-compatible bug fixes</li>
+</ul>
+<p><code>make tag BUILD_ID=$BUILD_ID TAG=1.0.0 </code></p>
+<h1 id="part-3-higher-level-abstractions-and-orchestration">
+  Part 3: Higher-level abstractions and orchestration
+  <a class="anchor" href="#part-3-higher-level-abstractions-and-orchestration">#</a>
+</h1>
+<h2 id="chapter-11-service-with-docker-and-compose">
+  Chapter 11: Service with Docker and Compose
+  <a class="anchor" href="#chapter-11-service-with-docker-and-compose">#</a>
+</h2>
+<p>Service: any processes, functionality, or data that must be discoverable and available over a network is called a service.</p>
+<h3 id="a-service-hello-world">
+  A service &ldquo;Hello World!&rdquo;
+  <a class="anchor" href="#a-service-hello-world">#</a>
+</h3>
+<p>Docker services are available only when Docker is running in swarm mode.</p>
+<p><code>docker swarm init </code></p>
+<p><img src="/../img/image-20230222232616754.png" alt="image-20230222232616754" /></p>
+<p><code>docker service create --publish 8080:80 --name hello-world dockerinaction/ch11_service_hw:v1</code></p>
+<p><img src="/../img/image-20230222232630066.png" alt="image-20230222232630066" /></p>
 <p>Task is a swarm concept that represents a unit of work. Each task has one associated container.</p>
-<p>Automated resurrection and replication
-docker service ls  to list the running services.</p>
-<p>docker service ps hello-world to list the containers associated with a specific service.</p>
+<p><img src="/../img/image-20230222232646741.png" alt="image-20230222232646741" /></p>
+<h4 id="automated-resurrection-and-replication">
+  Automated resurrection and replication
+  <a class="anchor" href="#automated-resurrection-and-replication">#</a>
+</h4>
+<p><code>docker service ls</code>  to list the running services.</p>
+<p><code>docker service ps hello-world</code> to list the containers associated with a specific service.</p>
+<ul>
+<li>
 <p>The desired state is what the user wants the system to be doing, or what it is supposed to be doing.</p>
+</li>
+<li>
 <p>The current state describes what the system is actually doing.</p>
+</li>
+</ul>
 <p>Orchestrators remember how a system should be operating and manipulate it without being asked to do so by a user.</p>
-<p>you need to understand how to describe systems and their operation.
-docker service inspect hello-world to output the current desired state definition for the service:</p>
-<p>Name of the service
-Service ID
-Versioning and timestamps
-A template for the container workloads
-A replication mode: replicated mode and global mode.
-replicated mode (default)
-docker service scale hello-world=3 (use docker container ps  and docker service ps hello-world to show the effects.)
-If you scale the service back down (docker service scale hello-world=2), you’ll also notice that higher-numbered containers are removed first.
-global mode
-Run one replica on each node in the swarm cluster.
-Rollout parameters
-Similar rollback parameters
-A description of the service endpoint
-Automated rollout</p>
+<ul>
+<li>you need to understand how to describe systems and their operation.</li>
+</ul>
+<p><code>docker service inspect hello-world</code> to output the current desired state definition for the service:</p>
+<ul>
+<li>Name of the service</li>
+<li>Service ID</li>
+<li>Versioning and timestamps</li>
+<li>A template for the container workloads</li>
+<li>A replication mode: replicated mode and global mode.
+<ul>
+<li>replicated mode (default)
+<ul>
+<li><code>docker service scale hello-world=3</code> (use <code>docker container ps</code>  and <code>docker service ps hello-world</code> to show the effects.)</li>
+<li>If you scale the service back down (<code>docker service scale hello-world=2</code>), you’ll also notice that higher-numbered containers are removed first.</li>
+</ul>
+</li>
+<li>global mode
+<ul>
+<li>Run one replica on each node in the swarm cluster.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Rollout parameters</li>
+<li>Similar rollback parameters</li>
+<li>A description of the service endpoint</li>
+</ul>
+<h4 id="automated-rollout">
+  Automated rollout
+  <a class="anchor" href="#automated-rollout">#</a>
+</h4>
+<p><img src="/../img/image-20230222232920942.png" alt="image-20230222232920942" /></p>
 <p>Illustration of a Docker swarm&rsquo;s action when deploying an update:</p>
+<!-- raw HTML omitted -->
 <p>Service converged: the current state of the service is the same as the desired state described by the command.</p>
-<p>Service health and rollback
-docker service update &ndash;rollback hello-world 回滚</p>
-<p>&ndash;update-failure-action to tell Swarm that failed deployment should roll back.</p>
-<p>update-max-failure-ratio to tell Swarm to tolerate start failures as long as 0.6 of the fleet is good. After that, the whole deployment will be marked as failed and a rollback will be initiated.</p>
+<h4 id="service-health-and-rollback">
+  Service health and rollback
+  <a class="anchor" href="#service-health-and-rollback">#</a>
+</h4>
+<p><code>docker service update --rollback hello-world</code> 回滚</p>
+<p><img src="/../img/image-20230222233036566.png" alt="image-20230222233036566" /></p>
+<p><code>--update-failure-action</code> to tell Swarm that failed deployment should roll back.</p>
+<p><code>update-max-failure-ratio</code> to tell Swarm to tolerate start failures as long as 0.6 of the fleet is good. After that, the whole deployment will be marked as failed and a rollback will be initiated.</p>
 <p>Add health check:</p>
-<p>At last, remove the service: docker service rm hello-world</p>
-<p>Declarative service environments with Compose V3
-Imperative tools: such as docker service create
-Declarative tools: describe the new state of a system, rather than the steps required to change from the current state to the new state.
-When the service is complex, the number of imperative commands required to achieve the goals is too large. Then we can adopt a higher-level declarative abstraction (docker stack).
-Docker stack describes collections of services, volumes, networks, and other configuration abstractions.</p>
+<p><img src="/../img/image-20230222233100459.png" alt="image-20230222233100459" /></p>
+<p>At last, remove the service: <code>docker service rm hello-world</code></p>
+<h3 id="declarative-service-environments-with-compose-v3">
+  Declarative service environments with Compose V3
+  <a class="anchor" href="#declarative-service-environments-with-compose-v3">#</a>
+</h3>
+<ul>
+<li>Imperative tools: such as docker service create</li>
+<li>Declarative tools: describe the new state of a system, rather than the steps required to change from the current state to the new state.
+<ul>
+<li>When the service is complex, the number of imperative commands required to achieve the goals is too large. Then we can adopt a higher-level declarative abstraction (docker stack).</li>
+</ul>
+</li>
+</ul>
+<p>Docker stack describes collections of services, volumes, networks, and other configuration abstractions.</p>
 <p>These environments are described using Docker Compose V3 file format.</p>
 <p>Compose files use YAML language, such as docker-compose.yml.</p>
-<p>A YAML primer
-Comment support: ( #)</p>
+<h4 id="a-yaml-primer">
+  A YAML primer
+  <a class="anchor" href="#a-yaml-primer">#</a>
+</h4>
+<p>Comment support: ( #)</p>
 <p>Three types of data: maps (key: value, the value can be double-quote style or plain style), lists (start by -), scalar values</p>
 <p>Two styles: flow collections, block style.</p>
 <p>Use indentation to indicate content scope. (only use spaces)</p>
-<p>Collections of services with Compose V3
-docker stack deploy subcommands: create and update stacks.</p>
-<p>Docker compose cannot handle delete well: e.g., The Compose file you provided to the stack deploy  command did not have any refer to the mariadb service, so Docker did not make any changes to that service.</p>
-<p>using docker service remove
-executing docker stack deploy  with the &ndash;prune  flag
-Stateful services and preserving data
-Define volumes in compose file:</p>
-<p>volumes:
-volume_name: property (empty definition uses volume defaults)</p>
-<p>The top-level property defines the volumes that can be used by services within the file.</p>
+<h4 id="collections-of-services-with-compose-v3">
+  Collections of services with Compose V3
+  <a class="anchor" href="#collections-of-services-with-compose-v3">#</a>
+</h4>
+<p><code>docker stack deploy</code> subcommands: create and update stacks.</p>
+<p>Docker compose cannot handle delete well: e.g., The Compose file you provided to the<code> stack deploy</code>  command did not have any refer to the mariadb service, so Docker did not make any changes to that service.</p>
+<ul>
+<li>using <code>docker service remove</code></li>
+<li>executing <code>docker stack deploy</code>  with the<code> --prune</code>  flag</li>
+</ul>
+<h3 id="stateful-services-and-preserving-data">
+  Stateful services and preserving data
+  <a class="anchor" href="#stateful-services-and-preserving-data">#</a>
+</h3>
+<p>Define volumes in compose file:</p>
+<pre tabindex="0"><code>volumes:
+  volume_name: property (empty definition uses volume defaults)
+</code></pre><p>The top-level property defines the volumes that can be used by services within the file.</p>
 <p>Docker can attach the new service to the original volume.</p>
-<p>Load balancing, service discovery, and networks with Compose
-Port publishing for a service is different from publishing a port on a container: containers directly map the port on the host interface to an interface for a specific container, services might be made up of many replica containers.</p>
+<h3 id="load-balancing-service-discovery-and-networks-with-compose">
+  Load balancing, service discovery, and networks with Compose
+  <a class="anchor" href="#load-balancing-service-discovery-and-networks-with-compose">#</a>
+</h3>
+<p>Port publishing for a service is different from publishing a port on a container: containers directly map the port on the host interface to an interface for a specific container, services might be made up of many replica containers.</p>
 <p>For docker services, docker creating virtual IP (VIP) addresses and balancing requests for a specific service between all of the associated replicas.</p>
-<p>First network ingress: handles all port forwarding from the host interface to services. Created when you initialize Docker in swarm mode.
-Second network: shared between all of the services in your stack.
-Services default attach to a network named default.
-The address listed here is the container address, or the address that the internal load balancer would forward requests onto. Not the virtual IP addr you would see when inspecting.
-Define network in compose file:</p>
-<p>top-level networks property that includes network definitions
-networks property of services</p>
+<p><img src="/../img/image-20230222233315285.png" alt="image-20230222233315285" /></p>
+<ul>
+<li>First network ingress: handles all port forwarding from the host interface to services. Created when you initialize Docker in swarm mode.</li>
+<li>Second network: shared between all of the services in your stack.
+<ul>
+<li>Services default attach to a network named default.</li>
+<li>The address listed here is the container address, or the address that the internal load balancer would forward requests onto. Not the virtual IP addr you would see when inspecting.</li>
+</ul>
+</li>
+</ul>
+<p>Define network in compose file:</p>
+<ul>
+<li>top-level networks property that includes network definitions</li>
+<li>networks property of services</li>
+</ul>
 </article>
  
       
@@ -1274,7 +2327,118 @@ networks property of services</p>
       <div class="book-toc-content">
         
   
-<nav id="TableOfContents"></nav>
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#chapter-1-welcome-to-docker">Chapter 1: Welcome to Docker</a>
+      <ul>
+        <li><a href="#what-is-docker">What is Docker?</a></li>
+        <li><a href="#what-problems-does-docker-solve">What problems does Docker solve?</a></li>
+        <li><a href="#why-is-docker-important--when-and-where-to-use-docker">Why is Docker Important? &amp; When and where to use Docker?</a></li>
+        <li><a href="#getting-help-with-the-docker-command-line">Getting help with the Docker command line</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#chapter-2-running-software-in-containers">Chapter 2: Running software in containers</a>
+      <ul>
+        <li><a href="#controlling-containers-building-a-website-monitor">Controlling containers: Building a website monitor</a></li>
+        <li><a href="#creating-and-starting-a-new-container-detached-containers">Creating and starting a new container: detached containers</a></li>
+        <li><a href="#running-interactive-containers">Running interactive containers</a></li>
+        <li><a href="#listing-stopping-restarting-and-viewing-output-of-containers">Listing, stopping, restarting, and viewing output of containers</a></li>
+        <li><a href="#solved-problems-and-the-pid-namespace">Solved problems and the PID namespace</a></li>
+        <li><a href="#eliminating-metaconflicts-building-a-website-farm">Eliminating metaconflicts: Building a website farm</a></li>
+        <li><a href="#building-environment-agnostic-systems">Building environment-agnostic systems</a></li>
+        <li><a href="#building-durable-containers">Building durable containers</a></li>
+        <li><a href="#cleaning-up">Cleaning up</a></li>
+      </ul>
+    </li>
+    <li><a href="#chapter-3-software-installation-simplified">Chapter 3: Software installation simplified</a>
+      <ul>
+        <li><a href="#identifying-software">Identifying software</a></li>
+        <li><a href="#finding-and-installing-software">Finding and installing software</a></li>
+        <li><a href="#installation-files-and-isolation">Installation files and isolation</a></li>
+      </ul>
+    </li>
+    <li><a href="#chapter-4-working-with-storage-and-volumes">Chapter 4: Working with storage and volumes</a>
+      <ul>
+        <li><a href="#file-trees-and-mount-points">File trees and mount points</a></li>
+        <li><a href="#bind-mounts">Bind mounts</a></li>
+        <li><a href="#in-memory-storage">In-memory storage</a></li>
+        <li><a href="#docker-volumes">Docker volumes</a></li>
+        <li><a href="#shared-mount-points-and-sharing-files">Shared mount points and sharing files</a></li>
+        <li><a href="#cleaning-up-volumes">Cleaning up volumes</a></li>
+        <li><a href="#advanced-storage-with-volume-plugins">Advanced storage with volume plugins</a></li>
+      </ul>
+    </li>
+    <li><a href="#chapter-5-single-host-networking">Chapter 5: Single-host networking</a>
+      <ul>
+        <li><a href="#networking-background">Networking background</a></li>
+        <li><a href="#docker-container-networking">Docker container networking</a></li>
+        <li><a href="#special-container-networks-host-and-none">Special container networks: host and none</a></li>
+        <li><a href="#handling-inbound-traffic-with-nodeport-publishing">Handling inbound traffic with NodePort publishing</a></li>
+        <li><a href="#container-networking-caveats-and-customizations">Container networking caveats and customizations</a></li>
+      </ul>
+    </li>
+    <li><a href="#chapter6-limiting-risk-with-resource-controls">Chapter6: Limiting risk with resource controls</a>
+      <ul>
+        <li><a href="#set-resource-allowances">Set resource allowances</a></li>
+        <li><a href="#sharing-memory">Sharing memory</a></li>
+        <li><a href="#understanding-users">Understanding users</a></li>
+        <li><a href="#adjusting-os-feature-access-with-capabilities">Adjusting OS feature access with capabilities</a></li>
+        <li><a href="#running-a-container-with-full-privileges">Running a container with full privileges</a></li>
+        <li><a href="#strengthening-containers-with-enhanced-tools">Strengthening containers with enhanced tools</a></li>
+        <li><a href="#building-use-case-appropriate-containers">Building use-case-appropriate containers</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#chapter-7-packaging-software-in-images">Chapter 7: Packaging software in images</a>
+      <ul>
+        <li><a href="#building-docker-images-from-a-container">Building Docker images from a container</a></li>
+        <li><a href="#going-deep-on-docker-images-and-layers">Going deep on Docker images and layers</a></li>
+        <li><a href="#exporting-and-importing-flat-filesystems">Exporting and importing flat filesystems</a></li>
+        <li><a href="#versioning-best-practices">Versioning best practices</a></li>
+      </ul>
+    </li>
+    <li><a href="#chapter-8-building-images-automatically-with-dockerfiles">Chapter 8: Building images automatically with Dockerfiles</a>
+      <ul>
+        <li><a href="#packaging-git-with-dockerfile">Packaging Git with Dockerfile</a></li>
+        <li><a href="#a-dockerfile-primer">A Dockerfile primer</a></li>
+        <li><a href="#injecting-downstream-build-time-behavior">Injecting downstream build-time behavior</a></li>
+        <li><a href="#using-startup-scripts-and-multiprocess-containers">Using startup scripts and multiprocess containers</a></li>
+        <li><a href="#building-hardened-application-images">Building hardened application images</a></li>
+        <li><a href="#chapter-9-public-and-private-software-distribution">Chapter 9: Public and private software distribution</a></li>
+        <li><a href="#choosing-a-distribution-method">Choosing a distribution method</a></li>
+        <li><a href="#publishing-with-hosted-registries">Publishing with hosted registries</a></li>
+        <li><a href="#introducing-private-registries">Introducing private registries</a></li>
+        <li><a href="#manual-image-publishing-and-distribution">Manual image publishing and distribution</a></li>
+        <li><a href="#image-source-distribution-workflows">Image source-distribution workflows</a></li>
+      </ul>
+    </li>
+    <li><a href="#chapter-10-image-pipelines">Chapter 10: Image pipelines</a>
+      <ul>
+        <li><a href="#goals-of-an-image-build-pipeline">Goals of an image build pipeline</a></li>
+        <li><a href="#patterns-for-building-images">Patterns for building images</a></li>
+        <li><a href="#record-metadata-at-image-build-time">Record metadata at image build time</a></li>
+        <li><a href="#testing-images-in-a-build-pipeline">Testing images in a build pipeline</a></li>
+        <li><a href="#patterns-for-tagging-images">Patterns for tagging images</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#chapter-11-service-with-docker-and-compose">Chapter 11: Service with Docker and Compose</a>
+      <ul>
+        <li><a href="#a-service-hello-world">A service &ldquo;Hello World!&rdquo;</a></li>
+        <li><a href="#declarative-service-environments-with-compose-v3">Declarative service environments with Compose V3</a></li>
+        <li><a href="#stateful-services-and-preserving-data">Stateful services and preserving data</a></li>
+        <li><a href="#load-balancing-service-discovery-and-networks-with-compose">Load balancing, service discovery, and networks with Compose</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
 
 
  

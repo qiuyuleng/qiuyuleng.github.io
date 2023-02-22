@@ -35,7 +35,9 @@ YMAL Key :(colon) value
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://example.org/docs/stage2/docker-in-action/</guid>
-      <description>Introduction Chapter 1: Welcome to Docker Docker make it easier for users to install and run the software. Docker is a tool helping solve common problems such as installing, removing, upgrading, distributing, trusting and running software, helping system administrators focus on higher-value activities. What is Docker? Docker is an open source project for building, shipping and running programs. containers Install Docker https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository Take care of the setting of proxy https://docs.docker.com/config/daemon/systemd/#httphttps-proxy https://docs.</description>
+      <description>Introduction # Chapter 1: Welcome to Docker # Docker make it easier for users to install and run the software. Docker is a tool helping solve common problems such as installing, removing, upgrading, distributing, trusting and running software, helping system administrators focus on higher-value activities. What is Docker? # Docker is an open source project for building, shipping and running programs.
+containers Install Docker
+https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository Take care of the setting of proxy https://docs.</description>
     </item>
     
     <item>
