@@ -14,13 +14,13 @@ https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository Take
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://example.org/docs/stage2/docker-in-action/" /><meta property="article:section" content="docs" />
 
-<meta property="article:modified_time" content="2023-02-19T20:51:44+08:00" />
+<meta property="article:modified_time" content="2023-02-22T23:33:55+08:00" />
 <title>Docker in Action | My CS Learning</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.c58292d36b18b675680ab9baea2029204537b839ea72f258746ec0f32ce8d6c8.css" integrity="sha256-xYKS02sYtnVoCrm66iApIEU3uDnqcvJYdG7A8yzo1sg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.9efd597a2fa4492ee6cc9b0579fc06c0794fa0486f79685b78183e8512a99888.js" integrity="sha256-nv1Zei&#43;kSS7mzJsFefwGwHlPoEhveWhbeBg&#43;hRKpmIg=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.f32a975e04735e83cea06f52cb6f87a7d5899fd715c91488db6b980fcb392732.js" integrity="sha256-8yqXXgRzXoPOoG9Sy2&#43;Hp9WJn9cVyRSI22uYD8s5JzI=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -73,6 +73,19 @@ https://github.com/alex-shpak/hugo-book
 
   
     <a href="/docs/stage1/ansible/" class="">Ansible</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/stage2/cicd/" class="">CI/CD</a>
   
 
         </li>
@@ -177,19 +190,6 @@ https://github.com/alex-shpak/hugo-book
 
   
     <a href="/docs/stage1/tmux/" class="">Tmux</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/stage2/udemy/" class="">Udemy</a>
   
 
         </li>
@@ -327,7 +327,10 @@ https://github.com/alex-shpak/hugo-book
         <li><a href="#injecting-downstream-build-time-behavior">Injecting downstream build-time behavior</a></li>
         <li><a href="#using-startup-scripts-and-multiprocess-containers">Using startup scripts and multiprocess containers</a></li>
         <li><a href="#building-hardened-application-images">Building hardened application images</a></li>
-        <li><a href="#chapter-9-public-and-private-software-distribution">Chapter 9: Public and private software distribution</a></li>
+      </ul>
+    </li>
+    <li><a href="#chapter-9-public-and-private-software-distribution">Chapter 9: Public and private software distribution</a>
+      <ul>
         <li><a href="#choosing-a-distribution-method">Choosing a distribution method</a></li>
         <li><a href="#publishing-with-hosted-registries">Publishing with hosted registries</a></li>
         <li><a href="#introducing-private-registries">Introducing private registries</a></li>
@@ -1138,7 +1141,8 @@ user-network2
 </code></pre><ul>
 <li>attach a running container to more than one network</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-docker" data-lang="docker"><span style="display:flex;"><span>--network user-network <span style="color:#ae81ff">\
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-docker" data-lang="docker"><span style="display:flex;"><span>docker run -it <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--network user-network <span style="color:#ae81ff">\
 </span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--name network-explorer <span style="color:#ae81ff">\
 </span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>alpine:3.8 <span style="color:#ae81ff">\
 </span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>sh<span style="color:#960050;background-color:#1e0010">
@@ -1912,10 +1916,10 @@ exec &#34;$@&#34; # run the default command
 <p>Unset the SUID and SGID permission for all files in current image:</p>
 <pre tabindex="0"><code>RUN for i in $(find / -type f \( -perm /u=s -o -perm /g=s \)); \
 do chmod ug-s $i; done
-</code></pre><h3 id="chapter-9-public-and-private-software-distribution">
+</code></pre><h2 id="chapter-9-public-and-private-software-distribution">
   Chapter 9: Public and private software distribution
   <a class="anchor" href="#chapter-9-public-and-private-software-distribution">#</a>
-</h3>
+</h2>
 <h3 id="choosing-a-distribution-method">
   Choosing a distribution method
   <a class="anchor" href="#choosing-a-distribution-method">#</a>
@@ -1925,7 +1929,7 @@ do chmod ug-s $i; done
   A distribution spectrum
   <a class="anchor" href="#a-distribution-spectrum">#</a>
 </h4>
-<!-- raw HTML omitted -->
+<p><img src="/../img/image-20230223230845131.png" alt="image-20230223230845131" /></p>
 <h4 id="selection-criteria">
   Selection criteria
   <a class="anchor" href="#selection-criteria">#</a>
@@ -2212,7 +2216,7 @@ FROM app-image as default
 </h4>
 <p><img src="/../img/image-20230222232920942.png" alt="image-20230222232920942" /></p>
 <p>Illustration of a Docker swarm&rsquo;s action when deploying an update:</p>
-<!-- raw HTML omitted -->
+<p><img src="/../img/image-20230223231037945.png" alt="image-20230223231037945" /></p>
 <p>Service converged: the current state of the service is the same as the desired state described by the command.</p>
 <h4 id="service-health-and-rollback">
   Service health and rollback
@@ -2409,7 +2413,10 @@ FROM app-image as default
         <li><a href="#injecting-downstream-build-time-behavior">Injecting downstream build-time behavior</a></li>
         <li><a href="#using-startup-scripts-and-multiprocess-containers">Using startup scripts and multiprocess containers</a></li>
         <li><a href="#building-hardened-application-images">Building hardened application images</a></li>
-        <li><a href="#chapter-9-public-and-private-software-distribution">Chapter 9: Public and private software distribution</a></li>
+      </ul>
+    </li>
+    <li><a href="#chapter-9-public-and-private-software-distribution">Chapter 9: Public and private software distribution</a>
+      <ul>
         <li><a href="#choosing-a-distribution-method">Choosing a distribution method</a></li>
         <li><a href="#publishing-with-hosted-registries">Publishing with hosted registries</a></li>
         <li><a href="#introducing-private-registries">Introducing private registries</a></li>

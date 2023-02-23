@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Inventory file alias(别名)
+<meta name="description" content="Inventory file # alias(别名)
 ansible_host=IP/FQDN(fully qualified domain name, 完整域名)
 ansible_connection=ssh/winrm/localhost
 ansible_port=22(default for ssh)
@@ -16,11 +16,16 @@ Groupmember_alias2 or host
 [group_name3:children] 继承
 group_name1
 group_name2
-YMAL Key :(colon) value
-冒号后面一定要加空格！">
+YAML # Key :(colon) value
+冒号后面一定要加空格！
+Dictionary: unodered
+List: ordered
+Ansible playbook # .yaml/.yml 格式的文件
+Run ansible playbooks:
+ansible -? (module) -i inventory.txt e.g., ansible target -m ping -i inventory.txt run command one by one Ansible-playbook -i inventory.txt e.g., ansible-playbook test.">
 <meta name="theme-color" content="#FFFFFF">
 <meta name="color-scheme" content="light dark"><meta property="og:title" content="Ansible" />
-<meta property="og:description" content="Inventory file alias(别名)
+<meta property="og:description" content="Inventory file # alias(别名)
 ansible_host=IP/FQDN(fully qualified domain name, 完整域名)
 ansible_connection=ssh/winrm/localhost
 ansible_port=22(default for ssh)
@@ -33,8 +38,13 @@ Groupmember_alias2 or host
 [group_name3:children] 继承
 group_name1
 group_name2
-YMAL Key :(colon) value
-冒号后面一定要加空格！" />
+YAML # Key :(colon) value
+冒号后面一定要加空格！
+Dictionary: unodered
+List: ordered
+Ansible playbook # .yaml/.yml 格式的文件
+Run ansible playbooks:
+ansible -? (module) -i inventory.txt e.g., ansible target -m ping -i inventory.txt run command one by one Ansible-playbook -i inventory.txt e.g., ansible-playbook test." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://example.org/docs/stage1/ansible/" /><meta property="article:section" content="docs" />
 
@@ -44,7 +54,7 @@ YMAL Key :(colon) value
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.c58292d36b18b675680ab9baea2029204537b839ea72f258746ec0f32ce8d6c8.css" integrity="sha256-xYKS02sYtnVoCrm66iApIEU3uDnqcvJYdG7A8yzo1sg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.9efd597a2fa4492ee6cc9b0579fc06c0794fa0486f79685b78183e8512a99888.js" integrity="sha256-nv1Zei&#43;kSS7mzJsFefwGwHlPoEhveWhbeBg&#43;hRKpmIg=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.f32a975e04735e83cea06f52cb6f87a7d5899fd715c91488db6b980fcb392732.js" integrity="sha256-8yqXXgRzXoPOoG9Sy2&#43;Hp9WJn9cVyRSI22uYD8s5JzI=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -97,6 +107,19 @@ https://github.com/alex-shpak/hugo-book
 
   
     <a href="/docs/stage1/ansible/" class="active">Ansible</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/stage2/cicd/" class="">CI/CD</a>
   
 
         </li>
@@ -206,19 +229,6 @@ https://github.com/alex-shpak/hugo-book
         </li>
       
     
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/stage2/udemy/" class="">Udemy</a>
-  
-
-        </li>
-      
-    
   </ul>
 
 
@@ -280,8 +290,11 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown"><p>Inventory file
-alias(别名)</p>
+  <article class="markdown"><h1 id="inventory-file">
+  Inventory file
+  <a class="anchor" href="#inventory-file">#</a>
+</h1>
+<p>alias(别名)</p>
 <p>ansible_host=IP/FQDN(fully qualified domain name, 完整域名)</p>
 <p>ansible_connection=ssh/winrm/localhost</p>
 <p>ansible_port=22(default for ssh)</p>
@@ -294,9 +307,114 @@ alias(别名)</p>
 <p>[group_name3:children] 继承</p>
 <p>group_name1</p>
 <p>group_name2</p>
-<p>YMAL
-Key :(colon) value</p>
+<h1 id="yaml">
+  YAML
+  <a class="anchor" href="#yaml">#</a>
+</h1>
+<p>Key :(colon) value</p>
 <p>冒号后面一定要加空格！</p>
+<p><img src="/../img/image-20230223215613603.png" alt="image-20230223215613603" /></p>
+<p><img src="/../img/image-20230223215629409.png" alt="image-20230223215629409" /></p>
+<p><img src="/../img/image-20230223215637877.png" alt="image-20230223215637877" /></p>
+<p><img src="/../img/image-20230223215647804.png" alt="image-20230223215647804" /></p>
+<p>Dictionary: unodered</p>
+<p>List: ordered</p>
+<h1 id="ansible-playbook">
+  Ansible playbook
+  <a class="anchor" href="#ansible-playbook">#</a>
+</h1>
+<p>.yaml/.yml 格式的文件</p>
+<p>Run ansible playbooks:</p>
+<ol>
+<li>ansible <!-- raw HTML omitted --> -? (module) <!-- raw HTML omitted --> -i inventory.txt
+<ol>
+<li>e.g., ansible target -m ping -i inventory.txt</li>
+<li>run command one by one</li>
+</ol>
+</li>
+<li>Ansible-playbook <!-- raw HTML omitted --> -i inventory.txt
+<ol>
+<li>e.g., ansible-playbook test.yaml -i inventory.txt</li>
+</ol>
+</li>
+</ol>
+<h1 id="ansible-module">
+  Ansible Module
+  <a class="anchor" href="#ansible-module">#</a>
+</h1>
+<p>各个module要查文档 ansible module，看文档的话，在ansible.builtin页面检索module名字，然后点进去看</p>
+<p>第一个大表格是各个parameter
+第二个大表格是attributes，还不知道是干什么用的
+后面的例子也可以看一眼</p>
+<ul>
+<li>要怎么知道是用的哪个module，用这个module里的哪些parameter啊?</li>
+</ul>
+<p>idempotency: 一个操作执行一遍和执行多遍(中间没有其他操作)的结果一样:</p>
+<ul>
+<li>started stopped: 保证机器是在一个特定的状态</li>
+</ul>
+<h1 id="ansible-variables">
+  Ansible Variables
+  <a class="anchor" href="#ansible-variables">#</a>
+</h1>
+<p>{{ variable name }}</p>
+<p><img src="/../img/image-20230223231716089.png" alt="image-20230223231716089" /></p>
+<p>To define variables in a playbook, using &ldquo;vars&rdquo; module</p>
+<p><img src="/../img/image-20230223231754091.png" alt="image-20230223231754091" /></p>
+<h1 id="ansible-conditionals">
+  Ansible Conditionals
+  <a class="anchor" href="#ansible-conditionals">#</a>
+</h1>
+<p>when:相当于if，里面可以用and，or
+register是用来储存当前指令的输出的，利用register，用command output来储存这个command的输出，来用在下一个task里面
+An example:
+<img src="/../img/image-20230223231814820.png" alt="image-20230223231814820" /></p>
+<p><img src="/../img/image-20230223231825203.png" alt="image-20230223231825203" /></p>
+<h1 id="ansible-loops">
+  Ansible Loops
+  <a class="anchor" href="#ansible-loops">#</a>
+</h1>
+<p>Loop/with_*(古老版本的)</p>
+<p>{{ item }}指代loop的变量</p>
+<p><img src="/../img/image-20230223231839476.png" alt="image-20230223231839476" /></p>
+<h1 id="ansible-roles">
+  Ansible Roles
+  <a class="anchor" href="#ansible-roles">#</a>
+</h1>
+<p>To make work reusable; 每次部署服务器(比如database server)所需养的步骤 (playbook中的代码)都差不多，为了提升代码复用性，把这些代码放在role文件中，然后直接用role文件
+e.g:</p>
+<p><img src="/../img/image-20230223231848855.png" alt="image-20230223231848855" /></p>
+<p>Ansible galaxy <a href="https://galaxy.ansible.com/">https://galaxy.ansible.com/</a></p>
+<ul>
+<li>Find pre-package roles in ansbie galaxy, such as installing and configuring web servers, database servers and so on</li>
+<li>用法
+<ul>
+<li>ansibie-galasy init mysql 会自动有一个mysql的文件夹</li>
+<li>方法一:将这个文件夹放到playbook/roles目录下面
+<ul>
+<li><img src="/../img/image-20230223231908926.png" alt="image-20230223231908926" /></li>
+</ul>
+</li>
+<li>方法二	/etc/ansible/roles (default path)</li>
+<li>方法三: 指定路径roles_path=&hellip;</li>
+</ul>
+</li>
+</ul>
+<h1 id="advanced-topics">
+  Advanced Topics
+  <a class="anchor" href="#advanced-topics">#</a>
+</h1>
+<ol>
+<li>how to run on win servers</li>
+<li>Ansible galaxy</li>
+<li>patterns</li>
+<li>hosts: host1,host2,host3 或 group1, host1 或 host*等</li>
+<li>dynamic inventory</li>
+<li>Ansible-playbook -i inventory.py</li>
+<li>custom moduies</li>
+<li>refer to the ansible documents</li>
+<li>deploy a task manually</li>
+</ol>
 </article>
  
       

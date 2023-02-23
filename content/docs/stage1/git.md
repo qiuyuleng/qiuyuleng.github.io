@@ -1,5 +1,6 @@
 ---
 title: "Git"
+typora-root-url: ../
 weight: 1
 # bookFlatSection: false
 # bookToc: true

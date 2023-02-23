@@ -598,6 +598,7 @@ user-network2
 - attach a running container to more than one network
 
 ```docker run -it \
+docker run -it \
 --network user-network \
 --name network-explorer \
 alpine:3.8 \
@@ -1296,7 +1297,7 @@ RUN for i in $(find / -type f \( -perm /u=s -o -perm /g=s \)); \
 do chmod ug-s $i; done
 ```
 
-### Chapter 9: Public and private software distribution
+## Chapter 9: Public and private software distribution
 
 ### Choosing a distribution method
 
@@ -1304,7 +1305,7 @@ How to choose the appropriate method for your situation.
 
 #### A distribution spectrum
 
-<img src="/../img/image-20230222230554602.png" alt="image-20230222230554602" style="zoom:67%;" />
+![image-20230223230845131](/../img/image-20230223230845131.png)
 
 #### Selection criteria
 
@@ -1577,7 +1578,7 @@ Orchestrators remember how a system should be operating and manipulate it withou
 
 Illustration of a Docker swarm's action when deploying an update:
 
-<img src="/../img/image-20230222232942518.png" alt="image-20230222232942518" style="zoom:67%;" />
+![image-20230223231037945](/../img/image-20230223231037945.png)
 
 Service converged: the current state of the service is the same as the desired state described by the command.
 

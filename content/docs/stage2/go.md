@@ -1,5 +1,6 @@
 ---
 title: "Go"
+typora-root-url: ../
 weight: 1
 # bookFlatSection: false
 # bookToc: true
@@ -531,7 +532,7 @@ fmt.Println(person2 == person)// error: mismatched types secondPerson and firstP
 ```
 
 - Can use a type conversion to convert an instance of `firstPerson` to
-`secondPerson`
+  `secondPerson`
     - How to convert? `person := firstPerson{} person2 = secondPerson(person)`?
 - Cannot use `==` to compare an instance of `firstPerson` and an instance of `secondPerson` (because they are different types)
 - Cannot convert an instance of `firstPerson` to `thirdPerson`, because the fields are in a different order

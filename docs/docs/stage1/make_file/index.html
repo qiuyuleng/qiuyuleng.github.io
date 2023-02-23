@@ -3,12 +3,10 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="概述 makefile关系到了整个系统的编译规则，哪些文件需要先编译，哪些后编译等等 自动化编译 Makefile的规则
-如果prerequisites后面的文件比target文件新，就执行command 执行：make 一层层地找文件的依赖关系，直到最终编译出第一个目标文件 变量 $(obj) 自动推导 make看到.o文件会自动把.c文件加在依赖关系prerequisites中 clean make clean 才会执行 放在文件的最后">
+<meta name="description" content=" 概述 # makefile关系到了整个系统的编译规则，哪些文件需要先编译，哪些后编译等等 自动化编译 Makefile的规则 # target ...: prerequisites ... command ... ... 如果prerequisites后面的文件比target文件新，就执行command 执行：make 一层层地找文件的依赖关系，直到最终编译出第一个目标文件 变量 $(obj) 自动推导 make看到.o文件会自动把.c文件加在依赖关系prerequisites中 clean make clean 才会执行 放在文件的最后 ">
 <meta name="theme-color" content="#FFFFFF">
 <meta name="color-scheme" content="light dark"><meta property="og:title" content="Make File" />
-<meta property="og:description" content="概述 makefile关系到了整个系统的编译规则，哪些文件需要先编译，哪些后编译等等 自动化编译 Makefile的规则
-如果prerequisites后面的文件比target文件新，就执行command 执行：make 一层层地找文件的依赖关系，直到最终编译出第一个目标文件 变量 $(obj) 自动推导 make看到.o文件会自动把.c文件加在依赖关系prerequisites中 clean make clean 才会执行 放在文件的最后" />
+<meta property="og:description" content=" 概述 # makefile关系到了整个系统的编译规则，哪些文件需要先编译，哪些后编译等等 自动化编译 Makefile的规则 # target ...: prerequisites ... command ... ... 如果prerequisites后面的文件比target文件新，就执行command 执行：make 一层层地找文件的依赖关系，直到最终编译出第一个目标文件 变量 $(obj) 自动推导 make看到.o文件会自动把.c文件加在依赖关系prerequisites中 clean make clean 才会执行 放在文件的最后 " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://example.org/docs/stage1/make_file/" /><meta property="article:section" content="docs" />
 
@@ -18,7 +16,7 @@
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.c58292d36b18b675680ab9baea2029204537b839ea72f258746ec0f32ce8d6c8.css" integrity="sha256-xYKS02sYtnVoCrm66iApIEU3uDnqcvJYdG7A8yzo1sg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.9efd597a2fa4492ee6cc9b0579fc06c0794fa0486f79685b78183e8512a99888.js" integrity="sha256-nv1Zei&#43;kSS7mzJsFefwGwHlPoEhveWhbeBg&#43;hRKpmIg=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.f32a975e04735e83cea06f52cb6f87a7d5899fd715c91488db6b980fcb392732.js" integrity="sha256-8yqXXgRzXoPOoG9Sy2&#43;Hp9WJn9cVyRSI22uYD8s5JzI=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -71,6 +69,19 @@ https://github.com/alex-shpak/hugo-book
 
   
     <a href="/docs/stage1/ansible/" class="">Ansible</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/stage2/cicd/" class="">CI/CD</a>
   
 
         </li>
@@ -180,19 +191,6 @@ https://github.com/alex-shpak/hugo-book
         </li>
       
     
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/stage2/udemy/" class="">Udemy</a>
-  
-
-        </li>
-      
-    
   </ul>
 
 
@@ -254,20 +252,46 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown"><p>概述
-makefile关系到了整个系统的编译规则，哪些文件需要先编译，哪些后编译等等
-自动化编译
-Makefile的规则</p>
-<p>如果prerequisites后面的文件比target文件新，就执行command
-执行：make
-一层层地找文件的依赖关系，直到最终编译出第一个目标文件
-变量
-$(obj)
-自动推导
-make看到.o文件会自动把.c文件加在依赖关系prerequisites中
-clean
-make clean 才会执行
-放在文件的最后</p>
+  <article class="markdown"><h1 id="概述">
+  概述
+  <a class="anchor" href="#%e6%a6%82%e8%bf%b0">#</a>
+</h1>
+<ul>
+<li>makefile关系到了整个系统的编译规则，哪些文件需要先编译，哪些后编译等等</li>
+<li>自动化编译</li>
+</ul>
+<h1 id="makefile的规则">
+  Makefile的规则
+  <a class="anchor" href="#makefile%e7%9a%84%e8%a7%84%e5%88%99">#</a>
+</h1>
+<pre tabindex="0"><code>target ...: prerequisites ...
+	command
+	...
+	...
+</code></pre><ul>
+<li>如果prerequisites后面的文件比target文件新，就执行command</li>
+<li>执行：make
+<ul>
+<li>一层层地找文件的依赖关系，直到最终编译出第一个目标文件</li>
+</ul>
+</li>
+<li>变量
+<ul>
+<li>$(obj)</li>
+</ul>
+</li>
+<li>自动推导
+<ul>
+<li>make看到.o文件会自动把.c文件加在依赖关系prerequisites中</li>
+</ul>
+</li>
+<li>clean
+<ul>
+<li>make clean 才会执行</li>
+<li>放在文件的最后</li>
+</ul>
+</li>
+</ul>
 </article>
  
       

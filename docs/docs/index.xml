@@ -12,7 +12,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://example.org/docs/stage1/ansible/</guid>
-      <description>Inventory file alias(别名)
+      <description>Inventory file # alias(别名)
 ansible_host=IP/FQDN(fully qualified domain name, 完整域名)
 ansible_connection=ssh/winrm/localhost
 ansible_port=22(default for ssh)
@@ -25,8 +25,26 @@ Groupmember_alias2 or host
 [group_name3:children] 继承
 group_name1
 group_name2
-YMAL Key :(colon) value
-冒号后面一定要加空格！</description>
+YAML # Key :(colon) value
+冒号后面一定要加空格！
+Dictionary: unodered
+List: ordered
+Ansible playbook # .yaml/.yml 格式的文件
+Run ansible playbooks:
+ansible -? (module) -i inventory.txt e.g., ansible target -m ping -i inventory.txt run command one by one Ansible-playbook -i inventory.txt e.g., ansible-playbook test.</description>
+    </item>
+    
+    <item>
+      <title>CI/CD</title>
+      <link>http://example.org/docs/stage2/cicd/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/docs/stage2/cicd/</guid>
+      <description>Section 1: 持续集成和Jenkins介绍 # 持续集成 # 在开发过程中尽早地发现bug 持续集成、持续交付、持续部署的区别 持续集成：个人研发的部分向软件整体的部分交付。频繁进行集成可以更快地发现其中的问题 持续交付：将集成后的代码交付到类生产环境中 持续部署：自动部署到生产环境中 Jenkins介绍 # Jenkins是持续集成和构建服务器 Java写的，开源的 Section 2: 环境配置和Jenkins安装 # java version：1.8.0 （Java 8）
+Jenkins version: 2.121.3，这个版本很多plugin用不了了，所以改用2.346.1
+Section 3: Jenkins架构、术语、UI介绍、创建第一个Jenkins Job # Master和Slave架构 # master改成main了
+关键术语 # Job/Project: 由Jenkins监视或控制的任务 Slave/Node: node是所有的机器，包括slave和master slave agent：jenkins在slave上运行一个单独的程序 slave注册到master之后，master开始向slave分配负载 Executor: 独立的构建流，一个node可以有&amp;gt;=1个executor Build: 一个build是一个job/project的结果 Plugin: 拓展核心jenkins服务核心功能的软件 Jenkins UI # manage plugin报错怎么办
+创建第一个Jenkins Job # 运行第一个Jenkins Job # 注意manage Jenkins -&amp;gt; manage plugin →advanced 中的HTTP Proxy Configuration</description>
     </item>
     
     <item>
@@ -85,30 +103,19 @@ go build -o + binary name Getting third party go tools # go install location_of_
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://example.org/docs/stage2/k8s-in-action/</guid>
-      <description>第一章：Kubernetes 介绍
-Kubernetes 通过对实际硬件做抽象，然后将自身暴露成一个平台，用于部署和运行应用程序。它允许开发者自己配置和部署应用程序，而不需要系统管理员的帮助，让开发者聚焦于保持底层基础设施运转正常的同时，不需要关注实际运行在平台上的应用程序。
+      <description>第一章：Kubernetes 介绍 # Kubernetes 通过对实际硬件做抽象，然后将自身暴露成一个平台，用于部署和运行应用程序。它允许开发者自己配置和部署应用程序，而不需要系统管理员的帮助，让开发者聚焦于保持底层基础设施运转正常的同时，不需要关注实际运行在平台上的应用程序。
 K8s系统由一个主节点和若干个工作节点组成。开发者把一个应用列表提交到主节点，k8s会把它们部署到集群的工作节点。组件被具体部署在哪个节点对于开发者和系统管理员来说都不用关心。
-第二章：开始使用K8S和Docker
-kubectl cluster-info 展示集群信息
+控制面板中的组件运行在单个或多个主节点上 API服务器: 其他控制面包组件都与它通信 Scheduler: 调度应用，为每个组件分配一个工作节点 Controller Manager: 执行集群级别的功能，如复制组件、持续跟踪工作节点、处理节点失败 etcd: 分布式数据存储，储存集群配置 工作节点：运行容器化应用的机器 Kubelet: 与API服务器通信，管理它所在节点的容器 Kube-proxy: 负责组件之间的负载均衡网络流量 第二章：开始使用K8S和Docker # kubectl cluster-info 展示集群信息
 kubectl get 列出各种kubernetes对象的基本信息, e.g., kubectl get nodes kubectl describe node xxx 查看更详细的信息
 为kubectl创建别名 alias k=kubectl , tab命令补全
 pod: 一组紧密相关的容器，运行在同一个工作节点上，同一个linux命名空间内
 不能用kubectl get 列出单个容器，因为它们不是独立的k8s对象，但是可以列出pod，kubectl get pods
 调度scheduling：将pod分配给一个节点
-kubectl expose re kubia &amp;ndash;type=LoadBalancer &amp;ndash;name kubia-http 创建外部的负载均衡，可以通过负载均衡的公共ip访问pod
+kubectl expose re kubia --type=LoadBalancer --name kubia-http 创建外部的负载均衡，可以通过负载均衡的公共ip访问pod
 kubia-http服务：解决不断变化的pod IP地址的问题
 ReplicationController：负责pod并让它们保持运行
-第三章：pod: 运行于Kubernetes中的容器 介绍pod
-一个pod不会跨越多个工作节点
-想象一个由多个进程组成的应用程序，由于不能将多个进程聚集在一个单独的容器中（很难确定每个进程分别记录了什么），我们需要用pod将容器绑定在一起，作为一个单元进行管理
-Kubernetes 通过配置Docker 来让一个pod 内的所有容器共享相同的Linux 命名空间、网络、IPC（进程间通信）命名空间，可以通过IPC进行通信。也可以共享PID命名空间。
-同一pod 中的容器运行的多个进程需要注意不能绑定到相同的端口号（共享network命名空间），否则会导致端口冲突。
-容器可以通过localhost与同一pod中的其他容器进行通信。
-每个pod都可以通过其他pod 的IP 地址来实现相互访问，它们之间没有NAT (网络地址转换） 网关，不管是不是在不同的server上。
-这个平面网络是由额外的软件基于真实链路实现的。
-通过pod合理管理容器
-我们应该将应用程序组织到多个pod 中， 而每个pod 只包含紧密相关的组件或进程。
-多层应用分担到多个pod中，提高基础架构的利用率 pod是扩缩容的基本单位，不同组件有不同的扩缩容要求</description>
+第三章：pod: 运行于Kubernetes中的容器 # 介绍pod # 一个pod不会跨越多个工作节点
+想象一个由多个进程组成的应用程序，由于不能将多个进程聚集在一个单独的容器中（很难确定每个进程分别记录了什么），我们需要用pod将容器绑定在一起，作为一个单元进行管理</description>
     </item>
     
     <item>
@@ -155,8 +162,7 @@ open system interconnection OSI 七层协议 越接近硬件的阶层为底层�
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://example.org/docs/stage1/make_file/</guid>
-      <description>概述 makefile关系到了整个系统的编译规则，哪些文件需要先编译，哪些后编译等等 自动化编译 Makefile的规则
-如果prerequisites后面的文件比target文件新，就执行command 执行：make 一层层地找文件的依赖关系，直到最终编译出第一个目标文件 变量 $(obj) 自动推导 make看到.o文件会自动把.c文件加在依赖关系prerequisites中 clean make clean 才会执行 放在文件的最后</description>
+      <description> 概述 # makefile关系到了整个系统的编译规则，哪些文件需要先编译，哪些后编译等等 自动化编译 Makefile的规则 # target ...: prerequisites ... command ... ... 如果prerequisites后面的文件比target文件新，就执行command 执行：make 一层层地找文件的依赖关系，直到最终编译出第一个目标文件 变量 $(obj) 自动推导 make看到.o文件会自动把.c文件加在依赖关系prerequisites中 clean make clean 才会执行 放在文件的最后 </description>
     </item>
     
     <item>
@@ -167,30 +173,12 @@ open system interconnection OSI 七层协议 越接近硬件的阶层为底层�
       <guid>http://example.org/docs/stage1/tmux/</guid>
       <description>将会话（还有内部的进程）与窗口解绑的工具
 几个名词：
-session 会话，理解成任务 window 窗口，当前呈现在面前的终端界面就是窗口 pane 窗格，把窗口切割成一小块一小块 一个会话可以有多个窗口，一个窗口可以又可以分隔成多个窗格 还允许多人实时共享对话
-会话session操作
+session 会话，理解成任务 window 窗口，当前呈现在面前的终端界面就是窗口 pane 窗格，把窗口切割成一小块一小块 一个会话可以有多个窗口，一个窗口可以又可以分隔成多个窗格 还允许多人实时共享对话 会话session操作
 新建会话：tmux new -s 分离会话：tmux detach / ctrl+b d 查看所有会话：tmux ls 接入会话：tmux attach -t tmux attach -t 0 会话编号 杀死会话： tmux kill-session -t 会话编号/ 切换会话：tmux switch -t 会话编号/ 重命名会话：tmux rename-session -t 会话编号/session-name 快捷键 ctrl+b d 分离会话 ctrl+b s 列出所有会话 ctrl+b $ 重命名当前会话 查看session历史输出信息: 进入指定会话后，按ctrl+b，松开后按[，就可以进入历史输出信息查看模式，按q退出 窗格pane操作
-划分窗格(pane) tmux split-window [-h] 移动光标 tmux select-pane -U/D/L/R 快捷键
+划分窗格(pane) tmux split-window [-h]
+移动光标 tmux select-pane -U/D/L/R
 窗口操作
-新建窗口 tmux new-window -n 切换窗口 tmux select -window -t &amp;lt;name/number&amp;gt; 重命名窗口 tmux rename-window 快捷键</description>
-    </item>
-    
-    <item>
-      <title>Udemy</title>
-      <link>http://example.org/docs/stage2/udemy/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://example.org/docs/stage2/udemy/</guid>
-      <description>Section 1: 持续集成和Jenkins介绍
-持续集成 在开发过程中尽早地发现bug 持续集成、持续交付、持续部署的区别
-持续集成：个人研发的部分向软件整体的部分交付。频繁进行集成可以更快地发现其中的问题 持续交付：将集成后的代码交付到类生产环境中 持续部署：自动部署到生产环境中 2. Jenkins介绍 Jenkins是持续集成和构建服务器 Java写的，开源的 Section 2: 环境配置和Jenkins安装 java version：1.8.0 （Java 8）
-Jenkins version: 2.121.3，这个版本很多plugin用不了了，所以改用2.346.1
-Section 3: Jenkins架构、术语、UI介绍、创建第一个Jenkins Job Master和Slave架构
-master改成main了
-关键术语 Job/Project: 由Jenkins监视或控制的任务 Slave/Node: node是所有的机器，包括slave和master slave agent：jenkins在slave上运行一个单独的程序 slave注册到master之后，master开始向slave分配负载 Executor: 独立的构建流，一个node可以有&amp;gt;=1个executor Build: 一个build是一个job/project的结果 Plugin: 拓展核心jenkins服务核心功能的软件 Jenkins UI manage plugin报错怎么办
-创建第一个Jenkins Job 运行第一个Jenkins Job 注意manage Jenkins -&amp;gt; manage plugin →advanced 中的HTTP Proxy Configuration
-enter image description here
-Section 4: 用Jenkins持续集成 安装Jenkins GitHub plugin 第一个基于maven的Jenkins项目 Maven 什么是maven 描述软件是如何构建的 描述项目的依赖 安装的时候注意设置PATH Maven中的pom.</description>
+新建窗口 tmux new-window -n 切换窗口 tmux select -window -t &amp;lt;name/number&amp;gt; 重命名窗口 tmux rename-window </description>
     </item>
     
   </channel>
