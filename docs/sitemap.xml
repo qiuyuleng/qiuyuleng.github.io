@@ -3,21 +3,22 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>http://example.org/docs/stage1/ansible/</loc>
-    <lastmod>2023-02-19T20:51:44+08:00</lastmod>
+    <lastmod>2023-02-23T23:48:22+08:00</lastmod>
   </url><url>
     <loc>http://example.org/docs/stage2/cicd/</loc>
+    <lastmod>2023-02-23T23:48:22+08:00</lastmod>
   </url><url>
     <loc>http://example.org/docs/stage2/docker-in-action/</loc>
-    <lastmod>2023-02-22T23:33:55+08:00</lastmod>
+    <lastmod>2023-02-23T23:48:22+08:00</lastmod>
   </url><url>
     <loc>http://example.org/docs/stage1/git/</loc>
-    <lastmod>2023-02-19T20:51:44+08:00</lastmod>
+    <lastmod>2023-02-23T23:48:22+08:00</lastmod>
   </url><url>
     <loc>http://example.org/docs/stage2/go/</loc>
-    <lastmod>2023-02-19T20:51:44+08:00</lastmod>
+    <lastmod>2023-02-23T23:48:22+08:00</lastmod>
   </url><url>
     <loc>http://example.org/docs/stage2/k8s-in-action/</loc>
-    <lastmod>2023-02-19T20:51:44+08:00</lastmod>
+    <lastmod>2023-02-23T23:48:22+08:00</lastmod>
   </url><url>
     <loc>http://example.org/docs/stage1/linux1/</loc>
     <lastmod>2023-02-21T22:37:37+08:00</lastmod>
@@ -26,18 +27,18 @@
     <lastmod>2023-02-21T22:37:37+08:00</lastmod>
   </url><url>
     <loc>http://example.org/docs/stage1/make_file/</loc>
-    <lastmod>2023-02-19T20:51:44+08:00</lastmod>
+    <lastmod>2023-02-23T23:48:22+08:00</lastmod>
   </url><url>
     <loc>http://example.org/docs/stage1/tmux/</loc>
-    <lastmod>2023-02-19T20:51:44+08:00</lastmod>
+    <lastmod>2023-02-23T23:48:22+08:00</lastmod>
   </url><url>
     <loc>http://example.org/categories/</loc>
   </url><url>
     <loc>http://example.org/docs/</loc>
-    <lastmod>2023-02-22T23:33:55+08:00</lastmod>
+    <lastmod>2023-02-23T23:48:22+08:00</lastmod>
   </url><url>
     <loc>http://example.org/</loc>
-    <lastmod>2023-02-22T23:33:55+08:00</lastmod>
+    <lastmod>2023-02-23T23:48:22+08:00</lastmod>
   </url><url>
     <loc>http://example.org/tags/</loc>
   </url>

@@ -22,7 +22,7 @@ go build -o &#43; binary name Getting third party go tools # go install location
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://example.org/docs/stage2/go/" /><meta property="article:section" content="docs" />
 
-<meta property="article:modified_time" content="2023-02-19T20:51:44+08:00" />
+<meta property="article:modified_time" content="2023-02-23T23:48:22+08:00" />
 <title>Go | My CS Learning</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
@@ -255,89 +255,97 @@ https://github.com/alex-shpak/hugo-book
   
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#go-workspace">Go Workspace</a></li>
-    <li><a href="#go-command">Go Command</a>
+    <li><a href="#chapter-1-set-up-go-environment">Chapter 1: Set up Go Environment</a>
       <ul>
-        <li><a href="#getting-third-party-go-tools">Getting third party go tools</a></li>
-        <li><a href="#formatting-your-code">Formatting your code</a></li>
+        <li><a href="#go-workspace">Go Workspace</a></li>
+        <li><a href="#go-command">Go Command</a>
+          <ul>
+            <li><a href="#getting-third-party-go-tools">Getting third party go tools</a></li>
+            <li><a href="#formatting-your-code">Formatting your code</a></li>
+          </ul>
+        </li>
+        <li><a href="#linting-and-vetting">Linting and Vetting</a></li>
+        <li><a href="#makefile">Makefile</a></li>
+        <li><a href="#staying-up-tp-date">Staying Up tp Date</a></li>
       </ul>
     </li>
-    <li><a href="#linting-and-vetting">Linting and Vetting</a></li>
-    <li><a href="#makefile">Makefile</a></li>
-    <li><a href="#staying-up-tp-date">Staying Up tp Date</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#build-in-types">Build-in Types</a>
+    <li><a href="#chapter-2-primitive-types-and-declarations">Chapter 2: Primitive Types and Declarations</a>
       <ul>
-        <li><a href="#zero-value">Zero value</a></li>
-        <li><a href="#literals">Literals</a></li>
+        <li><a href="#build-in-types">Build-in Types</a>
+          <ul>
+            <li><a href="#zero-value">Zero value</a></li>
+            <li><a href="#literals">Literals</a></li>
+          </ul>
+        </li>
+        <li><a href="#var-versus-">var Versus :=</a></li>
+        <li><a href="#using-const">Using const</a></li>
+        <li><a href="#unused-variables">Unused Variables</a></li>
+        <li><a href="#naming-variables-and-constants">Naming Variables and Constants</a></li>
       </ul>
     </li>
-    <li><a href="#var-versus-">var Versus :=</a></li>
-    <li><a href="#using-const">Using const</a></li>
-    <li><a href="#unused-variables">Unused Variables</a></li>
-    <li><a href="#naming-variables-and-constants">Naming Variables and Constants</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#arrays-too-rigid-to-use-directly">Arrays: Too rigid to use directly</a></li>
-    <li><a href="#slices">Slices</a>
+    <li><a href="#chapter-3-composite-types">Chapter 3: Composite Types</a>
       <ul>
-        <li><a href="#capacity">Capacity</a></li>
-        <li><a href="#make-slices">make slices</a></li>
-        <li><a href="#declaring-your-slice">Declaring your Slice</a></li>
-        <li><a href="#slicing-slices">Slicing Slices</a></li>
-        <li><a href="#covert-arrays-to-slices">Covert arrays to slices</a></li>
-        <li><a href="#copy">Copy</a></li>
+        <li><a href="#arrays-too-rigid-to-use-directly">Arrays: Too rigid to use directly</a></li>
+        <li><a href="#slices">Slices</a>
+          <ul>
+            <li><a href="#capacity">Capacity</a></li>
+            <li><a href="#make-slices">make slices</a></li>
+            <li><a href="#declaring-your-slice">Declaring your Slice</a></li>
+            <li><a href="#slicing-slices">Slicing Slices</a></li>
+            <li><a href="#covert-arrays-to-slices">Covert arrays to slices</a></li>
+            <li><a href="#copy">Copy</a></li>
+          </ul>
+        </li>
+        <li><a href="#strings-and-runes-and-bytes">Strings and Runes and Bytes</a></li>
+        <li><a href="#maps">Maps</a>
+          <ul>
+            <li><a href="#reading-and-writing-a-map">Reading and Writing a Map</a></li>
+            <li><a href="#the-comma-ok-idiom">The comma ok idiom</a></li>
+            <li><a href="#deleting-from-maps">Deleting from Maps</a></li>
+            <li><a href="#using-maps-as-sets">Using Maps as Sets</a></li>
+          </ul>
+        </li>
+        <li><a href="#structs">Structs</a>
+          <ul>
+            <li><a href="#anonymous-structs">Anonymous Structs</a></li>
+            <li><a href="#comparing-and-converting-structs">Comparing and Converting Structs</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
-    <li><a href="#strings-and-runes-and-bytes">Strings and Runes and Bytes</a></li>
-    <li><a href="#maps">Maps</a>
+    <li><a href="#chapter-4-blocks-shadows-and-control-structures">Chapter 4: Blocks, Shadows, and Control Structures</a>
       <ul>
-        <li><a href="#reading-and-writing-a-map">Reading and Writing a Map</a></li>
-        <li><a href="#the-comma-ok-idiom">The comma ok idiom</a></li>
-        <li><a href="#deleting-from-maps">Deleting from Maps</a></li>
-        <li><a href="#using-maps-as-sets">Using Maps as Sets</a></li>
+        <li><a href="#blocks">Blocks</a></li>
+        <li><a href="#shadowing-variables">Shadowing Variables</a></li>
+        <li><a href="#detecting-shadowed-variables">Detecting Shadowed Variables</a></li>
+        <li><a href="#if">if</a></li>
+        <li><a href="#for-four-ways">for, Four Ways</a>
+          <ul>
+            <li><a href="#the-complete-for-statement">The Complete for Statement</a></li>
+            <li><a href="#the-condition-only-for-statement">The Condition-Only for Statement</a></li>
+            <li><a href="#the-infinite-for-statement">The Infinite for Statement</a></li>
+            <li><a href="#break-and-continue">break and continue</a></li>
+            <li><a href="#the-for-range-statement">The for-range Statement</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
-    <li><a href="#structs">Structs</a>
+    <li><a href="#chapter-13-writing-tests">Chapter 13: Writing Tests</a>
       <ul>
-        <li><a href="#anonymous-structs">Anonymous Structs</a></li>
-        <li><a href="#comparing-and-converting-structs">Comparing and Converting Structs</a></li>
+        <li><a href="#the-basics-of-testing">The Basics of Testing</a>
+          <ul>
+            <li><a href="#reporting-test-failures">Reporting Test Failures</a></li>
+            <li><a href="#setting-up-and-tearing-down">Setting up and tearing down</a></li>
+            <li><a href="#storing-sample-test-data">Storing Sample Test Data</a></li>
+            <li><a href="#caching-test-results">Caching Test Results</a></li>
+            <li><a href="#testing-your-public-api">Testing your Public API</a></li>
+            <li><a href="#use-go-cmp-to-compare-test-results">Use go-cmp to Compare Test Results</a></li>
+          </ul>
+        </li>
+        <li><a href="#table-tests">Table Tests</a></li>
+        <li><a href="#checking-your-code-coverage">Checking Your Code Coverage</a></li>
       </ul>
     </li>
-  </ul>
-
-  <ul>
-    <li><a href="#blocks">Blocks</a></li>
-    <li><a href="#shadowing-variables">Shadowing Variables</a></li>
-    <li><a href="#detecting-shadowed-variables">Detecting Shadowed Variables</a></li>
-    <li><a href="#if">if</a></li>
-    <li><a href="#for-four-ways">for, Four Ways</a>
-      <ul>
-        <li><a href="#the-complete-for-statement">The Complete for Statement</a></li>
-        <li><a href="#the-condition-only-for-statement">The Condition-Only for Statement</a></li>
-        <li><a href="#the-infinite-for-statement">The Infinite for Statement</a></li>
-        <li><a href="#break-and-continue">break and continue</a></li>
-        <li><a href="#the-for-range-statement">The for-range Statement</a></li>
-      </ul>
-    </li>
-  </ul>
-
-  <ul>
-    <li><a href="#the-basics-of-testing">The Basics of Testing</a>
-      <ul>
-        <li><a href="#reporting-test-failures">Reporting Test Failures</a></li>
-        <li><a href="#setting-up-and-tearing-down">Setting up and tearing down</a></li>
-        <li><a href="#storing-sample-test-data">Storing Sample Test Data</a></li>
-        <li><a href="#caching-test-results">Caching Test Results</a></li>
-        <li><a href="#testing-your-public-api">Testing your Public API</a></li>
-        <li><a href="#use-go-cmp-to-compare-test-results">Use go-cmp to Compare Test Results</a></li>
-      </ul>
-    </li>
-    <li><a href="#table-tests">Table Tests</a></li>
-    <li><a href="#checking-your-code-coverage">Checking Your Code Coverage</a></li>
   </ul>
 </nav>
 
@@ -1217,89 +1225,97 @@ go tool cover -html=c.out
   
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#go-workspace">Go Workspace</a></li>
-    <li><a href="#go-command">Go Command</a>
+    <li><a href="#chapter-1-set-up-go-environment">Chapter 1: Set up Go Environment</a>
       <ul>
-        <li><a href="#getting-third-party-go-tools">Getting third party go tools</a></li>
-        <li><a href="#formatting-your-code">Formatting your code</a></li>
+        <li><a href="#go-workspace">Go Workspace</a></li>
+        <li><a href="#go-command">Go Command</a>
+          <ul>
+            <li><a href="#getting-third-party-go-tools">Getting third party go tools</a></li>
+            <li><a href="#formatting-your-code">Formatting your code</a></li>
+          </ul>
+        </li>
+        <li><a href="#linting-and-vetting">Linting and Vetting</a></li>
+        <li><a href="#makefile">Makefile</a></li>
+        <li><a href="#staying-up-tp-date">Staying Up tp Date</a></li>
       </ul>
     </li>
-    <li><a href="#linting-and-vetting">Linting and Vetting</a></li>
-    <li><a href="#makefile">Makefile</a></li>
-    <li><a href="#staying-up-tp-date">Staying Up tp Date</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#build-in-types">Build-in Types</a>
+    <li><a href="#chapter-2-primitive-types-and-declarations">Chapter 2: Primitive Types and Declarations</a>
       <ul>
-        <li><a href="#zero-value">Zero value</a></li>
-        <li><a href="#literals">Literals</a></li>
+        <li><a href="#build-in-types">Build-in Types</a>
+          <ul>
+            <li><a href="#zero-value">Zero value</a></li>
+            <li><a href="#literals">Literals</a></li>
+          </ul>
+        </li>
+        <li><a href="#var-versus-">var Versus :=</a></li>
+        <li><a href="#using-const">Using const</a></li>
+        <li><a href="#unused-variables">Unused Variables</a></li>
+        <li><a href="#naming-variables-and-constants">Naming Variables and Constants</a></li>
       </ul>
     </li>
-    <li><a href="#var-versus-">var Versus :=</a></li>
-    <li><a href="#using-const">Using const</a></li>
-    <li><a href="#unused-variables">Unused Variables</a></li>
-    <li><a href="#naming-variables-and-constants">Naming Variables and Constants</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#arrays-too-rigid-to-use-directly">Arrays: Too rigid to use directly</a></li>
-    <li><a href="#slices">Slices</a>
+    <li><a href="#chapter-3-composite-types">Chapter 3: Composite Types</a>
       <ul>
-        <li><a href="#capacity">Capacity</a></li>
-        <li><a href="#make-slices">make slices</a></li>
-        <li><a href="#declaring-your-slice">Declaring your Slice</a></li>
-        <li><a href="#slicing-slices">Slicing Slices</a></li>
-        <li><a href="#covert-arrays-to-slices">Covert arrays to slices</a></li>
-        <li><a href="#copy">Copy</a></li>
+        <li><a href="#arrays-too-rigid-to-use-directly">Arrays: Too rigid to use directly</a></li>
+        <li><a href="#slices">Slices</a>
+          <ul>
+            <li><a href="#capacity">Capacity</a></li>
+            <li><a href="#make-slices">make slices</a></li>
+            <li><a href="#declaring-your-slice">Declaring your Slice</a></li>
+            <li><a href="#slicing-slices">Slicing Slices</a></li>
+            <li><a href="#covert-arrays-to-slices">Covert arrays to slices</a></li>
+            <li><a href="#copy">Copy</a></li>
+          </ul>
+        </li>
+        <li><a href="#strings-and-runes-and-bytes">Strings and Runes and Bytes</a></li>
+        <li><a href="#maps">Maps</a>
+          <ul>
+            <li><a href="#reading-and-writing-a-map">Reading and Writing a Map</a></li>
+            <li><a href="#the-comma-ok-idiom">The comma ok idiom</a></li>
+            <li><a href="#deleting-from-maps">Deleting from Maps</a></li>
+            <li><a href="#using-maps-as-sets">Using Maps as Sets</a></li>
+          </ul>
+        </li>
+        <li><a href="#structs">Structs</a>
+          <ul>
+            <li><a href="#anonymous-structs">Anonymous Structs</a></li>
+            <li><a href="#comparing-and-converting-structs">Comparing and Converting Structs</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
-    <li><a href="#strings-and-runes-and-bytes">Strings and Runes and Bytes</a></li>
-    <li><a href="#maps">Maps</a>
+    <li><a href="#chapter-4-blocks-shadows-and-control-structures">Chapter 4: Blocks, Shadows, and Control Structures</a>
       <ul>
-        <li><a href="#reading-and-writing-a-map">Reading and Writing a Map</a></li>
-        <li><a href="#the-comma-ok-idiom">The comma ok idiom</a></li>
-        <li><a href="#deleting-from-maps">Deleting from Maps</a></li>
-        <li><a href="#using-maps-as-sets">Using Maps as Sets</a></li>
+        <li><a href="#blocks">Blocks</a></li>
+        <li><a href="#shadowing-variables">Shadowing Variables</a></li>
+        <li><a href="#detecting-shadowed-variables">Detecting Shadowed Variables</a></li>
+        <li><a href="#if">if</a></li>
+        <li><a href="#for-four-ways">for, Four Ways</a>
+          <ul>
+            <li><a href="#the-complete-for-statement">The Complete for Statement</a></li>
+            <li><a href="#the-condition-only-for-statement">The Condition-Only for Statement</a></li>
+            <li><a href="#the-infinite-for-statement">The Infinite for Statement</a></li>
+            <li><a href="#break-and-continue">break and continue</a></li>
+            <li><a href="#the-for-range-statement">The for-range Statement</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
-    <li><a href="#structs">Structs</a>
+    <li><a href="#chapter-13-writing-tests">Chapter 13: Writing Tests</a>
       <ul>
-        <li><a href="#anonymous-structs">Anonymous Structs</a></li>
-        <li><a href="#comparing-and-converting-structs">Comparing and Converting Structs</a></li>
+        <li><a href="#the-basics-of-testing">The Basics of Testing</a>
+          <ul>
+            <li><a href="#reporting-test-failures">Reporting Test Failures</a></li>
+            <li><a href="#setting-up-and-tearing-down">Setting up and tearing down</a></li>
+            <li><a href="#storing-sample-test-data">Storing Sample Test Data</a></li>
+            <li><a href="#caching-test-results">Caching Test Results</a></li>
+            <li><a href="#testing-your-public-api">Testing your Public API</a></li>
+            <li><a href="#use-go-cmp-to-compare-test-results">Use go-cmp to Compare Test Results</a></li>
+          </ul>
+        </li>
+        <li><a href="#table-tests">Table Tests</a></li>
+        <li><a href="#checking-your-code-coverage">Checking Your Code Coverage</a></li>
       </ul>
     </li>
-  </ul>
-
-  <ul>
-    <li><a href="#blocks">Blocks</a></li>
-    <li><a href="#shadowing-variables">Shadowing Variables</a></li>
-    <li><a href="#detecting-shadowed-variables">Detecting Shadowed Variables</a></li>
-    <li><a href="#if">if</a></li>
-    <li><a href="#for-four-ways">for, Four Ways</a>
-      <ul>
-        <li><a href="#the-complete-for-statement">The Complete for Statement</a></li>
-        <li><a href="#the-condition-only-for-statement">The Condition-Only for Statement</a></li>
-        <li><a href="#the-infinite-for-statement">The Infinite for Statement</a></li>
-        <li><a href="#break-and-continue">break and continue</a></li>
-        <li><a href="#the-for-range-statement">The for-range Statement</a></li>
-      </ul>
-    </li>
-  </ul>
-
-  <ul>
-    <li><a href="#the-basics-of-testing">The Basics of Testing</a>
-      <ul>
-        <li><a href="#reporting-test-failures">Reporting Test Failures</a></li>
-        <li><a href="#setting-up-and-tearing-down">Setting up and tearing down</a></li>
-        <li><a href="#storing-sample-test-data">Storing Sample Test Data</a></li>
-        <li><a href="#caching-test-results">Caching Test Results</a></li>
-        <li><a href="#testing-your-public-api">Testing your Public API</a></li>
-        <li><a href="#use-go-cmp-to-compare-test-results">Use go-cmp to Compare Test Results</a></li>
-      </ul>
-    </li>
-    <li><a href="#table-tests">Table Tests</a></li>
-    <li><a href="#checking-your-code-coverage">Checking Your Code Coverage</a></li>
   </ul>
 </nav>
 

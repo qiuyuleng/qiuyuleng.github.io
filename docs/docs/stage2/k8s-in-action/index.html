@@ -34,7 +34,7 @@ ReplicationController：负责pod并让它们保持运行
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://example.org/docs/stage2/k8s-in-action/" /><meta property="article:section" content="docs" />
 
-<meta property="article:modified_time" content="2023-02-19T20:51:44+08:00" />
+<meta property="article:modified_time" content="2023-02-23T23:48:22+08:00" />
 <title>K8s in Action | My CS Learning</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
@@ -267,94 +267,102 @@ https://github.com/alex-shpak/hugo-book
   
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#介绍pod">介绍pod</a>
+    <li><a href="#第一章kubernetes-介绍">第一章：Kubernetes 介绍</a></li>
+    <li><a href="#第二章开始使用k8s和docker">第二章：开始使用K8S和Docker</a></li>
+    <li><a href="#第三章pod-运行于kubernetes中的容器">第三章：pod: 运行于Kubernetes中的容器</a>
       <ul>
-        <li><a href="#通过pod合理管理容器">通过pod合理管理容器</a></li>
+        <li><a href="#介绍pod">介绍pod</a>
+          <ul>
+            <li><a href="#通过pod合理管理容器">通过pod合理管理容器</a></li>
+          </ul>
+        </li>
+        <li><a href="#以yaml或json描述文件创建pod">以YAML或JSON描述文件创建pod</a></li>
+        <li><a href="#使用标签组织pod">使用标签组织pod</a></li>
+        <li><a href="#通过标签选择器列出pod子集">通过标签选择器列出pod子集</a></li>
+        <li><a href="#使用标签选择器来约束pod调度">使用标签选择器来约束pod调度</a></li>
+        <li><a href="#注解pod">注解pod</a></li>
+        <li><a href="#使用命名空间对资源进行分组">使用命名空间对资源进行分组</a>
+          <ul>
+            <li><a href="#发现创建管理命名空间">发现、创建、管理命名空间</a></li>
+          </ul>
+        </li>
+        <li><a href="#停止和移除pod">停止和移除pod</a></li>
       </ul>
     </li>
-    <li><a href="#以yaml或json描述文件创建pod">以YAML或JSON描述文件创建pod</a></li>
-    <li><a href="#使用标签组织pod">使用标签组织pod</a></li>
-    <li><a href="#通过标签选择器列出pod子集">通过标签选择器列出pod子集</a></li>
-    <li><a href="#使用标签选择器来约束pod调度">使用标签选择器来约束pod调度</a></li>
-    <li><a href="#注解pod">注解pod</a></li>
-    <li><a href="#使用命名空间对资源进行分组">使用命名空间对资源进行分组</a>
+    <li><a href="#第四章副本机制和其他控制器部署托管的pod">第四章：副本机制和其他控制器：部署托管的pod</a>
       <ul>
-        <li><a href="#发现创建管理命名空间">发现、创建、管理命名空间</a></li>
+        <li><a href="#保持pod健康存活探针-liveness-probe">保持pod健康：存活探针 (liveness probe)</a></li>
+        <li><a href="#replicationcontroller">ReplicationController</a>
+          <ul>
+            <li><a href="#replicationcontroller的协调流程">ReplicationController的协调流程</a></li>
+            <li><a href="#创建rc">创建RC</a></li>
+            <li><a href="#修改pod模板">修改pod模板</a></li>
+            <li><a href="#水平缩放pod">水平缩放pod</a></li>
+            <li><a href="#删除rc">删除RC</a></li>
+          </ul>
+        </li>
+        <li><a href="#使用replicaset而不是replicationcontroller">使用ReplicaSet而不是ReplicationController</a>
+          <ul>
+            <li><a href="#定义replicaset">定义ReplicaSet</a></li>
+            <li><a href="#replicaset强大的标签选择器">ReplicaSet强大的标签选择器</a></li>
+          </ul>
+        </li>
+        <li><a href="#使用daemonset在每个节点上运行一个pod">使用DaemonSet在每个节点上运行一个pod</a></li>
+        <li><a href="#运行执行单个任务的pod">运行执行单个任务的pod</a>
+          <ul>
+            <li><a href="#定义job资源">定义Job资源</a></li>
+            <li><a href="#在job中运行多个pod实例">在Job中运行多个pod实例</a></li>
+            <li><a href="#限制job-pod完成任务的时间">限制Job pod完成任务的时间</a></li>
+          </ul>
+        </li>
+        <li><a href="#安排job定期运行或在将来运行一次">安排Job定期运行或在将来运行一次</a>
+          <ul>
+            <li><a href="#创建cronjob">创建CronJob</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
-    <li><a href="#停止和移除pod">停止和移除pod</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#保持pod健康存活探针-liveness-probe">保持pod健康：存活探针 (liveness probe)</a></li>
-    <li><a href="#replicationcontroller">ReplicationController</a>
+    <li><a href="#服务让客户端发现pod并与之通信">服务：让客户端发现pod并与之通信</a>
       <ul>
-        <li><a href="#replicationcontroller的协调流程">ReplicationController的协调流程</a></li>
-        <li><a href="#创建rc">创建RC</a></li>
-        <li><a href="#修改pod模板">修改pod模板</a></li>
-        <li><a href="#水平缩放pod">水平缩放pod</a></li>
-        <li><a href="#删除rc">删除RC</a></li>
+        <li><a href="#介绍服务">介绍服务</a>
+          <ul>
+            <li><a href="#创建服务">创建服务</a></li>
+            <li><a href="#在运行的容器中远程执行命令">在运行的容器中远程执行命令</a></li>
+            <li><a href="#会话亲和性">会话亲和性</a></li>
+            <li><a href="#端口命名">端口命名</a></li>
+            <li><a href="#服务发现">服务发现</a></li>
+          </ul>
+        </li>
+        <li><a href="#连接集群外部的服务">连接集群外部的服务</a>
+          <ul>
+            <li><a href="#介绍endpoints资源">介绍Endpoints资源</a></li>
+            <li><a href="#手动配置服务的endpoint">手动配置服务的endpoint</a></li>
+            <li><a href="#为外部服务创建别名">为外部服务创建别名</a></li>
+          </ul>
+        </li>
+        <li><a href="#将服务暴露给外部客户端">将服务暴露给外部客户端</a>
+          <ul>
+            <li><a href="#使用nodeport类型的服务">使用NodePort类型的服务</a></li>
+            <li><a href="#创建loadbalance类型的服务">创建LoadBalance类型的服务</a></li>
+            <li><a href="#了解外部连接的特性">了解外部连接的特性</a></li>
+            <li><a href="#客户端ip是不记录的">客户端IP是不记录的</a></li>
+          </ul>
+        </li>
+        <li><a href="#通过ingress暴露服务">通过Ingress暴露服务</a>
+          <ul>
+            <li><a href="#通过相同的ingress暴露多个服务">通过相同的ingress暴露多个服务</a></li>
+            <li><a href="#配置ingress处理tls传输">配置Ingress处理TLS传输</a></li>
+          </ul>
+        </li>
+        <li><a href="#pod就绪后发出信号">pod就绪后发出信号</a>
+          <ul>
+            <li><a href="#介绍就绪探针">介绍就绪探针</a></li>
+            <li><a href="#向pod中添加就绪探针">向pod中添加就绪探针</a></li>
+          </ul>
+        </li>
+        <li><a href="#使用headless服务来发现独立的pod">使用headless服务来发现独立的pod</a></li>
       </ul>
     </li>
-    <li><a href="#使用replicaset而不是replicationcontroller">使用ReplicaSet而不是ReplicationController</a>
-      <ul>
-        <li><a href="#定义replicaset">定义ReplicaSet</a></li>
-        <li><a href="#replicaset强大的标签选择器">ReplicaSet强大的标签选择器</a></li>
-      </ul>
-    </li>
-    <li><a href="#使用daemonset在每个节点上运行一个pod">使用DaemonSet在每个节点上运行一个pod</a></li>
-    <li><a href="#运行执行单个任务的pod">运行执行单个任务的pod</a>
-      <ul>
-        <li><a href="#定义job资源">定义Job资源</a></li>
-        <li><a href="#在job中运行多个pod实例">在Job中运行多个pod实例</a></li>
-        <li><a href="#限制job-pod完成任务的时间">限制Job pod完成任务的时间</a></li>
-      </ul>
-    </li>
-    <li><a href="#安排job定期运行或在将来运行一次">安排Job定期运行或在将来运行一次</a>
-      <ul>
-        <li><a href="#创建cronjob">创建CronJob</a></li>
-      </ul>
-    </li>
-  </ul>
-
-  <ul>
-    <li><a href="#介绍服务">介绍服务</a>
-      <ul>
-        <li><a href="#创建服务">创建服务</a></li>
-        <li><a href="#在运行的容器中远程执行命令">在运行的容器中远程执行命令</a></li>
-        <li><a href="#会话亲和性">会话亲和性</a></li>
-        <li><a href="#端口命名">端口命名</a></li>
-        <li><a href="#服务发现">服务发现</a></li>
-      </ul>
-    </li>
-    <li><a href="#连接集群外部的服务">连接集群外部的服务</a>
-      <ul>
-        <li><a href="#介绍endpoints资源">介绍Endpoints资源</a></li>
-        <li><a href="#手动配置服务的endpoint">手动配置服务的endpoint</a></li>
-        <li><a href="#为外部服务创建别名">为外部服务创建别名</a></li>
-      </ul>
-    </li>
-    <li><a href="#将服务暴露给外部客户端">将服务暴露给外部客户端</a>
-      <ul>
-        <li><a href="#使用nodeport类型的服务">使用NodePort类型的服务</a></li>
-        <li><a href="#创建loadbalance类型的服务">创建LoadBalance类型的服务</a></li>
-        <li><a href="#了解外部连接的特性">了解外部连接的特性</a></li>
-        <li><a href="#客户端ip是不记录的">客户端IP是不记录的</a></li>
-      </ul>
-    </li>
-    <li><a href="#通过ingress暴露服务">通过Ingress暴露服务</a>
-      <ul>
-        <li><a href="#通过相同的ingress暴露多个服务">通过相同的ingress暴露多个服务</a></li>
-        <li><a href="#配置ingress处理tls传输">配置Ingress处理TLS传输</a></li>
-      </ul>
-    </li>
-    <li><a href="#pod就绪后发出信号">pod就绪后发出信号</a>
-      <ul>
-        <li><a href="#介绍就绪探针">介绍就绪探针</a></li>
-        <li><a href="#向pod中添加就绪探针">向pod中添加就绪探针</a></li>
-      </ul>
-    </li>
-    <li><a href="#使用headless服务来发现独立的pod">使用headless服务来发现独立的pod</a></li>
   </ul>
 </nav>
 
@@ -961,94 +969,102 @@ https://github.com/alex-shpak/hugo-book
   
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#介绍pod">介绍pod</a>
+    <li><a href="#第一章kubernetes-介绍">第一章：Kubernetes 介绍</a></li>
+    <li><a href="#第二章开始使用k8s和docker">第二章：开始使用K8S和Docker</a></li>
+    <li><a href="#第三章pod-运行于kubernetes中的容器">第三章：pod: 运行于Kubernetes中的容器</a>
       <ul>
-        <li><a href="#通过pod合理管理容器">通过pod合理管理容器</a></li>
+        <li><a href="#介绍pod">介绍pod</a>
+          <ul>
+            <li><a href="#通过pod合理管理容器">通过pod合理管理容器</a></li>
+          </ul>
+        </li>
+        <li><a href="#以yaml或json描述文件创建pod">以YAML或JSON描述文件创建pod</a></li>
+        <li><a href="#使用标签组织pod">使用标签组织pod</a></li>
+        <li><a href="#通过标签选择器列出pod子集">通过标签选择器列出pod子集</a></li>
+        <li><a href="#使用标签选择器来约束pod调度">使用标签选择器来约束pod调度</a></li>
+        <li><a href="#注解pod">注解pod</a></li>
+        <li><a href="#使用命名空间对资源进行分组">使用命名空间对资源进行分组</a>
+          <ul>
+            <li><a href="#发现创建管理命名空间">发现、创建、管理命名空间</a></li>
+          </ul>
+        </li>
+        <li><a href="#停止和移除pod">停止和移除pod</a></li>
       </ul>
     </li>
-    <li><a href="#以yaml或json描述文件创建pod">以YAML或JSON描述文件创建pod</a></li>
-    <li><a href="#使用标签组织pod">使用标签组织pod</a></li>
-    <li><a href="#通过标签选择器列出pod子集">通过标签选择器列出pod子集</a></li>
-    <li><a href="#使用标签选择器来约束pod调度">使用标签选择器来约束pod调度</a></li>
-    <li><a href="#注解pod">注解pod</a></li>
-    <li><a href="#使用命名空间对资源进行分组">使用命名空间对资源进行分组</a>
+    <li><a href="#第四章副本机制和其他控制器部署托管的pod">第四章：副本机制和其他控制器：部署托管的pod</a>
       <ul>
-        <li><a href="#发现创建管理命名空间">发现、创建、管理命名空间</a></li>
+        <li><a href="#保持pod健康存活探针-liveness-probe">保持pod健康：存活探针 (liveness probe)</a></li>
+        <li><a href="#replicationcontroller">ReplicationController</a>
+          <ul>
+            <li><a href="#replicationcontroller的协调流程">ReplicationController的协调流程</a></li>
+            <li><a href="#创建rc">创建RC</a></li>
+            <li><a href="#修改pod模板">修改pod模板</a></li>
+            <li><a href="#水平缩放pod">水平缩放pod</a></li>
+            <li><a href="#删除rc">删除RC</a></li>
+          </ul>
+        </li>
+        <li><a href="#使用replicaset而不是replicationcontroller">使用ReplicaSet而不是ReplicationController</a>
+          <ul>
+            <li><a href="#定义replicaset">定义ReplicaSet</a></li>
+            <li><a href="#replicaset强大的标签选择器">ReplicaSet强大的标签选择器</a></li>
+          </ul>
+        </li>
+        <li><a href="#使用daemonset在每个节点上运行一个pod">使用DaemonSet在每个节点上运行一个pod</a></li>
+        <li><a href="#运行执行单个任务的pod">运行执行单个任务的pod</a>
+          <ul>
+            <li><a href="#定义job资源">定义Job资源</a></li>
+            <li><a href="#在job中运行多个pod实例">在Job中运行多个pod实例</a></li>
+            <li><a href="#限制job-pod完成任务的时间">限制Job pod完成任务的时间</a></li>
+          </ul>
+        </li>
+        <li><a href="#安排job定期运行或在将来运行一次">安排Job定期运行或在将来运行一次</a>
+          <ul>
+            <li><a href="#创建cronjob">创建CronJob</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
-    <li><a href="#停止和移除pod">停止和移除pod</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#保持pod健康存活探针-liveness-probe">保持pod健康：存活探针 (liveness probe)</a></li>
-    <li><a href="#replicationcontroller">ReplicationController</a>
+    <li><a href="#服务让客户端发现pod并与之通信">服务：让客户端发现pod并与之通信</a>
       <ul>
-        <li><a href="#replicationcontroller的协调流程">ReplicationController的协调流程</a></li>
-        <li><a href="#创建rc">创建RC</a></li>
-        <li><a href="#修改pod模板">修改pod模板</a></li>
-        <li><a href="#水平缩放pod">水平缩放pod</a></li>
-        <li><a href="#删除rc">删除RC</a></li>
+        <li><a href="#介绍服务">介绍服务</a>
+          <ul>
+            <li><a href="#创建服务">创建服务</a></li>
+            <li><a href="#在运行的容器中远程执行命令">在运行的容器中远程执行命令</a></li>
+            <li><a href="#会话亲和性">会话亲和性</a></li>
+            <li><a href="#端口命名">端口命名</a></li>
+            <li><a href="#服务发现">服务发现</a></li>
+          </ul>
+        </li>
+        <li><a href="#连接集群外部的服务">连接集群外部的服务</a>
+          <ul>
+            <li><a href="#介绍endpoints资源">介绍Endpoints资源</a></li>
+            <li><a href="#手动配置服务的endpoint">手动配置服务的endpoint</a></li>
+            <li><a href="#为外部服务创建别名">为外部服务创建别名</a></li>
+          </ul>
+        </li>
+        <li><a href="#将服务暴露给外部客户端">将服务暴露给外部客户端</a>
+          <ul>
+            <li><a href="#使用nodeport类型的服务">使用NodePort类型的服务</a></li>
+            <li><a href="#创建loadbalance类型的服务">创建LoadBalance类型的服务</a></li>
+            <li><a href="#了解外部连接的特性">了解外部连接的特性</a></li>
+            <li><a href="#客户端ip是不记录的">客户端IP是不记录的</a></li>
+          </ul>
+        </li>
+        <li><a href="#通过ingress暴露服务">通过Ingress暴露服务</a>
+          <ul>
+            <li><a href="#通过相同的ingress暴露多个服务">通过相同的ingress暴露多个服务</a></li>
+            <li><a href="#配置ingress处理tls传输">配置Ingress处理TLS传输</a></li>
+          </ul>
+        </li>
+        <li><a href="#pod就绪后发出信号">pod就绪后发出信号</a>
+          <ul>
+            <li><a href="#介绍就绪探针">介绍就绪探针</a></li>
+            <li><a href="#向pod中添加就绪探针">向pod中添加就绪探针</a></li>
+          </ul>
+        </li>
+        <li><a href="#使用headless服务来发现独立的pod">使用headless服务来发现独立的pod</a></li>
       </ul>
     </li>
-    <li><a href="#使用replicaset而不是replicationcontroller">使用ReplicaSet而不是ReplicationController</a>
-      <ul>
-        <li><a href="#定义replicaset">定义ReplicaSet</a></li>
-        <li><a href="#replicaset强大的标签选择器">ReplicaSet强大的标签选择器</a></li>
-      </ul>
-    </li>
-    <li><a href="#使用daemonset在每个节点上运行一个pod">使用DaemonSet在每个节点上运行一个pod</a></li>
-    <li><a href="#运行执行单个任务的pod">运行执行单个任务的pod</a>
-      <ul>
-        <li><a href="#定义job资源">定义Job资源</a></li>
-        <li><a href="#在job中运行多个pod实例">在Job中运行多个pod实例</a></li>
-        <li><a href="#限制job-pod完成任务的时间">限制Job pod完成任务的时间</a></li>
-      </ul>
-    </li>
-    <li><a href="#安排job定期运行或在将来运行一次">安排Job定期运行或在将来运行一次</a>
-      <ul>
-        <li><a href="#创建cronjob">创建CronJob</a></li>
-      </ul>
-    </li>
-  </ul>
-
-  <ul>
-    <li><a href="#介绍服务">介绍服务</a>
-      <ul>
-        <li><a href="#创建服务">创建服务</a></li>
-        <li><a href="#在运行的容器中远程执行命令">在运行的容器中远程执行命令</a></li>
-        <li><a href="#会话亲和性">会话亲和性</a></li>
-        <li><a href="#端口命名">端口命名</a></li>
-        <li><a href="#服务发现">服务发现</a></li>
-      </ul>
-    </li>
-    <li><a href="#连接集群外部的服务">连接集群外部的服务</a>
-      <ul>
-        <li><a href="#介绍endpoints资源">介绍Endpoints资源</a></li>
-        <li><a href="#手动配置服务的endpoint">手动配置服务的endpoint</a></li>
-        <li><a href="#为外部服务创建别名">为外部服务创建别名</a></li>
-      </ul>
-    </li>
-    <li><a href="#将服务暴露给外部客户端">将服务暴露给外部客户端</a>
-      <ul>
-        <li><a href="#使用nodeport类型的服务">使用NodePort类型的服务</a></li>
-        <li><a href="#创建loadbalance类型的服务">创建LoadBalance类型的服务</a></li>
-        <li><a href="#了解外部连接的特性">了解外部连接的特性</a></li>
-        <li><a href="#客户端ip是不记录的">客户端IP是不记录的</a></li>
-      </ul>
-    </li>
-    <li><a href="#通过ingress暴露服务">通过Ingress暴露服务</a>
-      <ul>
-        <li><a href="#通过相同的ingress暴露多个服务">通过相同的ingress暴露多个服务</a></li>
-        <li><a href="#配置ingress处理tls传输">配置Ingress处理TLS传输</a></li>
-      </ul>
-    </li>
-    <li><a href="#pod就绪后发出信号">pod就绪后发出信号</a>
-      <ul>
-        <li><a href="#介绍就绪探针">介绍就绪探针</a></li>
-        <li><a href="#向pod中添加就绪探针">向pod中添加就绪探针</a></li>
-      </ul>
-    </li>
-    <li><a href="#使用headless服务来发现独立的pod">使用headless服务来发现独立的pod</a></li>
   </ul>
 </nav>
 

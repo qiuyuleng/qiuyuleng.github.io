@@ -14,7 +14,7 @@ https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository Take
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://example.org/docs/stage2/docker-in-action/" /><meta property="article:section" content="docs" />
 
-<meta property="article:modified_time" content="2023-02-22T23:33:55+08:00" />
+<meta property="article:modified_time" content="2023-02-23T23:48:22+08:00" />
 <title>Docker in Action | My CS Learning</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
@@ -247,115 +247,122 @@ https://github.com/alex-shpak/hugo-book
   
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#chapter-1-welcome-to-docker">Chapter 1: Welcome to Docker</a>
+    <li><a href="#introduction">Introduction</a>
       <ul>
-        <li><a href="#what-is-docker">What is Docker?</a></li>
-        <li><a href="#what-problems-does-docker-solve">What problems does Docker solve?</a></li>
-        <li><a href="#why-is-docker-important--when-and-where-to-use-docker">Why is Docker Important? &amp; When and where to use Docker?</a></li>
-        <li><a href="#getting-help-with-the-docker-command-line">Getting help with the Docker command line</a></li>
+        <li><a href="#chapter-1-welcome-to-docker">Chapter 1: Welcome to Docker</a>
+          <ul>
+            <li><a href="#what-is-docker">What is Docker?</a></li>
+            <li><a href="#what-problems-does-docker-solve">What problems does Docker solve?</a></li>
+            <li><a href="#why-is-docker-important--when-and-where-to-use-docker">Why is Docker Important? &amp; When and where to use Docker?</a></li>
+            <li><a href="#getting-help-with-the-docker-command-line">Getting help with the Docker command line</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
-  </ul>
-
-  <ul>
-    <li><a href="#chapter-2-running-software-in-containers">Chapter 2: Running software in containers</a>
+    <li><a href="#part-1-process-isolation-and-environment-independent-computing">Part 1: Process isolation and environment-independent computing</a>
       <ul>
-        <li><a href="#controlling-containers-building-a-website-monitor">Controlling containers: Building a website monitor</a></li>
-        <li><a href="#creating-and-starting-a-new-container-detached-containers">Creating and starting a new container: detached containers</a></li>
-        <li><a href="#running-interactive-containers">Running interactive containers</a></li>
-        <li><a href="#listing-stopping-restarting-and-viewing-output-of-containers">Listing, stopping, restarting, and viewing output of containers</a></li>
-        <li><a href="#solved-problems-and-the-pid-namespace">Solved problems and the PID namespace</a></li>
-        <li><a href="#eliminating-metaconflicts-building-a-website-farm">Eliminating metaconflicts: Building a website farm</a></li>
-        <li><a href="#building-environment-agnostic-systems">Building environment-agnostic systems</a></li>
-        <li><a href="#building-durable-containers">Building durable containers</a></li>
-        <li><a href="#cleaning-up">Cleaning up</a></li>
+        <li><a href="#chapter-2-running-software-in-containers">Chapter 2: Running software in containers</a>
+          <ul>
+            <li><a href="#controlling-containers-building-a-website-monitor">Controlling containers: Building a website monitor</a></li>
+            <li><a href="#creating-and-starting-a-new-container-detached-containers">Creating and starting a new container: detached containers</a></li>
+            <li><a href="#running-interactive-containers">Running interactive containers</a></li>
+            <li><a href="#listing-stopping-restarting-and-viewing-output-of-containers">Listing, stopping, restarting, and viewing output of containers</a></li>
+            <li><a href="#solved-problems-and-the-pid-namespace">Solved problems and the PID namespace</a></li>
+            <li><a href="#eliminating-metaconflicts-building-a-website-farm">Eliminating metaconflicts: Building a website farm</a></li>
+            <li><a href="#building-environment-agnostic-systems">Building environment-agnostic systems</a></li>
+            <li><a href="#building-durable-containers">Building durable containers</a></li>
+            <li><a href="#cleaning-up">Cleaning up</a></li>
+          </ul>
+        </li>
+        <li><a href="#chapter-3-software-installation-simplified">Chapter 3: Software installation simplified</a>
+          <ul>
+            <li><a href="#identifying-software">Identifying software</a></li>
+            <li><a href="#finding-and-installing-software">Finding and installing software</a></li>
+            <li><a href="#installation-files-and-isolation">Installation files and isolation</a></li>
+          </ul>
+        </li>
+        <li><a href="#chapter-4-working-with-storage-and-volumes">Chapter 4: Working with storage and volumes</a>
+          <ul>
+            <li><a href="#file-trees-and-mount-points">File trees and mount points</a></li>
+            <li><a href="#bind-mounts">Bind mounts</a></li>
+            <li><a href="#in-memory-storage">In-memory storage</a></li>
+            <li><a href="#docker-volumes">Docker volumes</a></li>
+            <li><a href="#shared-mount-points-and-sharing-files">Shared mount points and sharing files</a></li>
+            <li><a href="#cleaning-up-volumes">Cleaning up volumes</a></li>
+            <li><a href="#advanced-storage-with-volume-plugins">Advanced storage with volume plugins</a></li>
+          </ul>
+        </li>
+        <li><a href="#chapter-5-single-host-networking">Chapter 5: Single-host networking</a>
+          <ul>
+            <li><a href="#networking-background">Networking background</a></li>
+            <li><a href="#docker-container-networking">Docker container networking</a></li>
+            <li><a href="#special-container-networks-host-and-none">Special container networks: host and none</a></li>
+            <li><a href="#handling-inbound-traffic-with-nodeport-publishing">Handling inbound traffic with NodePort publishing</a></li>
+            <li><a href="#container-networking-caveats-and-customizations">Container networking caveats and customizations</a></li>
+          </ul>
+        </li>
+        <li><a href="#chapter6-limiting-risk-with-resource-controls">Chapter6: Limiting risk with resource controls</a>
+          <ul>
+            <li><a href="#set-resource-allowances">Set resource allowances</a></li>
+            <li><a href="#sharing-memory">Sharing memory</a></li>
+            <li><a href="#understanding-users">Understanding users</a></li>
+            <li><a href="#adjusting-os-feature-access-with-capabilities">Adjusting OS feature access with capabilities</a></li>
+            <li><a href="#running-a-container-with-full-privileges">Running a container with full privileges</a></li>
+            <li><a href="#strengthening-containers-with-enhanced-tools">Strengthening containers with enhanced tools</a></li>
+            <li><a href="#building-use-case-appropriate-containers">Building use-case-appropriate containers</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
-    <li><a href="#chapter-3-software-installation-simplified">Chapter 3: Software installation simplified</a>
+    <li><a href="#part-2-packaging-software-for-distribution">Part 2: Packaging software for distribution</a>
       <ul>
-        <li><a href="#identifying-software">Identifying software</a></li>
-        <li><a href="#finding-and-installing-software">Finding and installing software</a></li>
-        <li><a href="#installation-files-and-isolation">Installation files and isolation</a></li>
+        <li><a href="#chapter-7-packaging-software-in-images">Chapter 7: Packaging software in images</a>
+          <ul>
+            <li><a href="#building-docker-images-from-a-container">Building Docker images from a container</a></li>
+            <li><a href="#going-deep-on-docker-images-and-layers">Going deep on Docker images and layers</a></li>
+            <li><a href="#exporting-and-importing-flat-filesystems">Exporting and importing flat filesystems</a></li>
+            <li><a href="#versioning-best-practices">Versioning best practices</a></li>
+          </ul>
+        </li>
+        <li><a href="#chapter-8-building-images-automatically-with-dockerfiles">Chapter 8: Building images automatically with Dockerfiles</a>
+          <ul>
+            <li><a href="#packaging-git-with-dockerfile">Packaging Git with Dockerfile</a></li>
+            <li><a href="#a-dockerfile-primer">A Dockerfile primer</a></li>
+            <li><a href="#injecting-downstream-build-time-behavior">Injecting downstream build-time behavior</a></li>
+            <li><a href="#using-startup-scripts-and-multiprocess-containers">Using startup scripts and multiprocess containers</a></li>
+            <li><a href="#building-hardened-application-images">Building hardened application images</a></li>
+          </ul>
+        </li>
+        <li><a href="#chapter-9-public-and-private-software-distribution">Chapter 9: Public and private software distribution</a>
+          <ul>
+            <li><a href="#choosing-a-distribution-method">Choosing a distribution method</a></li>
+            <li><a href="#publishing-with-hosted-registries">Publishing with hosted registries</a></li>
+            <li><a href="#introducing-private-registries">Introducing private registries</a></li>
+            <li><a href="#manual-image-publishing-and-distribution">Manual image publishing and distribution</a></li>
+            <li><a href="#image-source-distribution-workflows">Image source-distribution workflows</a></li>
+          </ul>
+        </li>
+        <li><a href="#chapter-10-image-pipelines">Chapter 10: Image pipelines</a>
+          <ul>
+            <li><a href="#goals-of-an-image-build-pipeline">Goals of an image build pipeline</a></li>
+            <li><a href="#patterns-for-building-images">Patterns for building images</a></li>
+            <li><a href="#record-metadata-at-image-build-time">Record metadata at image build time</a></li>
+            <li><a href="#testing-images-in-a-build-pipeline">Testing images in a build pipeline</a></li>
+            <li><a href="#patterns-for-tagging-images">Patterns for tagging images</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
-    <li><a href="#chapter-4-working-with-storage-and-volumes">Chapter 4: Working with storage and volumes</a>
+    <li><a href="#part-3-higher-level-abstractions-and-orchestration">Part 3: Higher-level abstractions and orchestration</a>
       <ul>
-        <li><a href="#file-trees-and-mount-points">File trees and mount points</a></li>
-        <li><a href="#bind-mounts">Bind mounts</a></li>
-        <li><a href="#in-memory-storage">In-memory storage</a></li>
-        <li><a href="#docker-volumes">Docker volumes</a></li>
-        <li><a href="#shared-mount-points-and-sharing-files">Shared mount points and sharing files</a></li>
-        <li><a href="#cleaning-up-volumes">Cleaning up volumes</a></li>
-        <li><a href="#advanced-storage-with-volume-plugins">Advanced storage with volume plugins</a></li>
-      </ul>
-    </li>
-    <li><a href="#chapter-5-single-host-networking">Chapter 5: Single-host networking</a>
-      <ul>
-        <li><a href="#networking-background">Networking background</a></li>
-        <li><a href="#docker-container-networking">Docker container networking</a></li>
-        <li><a href="#special-container-networks-host-and-none">Special container networks: host and none</a></li>
-        <li><a href="#handling-inbound-traffic-with-nodeport-publishing">Handling inbound traffic with NodePort publishing</a></li>
-        <li><a href="#container-networking-caveats-and-customizations">Container networking caveats and customizations</a></li>
-      </ul>
-    </li>
-    <li><a href="#chapter6-limiting-risk-with-resource-controls">Chapter6: Limiting risk with resource controls</a>
-      <ul>
-        <li><a href="#set-resource-allowances">Set resource allowances</a></li>
-        <li><a href="#sharing-memory">Sharing memory</a></li>
-        <li><a href="#understanding-users">Understanding users</a></li>
-        <li><a href="#adjusting-os-feature-access-with-capabilities">Adjusting OS feature access with capabilities</a></li>
-        <li><a href="#running-a-container-with-full-privileges">Running a container with full privileges</a></li>
-        <li><a href="#strengthening-containers-with-enhanced-tools">Strengthening containers with enhanced tools</a></li>
-        <li><a href="#building-use-case-appropriate-containers">Building use-case-appropriate containers</a></li>
-      </ul>
-    </li>
-  </ul>
-
-  <ul>
-    <li><a href="#chapter-7-packaging-software-in-images">Chapter 7: Packaging software in images</a>
-      <ul>
-        <li><a href="#building-docker-images-from-a-container">Building Docker images from a container</a></li>
-        <li><a href="#going-deep-on-docker-images-and-layers">Going deep on Docker images and layers</a></li>
-        <li><a href="#exporting-and-importing-flat-filesystems">Exporting and importing flat filesystems</a></li>
-        <li><a href="#versioning-best-practices">Versioning best practices</a></li>
-      </ul>
-    </li>
-    <li><a href="#chapter-8-building-images-automatically-with-dockerfiles">Chapter 8: Building images automatically with Dockerfiles</a>
-      <ul>
-        <li><a href="#packaging-git-with-dockerfile">Packaging Git with Dockerfile</a></li>
-        <li><a href="#a-dockerfile-primer">A Dockerfile primer</a></li>
-        <li><a href="#injecting-downstream-build-time-behavior">Injecting downstream build-time behavior</a></li>
-        <li><a href="#using-startup-scripts-and-multiprocess-containers">Using startup scripts and multiprocess containers</a></li>
-        <li><a href="#building-hardened-application-images">Building hardened application images</a></li>
-      </ul>
-    </li>
-    <li><a href="#chapter-9-public-and-private-software-distribution">Chapter 9: Public and private software distribution</a>
-      <ul>
-        <li><a href="#choosing-a-distribution-method">Choosing a distribution method</a></li>
-        <li><a href="#publishing-with-hosted-registries">Publishing with hosted registries</a></li>
-        <li><a href="#introducing-private-registries">Introducing private registries</a></li>
-        <li><a href="#manual-image-publishing-and-distribution">Manual image publishing and distribution</a></li>
-        <li><a href="#image-source-distribution-workflows">Image source-distribution workflows</a></li>
-      </ul>
-    </li>
-    <li><a href="#chapter-10-image-pipelines">Chapter 10: Image pipelines</a>
-      <ul>
-        <li><a href="#goals-of-an-image-build-pipeline">Goals of an image build pipeline</a></li>
-        <li><a href="#patterns-for-building-images">Patterns for building images</a></li>
-        <li><a href="#record-metadata-at-image-build-time">Record metadata at image build time</a></li>
-        <li><a href="#testing-images-in-a-build-pipeline">Testing images in a build pipeline</a></li>
-        <li><a href="#patterns-for-tagging-images">Patterns for tagging images</a></li>
-      </ul>
-    </li>
-  </ul>
-
-  <ul>
-    <li><a href="#chapter-11-service-with-docker-and-compose">Chapter 11: Service with Docker and Compose</a>
-      <ul>
-        <li><a href="#a-service-hello-world">A service &ldquo;Hello World!&rdquo;</a></li>
-        <li><a href="#declarative-service-environments-with-compose-v3">Declarative service environments with Compose V3</a></li>
-        <li><a href="#stateful-services-and-preserving-data">Stateful services and preserving data</a></li>
-        <li><a href="#load-balancing-service-discovery-and-networks-with-compose">Load balancing, service discovery, and networks with Compose</a></li>
+        <li><a href="#chapter-11-service-with-docker-and-compose">Chapter 11: Service with Docker and Compose</a>
+          <ul>
+            <li><a href="#a-service-hello-world">A service &ldquo;Hello World!&rdquo;</a></li>
+            <li><a href="#declarative-service-environments-with-compose-v3">Declarative service environments with Compose V3</a></li>
+            <li><a href="#stateful-services-and-preserving-data">Stateful services and preserving data</a></li>
+            <li><a href="#load-balancing-service-discovery-and-networks-with-compose">Load balancing, service discovery, and networks with Compose</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
   </ul>
@@ -2333,115 +2340,122 @@ FROM app-image as default
   
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#chapter-1-welcome-to-docker">Chapter 1: Welcome to Docker</a>
+    <li><a href="#introduction">Introduction</a>
       <ul>
-        <li><a href="#what-is-docker">What is Docker?</a></li>
-        <li><a href="#what-problems-does-docker-solve">What problems does Docker solve?</a></li>
-        <li><a href="#why-is-docker-important--when-and-where-to-use-docker">Why is Docker Important? &amp; When and where to use Docker?</a></li>
-        <li><a href="#getting-help-with-the-docker-command-line">Getting help with the Docker command line</a></li>
+        <li><a href="#chapter-1-welcome-to-docker">Chapter 1: Welcome to Docker</a>
+          <ul>
+            <li><a href="#what-is-docker">What is Docker?</a></li>
+            <li><a href="#what-problems-does-docker-solve">What problems does Docker solve?</a></li>
+            <li><a href="#why-is-docker-important--when-and-where-to-use-docker">Why is Docker Important? &amp; When and where to use Docker?</a></li>
+            <li><a href="#getting-help-with-the-docker-command-line">Getting help with the Docker command line</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
-  </ul>
-
-  <ul>
-    <li><a href="#chapter-2-running-software-in-containers">Chapter 2: Running software in containers</a>
+    <li><a href="#part-1-process-isolation-and-environment-independent-computing">Part 1: Process isolation and environment-independent computing</a>
       <ul>
-        <li><a href="#controlling-containers-building-a-website-monitor">Controlling containers: Building a website monitor</a></li>
-        <li><a href="#creating-and-starting-a-new-container-detached-containers">Creating and starting a new container: detached containers</a></li>
-        <li><a href="#running-interactive-containers">Running interactive containers</a></li>
-        <li><a href="#listing-stopping-restarting-and-viewing-output-of-containers">Listing, stopping, restarting, and viewing output of containers</a></li>
-        <li><a href="#solved-problems-and-the-pid-namespace">Solved problems and the PID namespace</a></li>
-        <li><a href="#eliminating-metaconflicts-building-a-website-farm">Eliminating metaconflicts: Building a website farm</a></li>
-        <li><a href="#building-environment-agnostic-systems">Building environment-agnostic systems</a></li>
-        <li><a href="#building-durable-containers">Building durable containers</a></li>
-        <li><a href="#cleaning-up">Cleaning up</a></li>
+        <li><a href="#chapter-2-running-software-in-containers">Chapter 2: Running software in containers</a>
+          <ul>
+            <li><a href="#controlling-containers-building-a-website-monitor">Controlling containers: Building a website monitor</a></li>
+            <li><a href="#creating-and-starting-a-new-container-detached-containers">Creating and starting a new container: detached containers</a></li>
+            <li><a href="#running-interactive-containers">Running interactive containers</a></li>
+            <li><a href="#listing-stopping-restarting-and-viewing-output-of-containers">Listing, stopping, restarting, and viewing output of containers</a></li>
+            <li><a href="#solved-problems-and-the-pid-namespace">Solved problems and the PID namespace</a></li>
+            <li><a href="#eliminating-metaconflicts-building-a-website-farm">Eliminating metaconflicts: Building a website farm</a></li>
+            <li><a href="#building-environment-agnostic-systems">Building environment-agnostic systems</a></li>
+            <li><a href="#building-durable-containers">Building durable containers</a></li>
+            <li><a href="#cleaning-up">Cleaning up</a></li>
+          </ul>
+        </li>
+        <li><a href="#chapter-3-software-installation-simplified">Chapter 3: Software installation simplified</a>
+          <ul>
+            <li><a href="#identifying-software">Identifying software</a></li>
+            <li><a href="#finding-and-installing-software">Finding and installing software</a></li>
+            <li><a href="#installation-files-and-isolation">Installation files and isolation</a></li>
+          </ul>
+        </li>
+        <li><a href="#chapter-4-working-with-storage-and-volumes">Chapter 4: Working with storage and volumes</a>
+          <ul>
+            <li><a href="#file-trees-and-mount-points">File trees and mount points</a></li>
+            <li><a href="#bind-mounts">Bind mounts</a></li>
+            <li><a href="#in-memory-storage">In-memory storage</a></li>
+            <li><a href="#docker-volumes">Docker volumes</a></li>
+            <li><a href="#shared-mount-points-and-sharing-files">Shared mount points and sharing files</a></li>
+            <li><a href="#cleaning-up-volumes">Cleaning up volumes</a></li>
+            <li><a href="#advanced-storage-with-volume-plugins">Advanced storage with volume plugins</a></li>
+          </ul>
+        </li>
+        <li><a href="#chapter-5-single-host-networking">Chapter 5: Single-host networking</a>
+          <ul>
+            <li><a href="#networking-background">Networking background</a></li>
+            <li><a href="#docker-container-networking">Docker container networking</a></li>
+            <li><a href="#special-container-networks-host-and-none">Special container networks: host and none</a></li>
+            <li><a href="#handling-inbound-traffic-with-nodeport-publishing">Handling inbound traffic with NodePort publishing</a></li>
+            <li><a href="#container-networking-caveats-and-customizations">Container networking caveats and customizations</a></li>
+          </ul>
+        </li>
+        <li><a href="#chapter6-limiting-risk-with-resource-controls">Chapter6: Limiting risk with resource controls</a>
+          <ul>
+            <li><a href="#set-resource-allowances">Set resource allowances</a></li>
+            <li><a href="#sharing-memory">Sharing memory</a></li>
+            <li><a href="#understanding-users">Understanding users</a></li>
+            <li><a href="#adjusting-os-feature-access-with-capabilities">Adjusting OS feature access with capabilities</a></li>
+            <li><a href="#running-a-container-with-full-privileges">Running a container with full privileges</a></li>
+            <li><a href="#strengthening-containers-with-enhanced-tools">Strengthening containers with enhanced tools</a></li>
+            <li><a href="#building-use-case-appropriate-containers">Building use-case-appropriate containers</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
-    <li><a href="#chapter-3-software-installation-simplified">Chapter 3: Software installation simplified</a>
+    <li><a href="#part-2-packaging-software-for-distribution">Part 2: Packaging software for distribution</a>
       <ul>
-        <li><a href="#identifying-software">Identifying software</a></li>
-        <li><a href="#finding-and-installing-software">Finding and installing software</a></li>
-        <li><a href="#installation-files-and-isolation">Installation files and isolation</a></li>
+        <li><a href="#chapter-7-packaging-software-in-images">Chapter 7: Packaging software in images</a>
+          <ul>
+            <li><a href="#building-docker-images-from-a-container">Building Docker images from a container</a></li>
+            <li><a href="#going-deep-on-docker-images-and-layers">Going deep on Docker images and layers</a></li>
+            <li><a href="#exporting-and-importing-flat-filesystems">Exporting and importing flat filesystems</a></li>
+            <li><a href="#versioning-best-practices">Versioning best practices</a></li>
+          </ul>
+        </li>
+        <li><a href="#chapter-8-building-images-automatically-with-dockerfiles">Chapter 8: Building images automatically with Dockerfiles</a>
+          <ul>
+            <li><a href="#packaging-git-with-dockerfile">Packaging Git with Dockerfile</a></li>
+            <li><a href="#a-dockerfile-primer">A Dockerfile primer</a></li>
+            <li><a href="#injecting-downstream-build-time-behavior">Injecting downstream build-time behavior</a></li>
+            <li><a href="#using-startup-scripts-and-multiprocess-containers">Using startup scripts and multiprocess containers</a></li>
+            <li><a href="#building-hardened-application-images">Building hardened application images</a></li>
+          </ul>
+        </li>
+        <li><a href="#chapter-9-public-and-private-software-distribution">Chapter 9: Public and private software distribution</a>
+          <ul>
+            <li><a href="#choosing-a-distribution-method">Choosing a distribution method</a></li>
+            <li><a href="#publishing-with-hosted-registries">Publishing with hosted registries</a></li>
+            <li><a href="#introducing-private-registries">Introducing private registries</a></li>
+            <li><a href="#manual-image-publishing-and-distribution">Manual image publishing and distribution</a></li>
+            <li><a href="#image-source-distribution-workflows">Image source-distribution workflows</a></li>
+          </ul>
+        </li>
+        <li><a href="#chapter-10-image-pipelines">Chapter 10: Image pipelines</a>
+          <ul>
+            <li><a href="#goals-of-an-image-build-pipeline">Goals of an image build pipeline</a></li>
+            <li><a href="#patterns-for-building-images">Patterns for building images</a></li>
+            <li><a href="#record-metadata-at-image-build-time">Record metadata at image build time</a></li>
+            <li><a href="#testing-images-in-a-build-pipeline">Testing images in a build pipeline</a></li>
+            <li><a href="#patterns-for-tagging-images">Patterns for tagging images</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
-    <li><a href="#chapter-4-working-with-storage-and-volumes">Chapter 4: Working with storage and volumes</a>
+    <li><a href="#part-3-higher-level-abstractions-and-orchestration">Part 3: Higher-level abstractions and orchestration</a>
       <ul>
-        <li><a href="#file-trees-and-mount-points">File trees and mount points</a></li>
-        <li><a href="#bind-mounts">Bind mounts</a></li>
-        <li><a href="#in-memory-storage">In-memory storage</a></li>
-        <li><a href="#docker-volumes">Docker volumes</a></li>
-        <li><a href="#shared-mount-points-and-sharing-files">Shared mount points and sharing files</a></li>
-        <li><a href="#cleaning-up-volumes">Cleaning up volumes</a></li>
-        <li><a href="#advanced-storage-with-volume-plugins">Advanced storage with volume plugins</a></li>
-      </ul>
-    </li>
-    <li><a href="#chapter-5-single-host-networking">Chapter 5: Single-host networking</a>
-      <ul>
-        <li><a href="#networking-background">Networking background</a></li>
-        <li><a href="#docker-container-networking">Docker container networking</a></li>
-        <li><a href="#special-container-networks-host-and-none">Special container networks: host and none</a></li>
-        <li><a href="#handling-inbound-traffic-with-nodeport-publishing">Handling inbound traffic with NodePort publishing</a></li>
-        <li><a href="#container-networking-caveats-and-customizations">Container networking caveats and customizations</a></li>
-      </ul>
-    </li>
-    <li><a href="#chapter6-limiting-risk-with-resource-controls">Chapter6: Limiting risk with resource controls</a>
-      <ul>
-        <li><a href="#set-resource-allowances">Set resource allowances</a></li>
-        <li><a href="#sharing-memory">Sharing memory</a></li>
-        <li><a href="#understanding-users">Understanding users</a></li>
-        <li><a href="#adjusting-os-feature-access-with-capabilities">Adjusting OS feature access with capabilities</a></li>
-        <li><a href="#running-a-container-with-full-privileges">Running a container with full privileges</a></li>
-        <li><a href="#strengthening-containers-with-enhanced-tools">Strengthening containers with enhanced tools</a></li>
-        <li><a href="#building-use-case-appropriate-containers">Building use-case-appropriate containers</a></li>
-      </ul>
-    </li>
-  </ul>
-
-  <ul>
-    <li><a href="#chapter-7-packaging-software-in-images">Chapter 7: Packaging software in images</a>
-      <ul>
-        <li><a href="#building-docker-images-from-a-container">Building Docker images from a container</a></li>
-        <li><a href="#going-deep-on-docker-images-and-layers">Going deep on Docker images and layers</a></li>
-        <li><a href="#exporting-and-importing-flat-filesystems">Exporting and importing flat filesystems</a></li>
-        <li><a href="#versioning-best-practices">Versioning best practices</a></li>
-      </ul>
-    </li>
-    <li><a href="#chapter-8-building-images-automatically-with-dockerfiles">Chapter 8: Building images automatically with Dockerfiles</a>
-      <ul>
-        <li><a href="#packaging-git-with-dockerfile">Packaging Git with Dockerfile</a></li>
-        <li><a href="#a-dockerfile-primer">A Dockerfile primer</a></li>
-        <li><a href="#injecting-downstream-build-time-behavior">Injecting downstream build-time behavior</a></li>
-        <li><a href="#using-startup-scripts-and-multiprocess-containers">Using startup scripts and multiprocess containers</a></li>
-        <li><a href="#building-hardened-application-images">Building hardened application images</a></li>
-      </ul>
-    </li>
-    <li><a href="#chapter-9-public-and-private-software-distribution">Chapter 9: Public and private software distribution</a>
-      <ul>
-        <li><a href="#choosing-a-distribution-method">Choosing a distribution method</a></li>
-        <li><a href="#publishing-with-hosted-registries">Publishing with hosted registries</a></li>
-        <li><a href="#introducing-private-registries">Introducing private registries</a></li>
-        <li><a href="#manual-image-publishing-and-distribution">Manual image publishing and distribution</a></li>
-        <li><a href="#image-source-distribution-workflows">Image source-distribution workflows</a></li>
-      </ul>
-    </li>
-    <li><a href="#chapter-10-image-pipelines">Chapter 10: Image pipelines</a>
-      <ul>
-        <li><a href="#goals-of-an-image-build-pipeline">Goals of an image build pipeline</a></li>
-        <li><a href="#patterns-for-building-images">Patterns for building images</a></li>
-        <li><a href="#record-metadata-at-image-build-time">Record metadata at image build time</a></li>
-        <li><a href="#testing-images-in-a-build-pipeline">Testing images in a build pipeline</a></li>
-        <li><a href="#patterns-for-tagging-images">Patterns for tagging images</a></li>
-      </ul>
-    </li>
-  </ul>
-
-  <ul>
-    <li><a href="#chapter-11-service-with-docker-and-compose">Chapter 11: Service with Docker and Compose</a>
-      <ul>
-        <li><a href="#a-service-hello-world">A service &ldquo;Hello World!&rdquo;</a></li>
-        <li><a href="#declarative-service-environments-with-compose-v3">Declarative service environments with Compose V3</a></li>
-        <li><a href="#stateful-services-and-preserving-data">Stateful services and preserving data</a></li>
-        <li><a href="#load-balancing-service-discovery-and-networks-with-compose">Load balancing, service discovery, and networks with Compose</a></li>
+        <li><a href="#chapter-11-service-with-docker-and-compose">Chapter 11: Service with Docker and Compose</a>
+          <ul>
+            <li><a href="#a-service-hello-world">A service &ldquo;Hello World!&rdquo;</a></li>
+            <li><a href="#declarative-service-environments-with-compose-v3">Declarative service environments with Compose V3</a></li>
+            <li><a href="#stateful-services-and-preserving-data">Stateful services and preserving data</a></li>
+            <li><a href="#load-balancing-service-discovery-and-networks-with-compose">Load balancing, service discovery, and networks with Compose</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
   </ul>

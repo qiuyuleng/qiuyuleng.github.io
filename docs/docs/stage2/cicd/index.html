@@ -18,7 +18,7 @@ Section 3: Jenkins架构、术语、UI介绍、创建第一个Jenkins Job # Mast
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://example.org/docs/stage2/cicd/" /><meta property="article:section" content="docs" />
 
-
+<meta property="article:modified_time" content="2023-02-23T23:48:22+08:00" />
 <title>CI/CD | My CS Learning</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
@@ -251,33 +251,45 @@ https://github.com/alex-shpak/hugo-book
   
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#持续集成">持续集成</a></li>
-    <li><a href="#jenkins介绍">Jenkins介绍</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#master和slave架构">Master和Slave架构</a></li>
-    <li><a href="#关键术语">关键术语</a>
+    <li><a href="#section-1-持续集成和jenkins介绍">Section 1: 持续集成和Jenkins介绍</a>
       <ul>
-        <li><a href="#jenkins-ui">Jenkins UI</a></li>
-        <li><a href="#创建第一个jenkins-job">创建第一个Jenkins Job</a></li>
-        <li><a href="#运行第一个jenkins-job">运行第一个Jenkins Job</a></li>
+        <li><a href="#持续集成">持续集成</a></li>
+        <li><a href="#jenkins介绍">Jenkins介绍</a></li>
       </ul>
     </li>
-  </ul>
-
-  <ul>
-    <li><a href="#第一个基于maven的jenkins项目">第一个基于maven的Jenkins项目</a>
+    <li><a href="#section-2-环境配置和jenkins安装">Section 2: 环境配置和Jenkins安装</a></li>
+    <li><a href="#section-3-jenkins架构术语ui介绍创建第一个jenkins-job">Section 3: Jenkins架构、术语、UI介绍、创建第一个Jenkins Job</a>
       <ul>
-        <li><a href="#maven">Maven</a></li>
-        <li><a href="#在jenkins中进行源代码控制轮询">在Jenkins中进行源代码控制轮询</a></li>
+        <li><a href="#master和slave架构">Master和Slave架构</a></li>
+        <li><a href="#关键术语">关键术语</a>
+          <ul>
+            <li><a href="#jenkins-ui">Jenkins UI</a></li>
+            <li><a href="#创建第一个jenkins-job">创建第一个Jenkins Job</a></li>
+            <li><a href="#运行第一个jenkins-job">运行第一个Jenkins Job</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
-  </ul>
-
-  <ul>
-    <li><a href="#代码质量和代码覆盖率度量报告">代码质量和代码覆盖率度量报告</a></li>
-    <li><a href="#jenkins支持的其他构建系统">Jenkins支持的其他构建系统</a></li>
+    <li><a href="#section-4-用jenkins持续集成">Section 4: 用Jenkins持续集成</a>
+      <ul>
+        <li><a href="#第一个基于maven的jenkins项目">第一个基于maven的Jenkins项目</a>
+          <ul>
+            <li><a href="#maven">Maven</a></li>
+            <li><a href="#在jenkins中进行源代码控制轮询">在Jenkins中进行源代码控制轮询</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#section-5-jenkins-持续检查">Section 5: Jenkins 持续检查</a>
+      <ul>
+        <li><a href="#代码质量和代码覆盖率度量报告">代码质量和代码覆盖率度量报告</a></li>
+        <li><a href="#jenkins支持的其他构建系统">Jenkins支持的其他构建系统</a></li>
+      </ul>
+    </li>
+    <li><a href="#section-6-jenkins-持续交付">Section 6: Jenkins 持续交付</a></li>
+    <li><a href="#section-7-jenkins-pipeline-as-code-jenkinsfile">Section 7: Jenkins Pipeline as Code (Jenkinsfile)</a></li>
+    <li><a href="#section-8-jenkins和docker集成">Section 8: Jenkins和Docker集成</a></li>
+    <li><a href="#section-9-分布式构建">Section 9: 分布式构建</a></li>
   </ul>
 </nav>
 
@@ -594,33 +606,45 @@ https://github.com/alex-shpak/hugo-book
   
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#持续集成">持续集成</a></li>
-    <li><a href="#jenkins介绍">Jenkins介绍</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#master和slave架构">Master和Slave架构</a></li>
-    <li><a href="#关键术语">关键术语</a>
+    <li><a href="#section-1-持续集成和jenkins介绍">Section 1: 持续集成和Jenkins介绍</a>
       <ul>
-        <li><a href="#jenkins-ui">Jenkins UI</a></li>
-        <li><a href="#创建第一个jenkins-job">创建第一个Jenkins Job</a></li>
-        <li><a href="#运行第一个jenkins-job">运行第一个Jenkins Job</a></li>
+        <li><a href="#持续集成">持续集成</a></li>
+        <li><a href="#jenkins介绍">Jenkins介绍</a></li>
       </ul>
     </li>
-  </ul>
-
-  <ul>
-    <li><a href="#第一个基于maven的jenkins项目">第一个基于maven的Jenkins项目</a>
+    <li><a href="#section-2-环境配置和jenkins安装">Section 2: 环境配置和Jenkins安装</a></li>
+    <li><a href="#section-3-jenkins架构术语ui介绍创建第一个jenkins-job">Section 3: Jenkins架构、术语、UI介绍、创建第一个Jenkins Job</a>
       <ul>
-        <li><a href="#maven">Maven</a></li>
-        <li><a href="#在jenkins中进行源代码控制轮询">在Jenkins中进行源代码控制轮询</a></li>
+        <li><a href="#master和slave架构">Master和Slave架构</a></li>
+        <li><a href="#关键术语">关键术语</a>
+          <ul>
+            <li><a href="#jenkins-ui">Jenkins UI</a></li>
+            <li><a href="#创建第一个jenkins-job">创建第一个Jenkins Job</a></li>
+            <li><a href="#运行第一个jenkins-job">运行第一个Jenkins Job</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
-  </ul>
-
-  <ul>
-    <li><a href="#代码质量和代码覆盖率度量报告">代码质量和代码覆盖率度量报告</a></li>
-    <li><a href="#jenkins支持的其他构建系统">Jenkins支持的其他构建系统</a></li>
+    <li><a href="#section-4-用jenkins持续集成">Section 4: 用Jenkins持续集成</a>
+      <ul>
+        <li><a href="#第一个基于maven的jenkins项目">第一个基于maven的Jenkins项目</a>
+          <ul>
+            <li><a href="#maven">Maven</a></li>
+            <li><a href="#在jenkins中进行源代码控制轮询">在Jenkins中进行源代码控制轮询</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#section-5-jenkins-持续检查">Section 5: Jenkins 持续检查</a>
+      <ul>
+        <li><a href="#代码质量和代码覆盖率度量报告">代码质量和代码覆盖率度量报告</a></li>
+        <li><a href="#jenkins支持的其他构建系统">Jenkins支持的其他构建系统</a></li>
+      </ul>
+    </li>
+    <li><a href="#section-6-jenkins-持续交付">Section 6: Jenkins 持续交付</a></li>
+    <li><a href="#section-7-jenkins-pipeline-as-code-jenkinsfile">Section 7: Jenkins Pipeline as Code (Jenkinsfile)</a></li>
+    <li><a href="#section-8-jenkins和docker集成">Section 8: Jenkins和Docker集成</a></li>
+    <li><a href="#section-9-分布式构建">Section 9: 分布式构建</a></li>
   </ul>
 </nav>
 

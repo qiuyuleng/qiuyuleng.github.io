@@ -4,3 +4,6 @@ title = 'My CS Learning'
 theme = "hugo-book"
 publishDir = 'docs'
 enableGitInfo = true
+
+[markup.tableOfContents]
+  startLevel = 1
