@@ -1,8 +1,7 @@
 ---
 title: "Database"
 typora-root-url: ../
-date: 2023-03-28T16:05:32+08:00
-draft: false
+weight: 1
 ---
 
 

@@ -1,8 +1,7 @@
 ---
 title: "PostgreSQL"
 typora-root-url: ../
-date: 2023-03-28T16:04:26+08:00
-draft: false
+weight: 1
 ---
 
 # Installation and Configuration
