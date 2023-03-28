@@ -48,6 +48,20 @@ Section 3: Jenkins架构、术语、UI介绍、创建第一个Jenkins Job # Mast
     </item>
     
     <item>
+      <title>Database</title>
+      <link>http://example.org/docs/oatk/database/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/docs/oatk/database/</guid>
+      <description>AR: Why Intel&amp;rsquo;s driver is open-source, and Nvidia&amp;rsquo;s driver is not open-source. How about AMD?
+AMD也是开源的
+Intel和AMD开源是因为CPU指令集就那几种，大家都是统一的
+什么是CPU指令集：
+reduced instruction set computing 精简指令集，ARM complex &amp;hellip; 复杂指令集，Intel GPU的指令系统更复杂，有发送给不同单元的控制指令，还有发给流处理器并行执行的流处理器指令，暴露了GPU的指令页面在一定程度上就暴露了GPU的硬件设计（Open-sourcing their drivers would reveal a lot of how their hardware worked, and give away secrets to their competitors.）
+From Nvidia: Most customers require Nvidia to provide an e2e solution, which means Nvidia wholly responsible for product delivery and support, including the drivers. Therefore, Nvidia decide to retain source code control.</description>
+    </item>
+    
+    <item>
       <title>Docker in Action</title>
       <link>http://example.org/docs/stage2/docker-in-action/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -163,6 +177,18 @@ open system interconnection OSI 七层协议 越接近硬件的阶层为底层�
       
       <guid>http://example.org/docs/stage1/make_file/</guid>
       <description> 概述 # makefile关系到了整个系统的编译规则，哪些文件需要先编译，哪些后编译等等 自动化编译 Makefile的规则 # target ...: prerequisites ... command ... ... 如果prerequisites后面的文件比target文件新，就执行command 执行：make 一层层地找文件的依赖关系，直到最终编译出第一个目标文件 变量 $(obj) 自动推导 make看到.o文件会自动把.c文件加在依赖关系prerequisites中 clean make clean 才会执行 放在文件的最后 </description>
+    </item>
+    
+    <item>
+      <title>PostgreSQL</title>
+      <link>http://example.org/docs/oatk/postgresql/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/docs/oatk/postgresql/</guid>
+      <description>Installation and Configuration # Install PostgreSQL
+sudo apt install postgresql Connect to our PostgreSQL, modify password for postgres user
+sudo -u postgres psql template1 //sudo -u xxx to run the command as xxx user other than the default target user (usually root) ALTER USER postgres with encrypted password &amp;#39;your_password&amp;#39;; // in SQL prompt sudo systemctl restart postgresql.service Test connections from local machines
+sudo apt install postgresql-client psql --host your-servers-dns-or-ip --username postgres --password --dbname template1 // e.</description>
     </item>
     
     <item>
