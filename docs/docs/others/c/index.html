@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="title: &ldquo;C&rdquo; typora-root-url: ../ weight: 1
+程序的基本概念 # 程序和编程语言 # 汇编语言和机器语言的指令是一一对应的。
+把机器语言中一组一组的数字用助记符(Mnemonic)表示，直接用这些助记符写出汇编程序，然后让汇编器(Assembler)去查表把助记符替换成数字，也就把汇编语言翻译成了机器语言。
+汇编器就是做一个简单的替换工作。
+C语言到汇编语言到过程是编译（compile），是平台无关的（platform independent），把C语言编译成各种不同体系结构的机器指令。
+编译的过程不执行程序，只是把src翻译成机器指令。（编译型语言）
+什么是平台?
+一种平台，就是一种体系结构，就是一种指令集，就是一种机器语言
+另外有解释型（interpret）语言：它把脚本中的每一行当作一条命令解释执行，而不需要先生成包含机器指令的可执行文件再执行。代码会逐行被解释器读取并转换为计算机能够理解的机器码，然后立即执行。SHELL脚本也是解释型语言
+第一代：机器语言；第二代：汇编语言；第三代：C，C&#43;&#43;，python等；第四代：声明式，例如SQL语言">
+<meta name="theme-color" content="#FFFFFF">
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="" />
+<meta property="og:description" content="title: &ldquo;C&rdquo; typora-root-url: ../ weight: 1
+程序的基本概念 # 程序和编程语言 # 汇编语言和机器语言的指令是一一对应的。
+把机器语言中一组一组的数字用助记符(Mnemonic)表示，直接用这些助记符写出汇编程序，然后让汇编器(Assembler)去查表把助记符替换成数字，也就把汇编语言翻译成了机器语言。
+汇编器就是做一个简单的替换工作。
+C语言到汇编语言到过程是编译（compile），是平台无关的（platform independent），把C语言编译成各种不同体系结构的机器指令。
+编译的过程不执行程序，只是把src翻译成机器指令。（编译型语言）
+什么是平台?
+一种平台，就是一种体系结构，就是一种指令集，就是一种机器语言
+另外有解释型（interpret）语言：它把脚本中的每一行当作一条命令解释执行，而不需要先生成包含机器指令的可执行文件再执行。代码会逐行被解释器读取并转换为计算机能够理解的机器码，然后立即执行。SHELL脚本也是解释型语言
+第一代：机器语言；第二代：汇编语言；第三代：C，C&#43;&#43;，python等；第四代：声明式，例如SQL语言" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://example.org/docs/others/c/" /><meta property="article:section" content="docs" />
+
+
+<title>C | My CS Learning</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.c58292d36b18b675680ab9baea2029204537b839ea72f258746ec0f32ce8d6c8.css" integrity="sha256-xYKS02sYtnVoCrm66iApIEU3uDnqcvJYdG7A8yzo1sg=" crossorigin="anonymous">
+  <script defer src="/flexsearch.min.js"></script>
+  <script defer src="/en.search.min.b20483a265e0dbab92fd2aaeb838ed8bcf529e00c837e94437a839e94f88d925.js" integrity="sha256-sgSDomXg26uS/SquuDjti89SngDIN&#43;lEN6g56U&#43;I2SU=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>My CS Learning</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/stage1/ansible/" class="">Ansible</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/stage2/cicd/" class="">CI/CD</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/oatk/database/" class="">Database</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/stage2/docker-in-action/" class="">Docker in Action</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/stage1/git/" class="">Git</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/stage2/go/" class="">Go</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/stage2/k8s-in-action/" class="">K8s in Action</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/stage1/linux1/" class="">Linux1</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/stage2/linux2/" class="">Linux2</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/stage1/make_file/" class="">Make File</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/oatk/postgresql/" class="">PostgreSQL</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/stage1/tmux/" class="">Tmux</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/others/c/" class="active">C</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>C</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#程序的基本概念">程序的基本概念</a>
+      <ul>
+        <li><a href="#程序和编程语言">程序和编程语言</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><p>title: &ldquo;C&rdquo;
+typora-root-url: ../
+weight: 1</p>
+<h1 id="程序的基本概念">
+  程序的基本概念
+  <a class="anchor" href="#%e7%a8%8b%e5%ba%8f%e7%9a%84%e5%9f%ba%e6%9c%ac%e6%a6%82%e5%bf%b5">#</a>
+</h1>
+<h2 id="程序和编程语言">
+  程序和编程语言
+  <a class="anchor" href="#%e7%a8%8b%e5%ba%8f%e5%92%8c%e7%bc%96%e7%a8%8b%e8%af%ad%e8%a8%80">#</a>
+</h2>
+<p>汇编语言和机器语言的指令是一一对应的。</p>
+<p>把机器语言中一组一组的数字用助记符(Mnemonic)表示，直接用这些助记符写出汇编程序，然后让汇编器(Assembler)去查表把助记符替换成数字，也就把汇编语言翻译成了机器语言。</p>
+<p>汇编器就是做一个简单的替换工作。</p>
+<p>C语言到汇编语言到过程是编译（compile），是平台无关的（platform independent），把C语言编译成各种不同体系结构的机器指令。</p>
+<p><img src="/Users/lengqiuyu/Desktop/qiuyuleng.github.io/content/img/image-20230508202949027.png" alt="image-20230508202949027" /></p>
+<p>编译的过程不执行程序，只是把src翻译成机器指令。（编译型语言）</p>
+<blockquote>
+<p>什么是平台?</p>
+<p>一种平台，就是一种体系结构，就是一种指令集，就是一种机器语言</p>
+</blockquote>
+<p>另外有解释型（interpret）语言：它把脚本中的每一行当作一条命令解释执行，而不需要先生成包含机器指令的可执行文件再执行。代码会逐行被解释器读取并转换为计算机能够理解的机器码，然后立即执行。SHELL脚本也是解释型语言</p>
+<p><img src="/Users/lengqiuyu/Desktop/qiuyuleng.github.io/content/img/image-20230508203209065.png" alt="image-20230508203209065" /></p>
+<p>第一代：机器语言；第二代：汇编语言；第三代：C，C++，python等；第四代：声明式，例如SQL语言</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#程序的基本概念">程序的基本概念</a>
+      <ul>
+        <li><a href="#程序和编程语言">程序和编程语言</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
