@@ -13,7 +13,7 @@ C语言到汇编语言到过程是编译（compile），是平台无关的（pla
 另外有解释型（interpret）语言：它把脚本中的每一行当作一条命令解释执行，而不需要先生成包含机器指令的可执行文件再执行。代码会逐行被解释器读取并转换为计算机能够理解的机器码，然后立即执行。SHELL脚本也是解释型语言
 第一代：机器语言；第二代：汇编语言；第三代：C，C&#43;&#43;，python等；第四代：声明式，例如SQL语言">
 <meta name="theme-color" content="#FFFFFF">
-<meta name="color-scheme" content="light dark"><meta property="og:title" content="C" />
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="C_and_linux" />
 <meta property="og:description" content="程序的基本概念 # 程序和编程语言 # 汇编语言和机器语言的指令是一一对应的。
 把机器语言中一组一组的数字用助记符(Mnemonic)表示，直接用这些助记符写出汇编程序，然后让汇编器(Assembler)去查表把助记符替换成数字，也就把汇编语言翻译成了机器语言。
 汇编器就是做一个简单的替换工作。
@@ -24,15 +24,15 @@ C语言到汇编语言到过程是编译（compile），是平台无关的（pla
 另外有解释型（interpret）语言：它把脚本中的每一行当作一条命令解释执行，而不需要先生成包含机器指令的可执行文件再执行。代码会逐行被解释器读取并转换为计算机能够理解的机器码，然后立即执行。SHELL脚本也是解释型语言
 第一代：机器语言；第二代：汇编语言；第三代：C，C&#43;&#43;，python等；第四代：声明式，例如SQL语言" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://example.org/docs/others/c/" /><meta property="article:section" content="docs" />
-
-<meta property="article:modified_time" content="2023-05-08T20:39:13+08:00" />
-<title>C | My CS Learning</title>
+<meta property="og:url" content="http://example.org/docs/others/c_and_linux/" /><meta property="article:section" content="docs" />
+<meta property="article:published_time" content="2023-05-08T20:42:57+08:00" />
+<meta property="article:modified_time" content="2023-05-08T20:42:57+08:00" />
+<title>C_and_linux | My CS Learning</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.c58292d36b18b675680ab9baea2029204537b839ea72f258746ec0f32ce8d6c8.css" integrity="sha256-xYKS02sYtnVoCrm66iApIEU3uDnqcvJYdG7A8yzo1sg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.0ceaff449911d6834a8d300ff0e8928d9739e50f83418f4e9d2544fbb7a3018b.js" integrity="sha256-DOr/RJkR1oNKjTAP8OiSjZc55Q&#43;DQY9OnSVE&#43;7ejAYs=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.b8f2bbc8b5d73ea4b1fc8b9990281bcada028b511c30e3d8508a8532a41e4059.js" integrity="sha256-uPK7yLXXPqSx/IuZkCgbytoCi1EcMOPYUIqFMqQeQFk=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -85,19 +85,6 @@ https://github.com/alex-shpak/hugo-book
 
   
     <a href="/docs/stage1/ansible/" class="">Ansible</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/others/c/" class="active">C</a>
   
 
         </li>
@@ -253,7 +240,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/others/c_and_linux/" class="">C_and_linux</a>
+    <a href="/docs/others/c_and_linux/" class="active">C_and_linux</a>
   
 
         </li>
@@ -295,7 +282,7 @@ https://github.com/alex-shpak/hugo-book
     <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <strong>C</strong>
+  <strong>C_and_linux</strong>
 
   <label for="toc-control">
     
@@ -340,14 +327,14 @@ https://github.com/alex-shpak/hugo-book
 <p>把机器语言中一组一组的数字用助记符(Mnemonic)表示，直接用这些助记符写出汇编程序，然后让汇编器(Assembler)去查表把助记符替换成数字，也就把汇编语言翻译成了机器语言。</p>
 <p>汇编器就是做一个简单的替换工作。</p>
 <p>C语言到汇编语言到过程是编译（compile），是平台无关的（platform independent），把C语言编译成各种不同体系结构的机器指令。</p>
-<p><img src="/Users/lengqiuyu/Desktop/qiuyuleng.github.io/content/img/image-20230508204437003.png" alt="image-20230508204437003" /></p>
+<p><img src="/../img/image-20230508204437003.png" alt="image-20230508204437003" /></p>
 <p>编译的过程不执行程序，只是把src翻译成机器指令。（编译型语言）</p>
 <blockquote>
 <p>什么是平台?</p>
 <p>一种平台，就是一种体系结构，就是一种指令集，就是一种机器语言</p>
 </blockquote>
 <p>另外有解释型（interpret）语言：它把脚本中的每一行当作一条命令解释执行，而不需要先生成包含机器指令的可执行文件再执行。代码会逐行被解释器读取并转换为计算机能够理解的机器码，然后立即执行。SHELL脚本也是解释型语言</p>
-<p><img src="/Users/lengqiuyu/Desktop/qiuyuleng.github.io/content/img/image-20230508203209065.png" alt="image-20230508203209065" /></p>
+<p><img src="/../img/image-20230508203209065.png" alt="image-20230508203209065" /></p>
 <p>第一代：机器语言；第二代：汇编语言；第三代：C，C++，python等；第四代：声明式，例如SQL语言</p>
 </article>
  

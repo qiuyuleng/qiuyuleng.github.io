@@ -5,7 +5,8 @@
     <link>http://example.org/docs/</link>
     <description>Recent content in Docs on My CS Learning</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="http://example.org/docs/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language>
+    <lastBuildDate>Mon, 08 May 2023 20:42:57 +0800</lastBuildDate><atom:link href="http://example.org/docs/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Ansible</title>
       <link>http://example.org/docs/stage1/ansible/</link>
@@ -208,13 +209,12 @@ session 会话，理解成任务 window 窗口，当前呈现在面前的终端�
     </item>
     
     <item>
-      <title></title>
-      <link>http://example.org/docs/others/c/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <title>C_and_linux</title>
+      <link>http://example.org/docs/others/c_and_linux/</link>
+      <pubDate>Mon, 08 May 2023 20:42:57 +0800</pubDate>
       
-      <guid>http://example.org/docs/others/c/</guid>
-      <description>title: &amp;ldquo;C&amp;rdquo; typora-root-url: ../ weight: 1
-程序的基本概念 # 程序和编程语言 # 汇编语言和机器语言的指令是一一对应的。
+      <guid>http://example.org/docs/others/c_and_linux/</guid>
+      <description>程序的基本概念 # 程序和编程语言 # 汇编语言和机器语言的指令是一一对应的。
 把机器语言中一组一组的数字用助记符(Mnemonic)表示，直接用这些助记符写出汇编程序，然后让汇编器(Assembler)去查表把助记符替换成数字，也就把汇编语言翻译成了机器语言。
 汇编器就是做一个简单的替换工作。
 C语言到汇编语言到过程是编译（compile），是平台无关的（platform independent），把C语言编译成各种不同体系结构的机器指令。

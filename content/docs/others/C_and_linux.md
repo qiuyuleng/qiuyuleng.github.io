@@ -1,8 +1,9 @@
-title: "C"
+---
+title: "C_and_linux"
 typora-root-url: ../
-weight: 1
-
-
+date: 2023-05-08T20:42:57+08:00
+draft: false
+---
 
 # 程序的基本概念
 
@@ -18,7 +19,7 @@ weight: 1
 
 C语言到汇编语言到过程是编译（compile），是平台无关的（platform independent），把C语言编译成各种不同体系结构的机器指令。
 
-![image-20230508202949027](/Users/lengqiuyu/Desktop/qiuyuleng.github.io/content/img/image-20230508202949027.png)
+![image-20230508204437003](/../img/image-20230508204437003.png)
 
 编译的过程不执行程序，只是把src翻译成机器指令。（编译型语言）
 
@@ -32,9 +33,6 @@ C语言到汇编语言到过程是编译（compile），是平台无关的（pla
 
 另外有解释型（interpret）语言：它把脚本中的每一行当作一条命令解释执行，而不需要先生成包含机器指令的可执行文件再执行。代码会逐行被解释器读取并转换为计算机能够理解的机器码，然后立即执行。SHELL脚本也是解释型语言
 
-![image-20230508203209065](/Users/lengqiuyu/Desktop/qiuyuleng.github.io/content/img/image-20230508203209065.png)
+![image-20230508203209065](/../img/image-20230508203209065.png)
 
 第一代：机器语言；第二代：汇编语言；第三代：C，C++，python等；第四代：声明式，例如SQL语言
-
-
-
