@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="程序的基本概念 # 程序和编程语言 # 汇编语言和机器语言的指令是一一对应的。
+<meta name="description" content=" 程序的基本概念 # 程序和编程语言 # 汇编语言和机器语言的指令是一一对应的。
 把机器语言中一组一组的数字用助记符(Mnemonic)表示，直接用这些助记符写出汇编程序，然后让汇编器(Assembler)去查表把助记符替换成数字，也就把汇编语言翻译成了机器语言。
 汇编器就是做一个简单的替换工作。
 C语言到汇编语言到过程是编译（compile），是平台无关的（platform independent），把C语言编译成各种不同体系结构的机器指令。
@@ -11,10 +11,12 @@ C语言到汇编语言到过程是编译（compile），是平台无关的（pla
 什么是平台?
 一种平台，就是一种体系结构，就是一种指令集，就是一种机器语言
 另外有解释型（interpret）语言：它把脚本中的每一行当作一条命令解释执行，而不需要先生成包含机器指令的可执行文件再执行。代码会逐行被解释器读取并转换为计算机能够理解的机器码，然后立即执行。SHELL脚本也是解释型语言
-第一代：机器语言；第二代：汇编语言；第三代：C，C&#43;&#43;，python等；第四代：声明式，例如SQL语言">
+第一代：机器语言；第二代：汇编语言；第三代：C，C&#43;&#43;，python等；第四代：声明式，例如SQL语言
+自然语言和形式语言 # syntax语法规则，包含: 词法lexical规则，语法grammar规则
+程序的调试 # 编译时错误：编译失败 运行时错误：运行崩溃 逻辑和语义错误 ">
 <meta name="theme-color" content="#FFFFFF">
 <meta name="color-scheme" content="light dark"><meta property="og:title" content="C_and_linux" />
-<meta property="og:description" content="程序的基本概念 # 程序和编程语言 # 汇编语言和机器语言的指令是一一对应的。
+<meta property="og:description" content=" 程序的基本概念 # 程序和编程语言 # 汇编语言和机器语言的指令是一一对应的。
 把机器语言中一组一组的数字用助记符(Mnemonic)表示，直接用这些助记符写出汇编程序，然后让汇编器(Assembler)去查表把助记符替换成数字，也就把汇编语言翻译成了机器语言。
 汇编器就是做一个简单的替换工作。
 C语言到汇编语言到过程是编译（compile），是平台无关的（platform independent），把C语言编译成各种不同体系结构的机器指令。
@@ -22,17 +24,19 @@ C语言到汇编语言到过程是编译（compile），是平台无关的（pla
 什么是平台?
 一种平台，就是一种体系结构，就是一种指令集，就是一种机器语言
 另外有解释型（interpret）语言：它把脚本中的每一行当作一条命令解释执行，而不需要先生成包含机器指令的可执行文件再执行。代码会逐行被解释器读取并转换为计算机能够理解的机器码，然后立即执行。SHELL脚本也是解释型语言
-第一代：机器语言；第二代：汇编语言；第三代：C，C&#43;&#43;，python等；第四代：声明式，例如SQL语言" />
+第一代：机器语言；第二代：汇编语言；第三代：C，C&#43;&#43;，python等；第四代：声明式，例如SQL语言
+自然语言和形式语言 # syntax语法规则，包含: 词法lexical规则，语法grammar规则
+程序的调试 # 编译时错误：编译失败 运行时错误：运行崩溃 逻辑和语义错误 " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://example.org/docs/others/c_and_linux/" /><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2023-05-08T20:42:57+08:00" />
-<meta property="article:modified_time" content="2023-05-08T20:42:57+08:00" />
+<meta property="article:modified_time" content="2023-05-08T20:46:17+08:00" />
 <title>C_and_linux | My CS Learning</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.c58292d36b18b675680ab9baea2029204537b839ea72f258746ec0f32ce8d6c8.css" integrity="sha256-xYKS02sYtnVoCrm66iApIEU3uDnqcvJYdG7A8yzo1sg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.b8f2bbc8b5d73ea4b1fc8b9990281bcada028b511c30e3d8508a8532a41e4059.js" integrity="sha256-uPK7yLXXPqSx/IuZkCgbytoCi1EcMOPYUIqFMqQeQFk=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.0b9fc6365e07c6144101fb772a41760a8d435e27801fb95fbd98259c50f4e713.js" integrity="sha256-C5/GNl4HxhRBAft3KkF2Co1DXieAH7lfvZglnFD05xM=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -301,6 +305,8 @@ https://github.com/alex-shpak/hugo-book
     <li><a href="#程序的基本概念">程序的基本概念</a>
       <ul>
         <li><a href="#程序和编程语言">程序和编程语言</a></li>
+        <li><a href="#自然语言和形式语言">自然语言和形式语言</a></li>
+        <li><a href="#程序的调试">程序的调试</a></li>
       </ul>
     </li>
   </ul>
@@ -336,6 +342,20 @@ https://github.com/alex-shpak/hugo-book
 <p>另外有解释型（interpret）语言：它把脚本中的每一行当作一条命令解释执行，而不需要先生成包含机器指令的可执行文件再执行。代码会逐行被解释器读取并转换为计算机能够理解的机器码，然后立即执行。SHELL脚本也是解释型语言</p>
 <p><img src="/../img/image-20230508203209065.png" alt="image-20230508203209065" /></p>
 <p>第一代：机器语言；第二代：汇编语言；第三代：C，C++，python等；第四代：声明式，例如SQL语言</p>
+<h2 id="自然语言和形式语言">
+  自然语言和形式语言
+  <a class="anchor" href="#%e8%87%aa%e7%84%b6%e8%af%ad%e8%a8%80%e5%92%8c%e5%bd%a2%e5%bc%8f%e8%af%ad%e8%a8%80">#</a>
+</h2>
+<p>syntax语法规则，包含: 词法lexical规则，语法grammar规则</p>
+<h2 id="程序的调试">
+  程序的调试
+  <a class="anchor" href="#%e7%a8%8b%e5%ba%8f%e7%9a%84%e8%b0%83%e8%af%95">#</a>
+</h2>
+<ul>
+<li>编译时错误：编译失败</li>
+<li>运行时错误：运行崩溃</li>
+<li>逻辑和语义错误</li>
+</ul>
 </article>
  
       
@@ -380,6 +400,8 @@ https://github.com/alex-shpak/hugo-book
     <li><a href="#程序的基本概念">程序的基本概念</a>
       <ul>
         <li><a href="#程序和编程语言">程序和编程语言</a></li>
+        <li><a href="#自然语言和形式语言">自然语言和形式语言</a></li>
+        <li><a href="#程序的调试">程序的调试</a></li>
       </ul>
     </li>
   </ul>
