@@ -37,3 +37,16 @@ docker run -p <host_port>:<container_port> <new_image_name>
 Reconnect to container
 docker start container_id
 docker exec -it container_id bash
+
+```
+/usr/bin/python pip module not found when cmake: default python refers to python2.
+
+root@ff32e4cc3e1a:/tugraph-db/deps# python --version
+Python 2.7.17
+root@ff32e4cc3e1a:/tugraph-db/deps# ls -l $(which python)
+lrwxrwxrwx 1 root root 9 Apr 16  2018 /usr/bin/python -> python2.7
+root@ff32e4cc3e1a:/tugraph-db/deps# rm /usr/bin/python
+root@ff32e4cc3e1a:/tugraph-db/deps# ln -s  /usr/bin/python3.6 /usr/bin/python
+root@ff32e4cc3e1a:/tugraph-db/deps# ls -l $(which python)
+lrwxrwxrwx 1 root root 18 May 16 05:45 /usr/bin/python -> /usr/bin/python3.6
+```
