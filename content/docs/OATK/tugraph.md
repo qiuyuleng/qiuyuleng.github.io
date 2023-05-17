@@ -38,6 +38,11 @@ Reconnect to container
 docker start container_id
 docker exec -it container_id bash
 
+Run and debug TuGraph
+docker run -it -p 7070:7070 -p 9090:9090 --privileged qiuyuleng/tugraph_debug
+// In the container
+lgraph_server
+
 ```
 /usr/bin/python pip module not found when cmake: default python refers to python2.
 
