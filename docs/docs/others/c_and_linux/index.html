@@ -13,7 +13,7 @@ C语言到汇编语言到过程是编译（compile），是平台无关的（pla
 另外有解释型（interpret）语言：它把脚本中的每一行当作一条命令解释执行，而不需要先生成包含机器指令的可执行文件再执行。代码会逐行被解释器读取并转换为计算机能够理解的机器码，然后立即执行。SHELL脚本也是解释型语言
 第一代：机器语言；第二代：汇编语言；第三代：C，C&#43;&#43;，python等；第四代：声明式，例如SQL语言
 自然语言和形式语言 # syntax语法规则，包含: 词法lexical规则，语法grammar规则
-程序的调试 # 编译时错误：编译失败 运行时错误：运行崩溃 逻辑和语义错误 ">
+程序的调试 # 编译时错误：编译失败 运行时错误：运行崩溃 逻辑和语义错误 常量、变量和表达式 # 声明(Declaration)有变量声明、函数声明和类型声明三种 一个变量或函数的声明要求编译器为它分配存储空间，那么 也可以称为定义(Definition)。 定义是声明的一种 定义一个变量，就是分配 一块存储空间并给它命名;给一个变量赋值，就是把一个值保存到这块存储空间中。定义&#43;赋值叫做初始化 char型本质上就是整数，只不过取值范围比int型 小，char型和int型统称为整数类型(Integer Type)或简称整型 &lsquo;a&rsquo;&#43;1：结果是&rsquo;b&rsquo; ">
 <meta name="theme-color" content="#FFFFFF">
 <meta name="color-scheme" content="light dark"><meta property="og:title" content="C_and_linux" />
 <meta property="og:description" content=" 程序的基本概念 # 程序和编程语言 # 汇编语言和机器语言的指令是一一对应的。
@@ -26,17 +26,17 @@ C语言到汇编语言到过程是编译（compile），是平台无关的（pla
 另外有解释型（interpret）语言：它把脚本中的每一行当作一条命令解释执行，而不需要先生成包含机器指令的可执行文件再执行。代码会逐行被解释器读取并转换为计算机能够理解的机器码，然后立即执行。SHELL脚本也是解释型语言
 第一代：机器语言；第二代：汇编语言；第三代：C，C&#43;&#43;，python等；第四代：声明式，例如SQL语言
 自然语言和形式语言 # syntax语法规则，包含: 词法lexical规则，语法grammar规则
-程序的调试 # 编译时错误：编译失败 运行时错误：运行崩溃 逻辑和语义错误 " />
+程序的调试 # 编译时错误：编译失败 运行时错误：运行崩溃 逻辑和语义错误 常量、变量和表达式 # 声明(Declaration)有变量声明、函数声明和类型声明三种 一个变量或函数的声明要求编译器为它分配存储空间，那么 也可以称为定义(Definition)。 定义是声明的一种 定义一个变量，就是分配 一块存储空间并给它命名;给一个变量赋值，就是把一个值保存到这块存储空间中。定义&#43;赋值叫做初始化 char型本质上就是整数，只不过取值范围比int型 小，char型和int型统称为整数类型(Integer Type)或简称整型 &lsquo;a&rsquo;&#43;1：结果是&rsquo;b&rsquo; " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://example.org/docs/others/c_and_linux/" /><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2023-05-08T20:42:57+08:00" />
-<meta property="article:modified_time" content="2023-05-08T20:46:17+08:00" />
+<meta property="article:modified_time" content="2023-05-09T21:34:21+08:00" />
 <title>C_and_linux | My CS Learning</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.c58292d36b18b675680ab9baea2029204537b839ea72f258746ec0f32ce8d6c8.css" integrity="sha256-xYKS02sYtnVoCrm66iApIEU3uDnqcvJYdG7A8yzo1sg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.0b9fc6365e07c6144101fb772a41760a8d435e27801fb95fbd98259c50f4e713.js" integrity="sha256-C5/GNl4HxhRBAft3KkF2Co1DXieAH7lfvZglnFD05xM=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.0d5de68ec5525c6ab0018d1c42277904e42d307794defac84c17b8e3c1017443.js" integrity="sha256-DV3mjsVSXGqwAY0cQid5BOQtMHeU3vrITBe448EBdEM=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -244,6 +244,19 @@ https://github.com/alex-shpak/hugo-book
   
 
   
+    <a href="/docs/oatk/tugraph/" class="">Tugraph</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
     <a href="/docs/others/c_and_linux/" class="active">C_and_linux</a>
   
 
@@ -309,6 +322,7 @@ https://github.com/alex-shpak/hugo-book
         <li><a href="#程序的调试">程序的调试</a></li>
       </ul>
     </li>
+    <li><a href="#常量变量和表达式">常量、变量和表达式</a></li>
   </ul>
 </nav>
 
@@ -355,6 +369,24 @@ https://github.com/alex-shpak/hugo-book
 <li>编译时错误：编译失败</li>
 <li>运行时错误：运行崩溃</li>
 <li>逻辑和语义错误</li>
+</ul>
+<h1 id="常量变量和表达式">
+  常量、变量和表达式
+  <a class="anchor" href="#%e5%b8%b8%e9%87%8f%e5%8f%98%e9%87%8f%e5%92%8c%e8%a1%a8%e8%be%be%e5%bc%8f">#</a>
+</h1>
+<ul>
+<li>声明(Declaration)有变量声明、函数声明和类型声明三种</li>
+<li>一个变量或函数的声明要求编译器为它分配存储空间，那么 也可以称为定义(Definition)。
+<ul>
+<li>定义是声明的一种</li>
+</ul>
+</li>
+<li>定义一个变量，就是分配 一块存储空间并给它命名;给一个变量赋值，就是把一个值保存到这块存储空间中。定义+赋值叫做初始化</li>
+<li>char型本质上就是整数，只不过取值范围比int型 小，char型和int型统称为整数类型(Integer Type)或简称整型
+<ul>
+<li>&lsquo;a&rsquo;+1：结果是&rsquo;b&rsquo;</li>
+</ul>
+</li>
 </ul>
 </article>
  
@@ -404,6 +436,7 @@ https://github.com/alex-shpak/hugo-book
         <li><a href="#程序的调试">程序的调试</a></li>
       </ul>
     </li>
+    <li><a href="#常量变量和表达式">常量、变量和表达式</a></li>
   </ul>
 </nav>
 

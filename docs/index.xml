@@ -209,6 +209,16 @@ session 会话，理解成任务 window 窗口，当前呈现在面前的终端�
     </item>
     
     <item>
+      <title>Tugraph</title>
+      <link>http://example.org/docs/oatk/tugraph/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/docs/oatk/tugraph/</guid>
+      <description>Steps for compiling TuGraph docker pull tugraph/tugraph-compile-ubuntu18.04 docker run -it tugraph/tugraph-compile-ubuntu18.04 // In the container export http_proxy=http://child-prc.intel.com:913 export https_proxy=http://child-prc.intel.com:913 export HTTPS_PROXY=http://child-prc.intel.com:913 export HTTP_PROXY=http://child-prc.intel.com:913 git clone https://github.com/TuGraph-family/tugraph-db.git git submodule update &amp;ndash;init &amp;ndash;recursive cd tugraph-db deps/build_deps.sh deps/build_deps.sh &amp;ndash;fix cmake .. -DOURSYSTEM=ubuntu -DENABLE_PREDOWNLOAD_DEPENDS_PACKAGE=1 -DCMAKE_BUILD_TYPE=debug make make package dpkg -i tugraph-3.4.0-1.x86_64.deb export LD_LIBRARY_PATH=/usr/local/lib64:/usr/local/lib:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/server/:$LD_LIBRARY_PATH lgraph_server
+Expose container ports 7070 and 9090 to host machine docker ps docker commit &amp;lt;container_name_or_id&amp;gt; &amp;lt;new_image_name&amp;gt; docker stop &amp;lt;container_name_or_id&amp;gt; docker run -p &amp;lt;host_port&amp;gt;:&amp;lt;container_port&amp;gt; &amp;lt;new_image_name&amp;gt;</description>
+    </item>
+    
+    <item>
       <title>C_and_linux</title>
       <link>http://example.org/docs/others/c_and_linux/</link>
       <pubDate>Mon, 08 May 2023 20:42:57 +0800</pubDate>
@@ -224,7 +234,7 @@ C语言到汇编语言到过程是编译（compile），是平台无关的（pla
 另外有解释型（interpret）语言：它把脚本中的每一行当作一条命令解释执行，而不需要先生成包含机器指令的可执行文件再执行。代码会逐行被解释器读取并转换为计算机能够理解的机器码，然后立即执行。SHELL脚本也是解释型语言
 第一代：机器语言；第二代：汇编语言；第三代：C，C++，python等；第四代：声明式，例如SQL语言
 自然语言和形式语言 # syntax语法规则，包含: 词法lexical规则，语法grammar规则
-程序的调试 # 编译时错误：编译失败 运行时错误：运行崩溃 逻辑和语义错误 </description>
+程序的调试 # 编译时错误：编译失败 运行时错误：运行崩溃 逻辑和语义错误 常量、变量和表达式 # 声明(Declaration)有变量声明、函数声明和类型声明三种 一个变量或函数的声明要求编译器为它分配存储空间，那么 也可以称为定义(Definition)。 定义是声明的一种 定义一个变量，就是分配 一块存储空间并给它命名;给一个变量赋值，就是把一个值保存到这块存储空间中。定义+赋值叫做初始化 char型本质上就是整数，只不过取值范围比int型 小，char型和int型统称为整数类型(Integer Type)或简称整型 &amp;lsquo;a&amp;rsquo;+1：结果是&amp;rsquo;b&amp;rsquo; </description>
     </item>
     
   </channel>

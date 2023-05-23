@@ -3,15 +3,17 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content=" 概述 # makefile关系到了整个系统的编译规则，哪些文件需要先编译，哪些后编译等等 自动化编译 Makefile的规则 # target ...: prerequisites ... command ... ... 如果prerequisites后面的文件比target文件新，就执行command 执行：make 一层层地找文件的依赖关系，直到最终编译出第一个目标文件 变量 $(obj) 自动推导 make看到.o文件会自动把.c文件加在依赖关系prerequisites中 clean make clean 才会执行 放在文件的最后 ">
+<meta name="description" content="Steps for compiling TuGraph docker pull tugraph/tugraph-compile-ubuntu18.04 docker run -it tugraph/tugraph-compile-ubuntu18.04 // In the container export http_proxy=http://child-prc.intel.com:913 export https_proxy=http://child-prc.intel.com:913 export HTTPS_PROXY=http://child-prc.intel.com:913 export HTTP_PROXY=http://child-prc.intel.com:913 git clone https://github.com/TuGraph-family/tugraph-db.git git submodule update &ndash;init &ndash;recursive cd tugraph-db deps/build_deps.sh deps/build_deps.sh &ndash;fix cmake .. -DOURSYSTEM=ubuntu -DENABLE_PREDOWNLOAD_DEPENDS_PACKAGE=1 -DCMAKE_BUILD_TYPE=debug make make package dpkg -i tugraph-3.4.0-1.x86_64.deb export LD_LIBRARY_PATH=/usr/local/lib64:/usr/local/lib:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/server/:$LD_LIBRARY_PATH lgraph_server
+Expose container ports 7070 and 9090 to host machine docker ps docker commit &lt;container_name_or_id&gt; &lt;new_image_name&gt; docker stop &lt;container_name_or_id&gt; docker run -p &lt;host_port&gt;:&lt;container_port&gt; &lt;new_image_name&gt;">
 <meta name="theme-color" content="#FFFFFF">
-<meta name="color-scheme" content="light dark"><meta property="og:title" content="Make File" />
-<meta property="og:description" content=" 概述 # makefile关系到了整个系统的编译规则，哪些文件需要先编译，哪些后编译等等 自动化编译 Makefile的规则 # target ...: prerequisites ... command ... ... 如果prerequisites后面的文件比target文件新，就执行command 执行：make 一层层地找文件的依赖关系，直到最终编译出第一个目标文件 变量 $(obj) 自动推导 make看到.o文件会自动把.c文件加在依赖关系prerequisites中 clean make clean 才会执行 放在文件的最后 " />
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="Tugraph" />
+<meta property="og:description" content="Steps for compiling TuGraph docker pull tugraph/tugraph-compile-ubuntu18.04 docker run -it tugraph/tugraph-compile-ubuntu18.04 // In the container export http_proxy=http://child-prc.intel.com:913 export https_proxy=http://child-prc.intel.com:913 export HTTPS_PROXY=http://child-prc.intel.com:913 export HTTP_PROXY=http://child-prc.intel.com:913 git clone https://github.com/TuGraph-family/tugraph-db.git git submodule update &ndash;init &ndash;recursive cd tugraph-db deps/build_deps.sh deps/build_deps.sh &ndash;fix cmake .. -DOURSYSTEM=ubuntu -DENABLE_PREDOWNLOAD_DEPENDS_PACKAGE=1 -DCMAKE_BUILD_TYPE=debug make make package dpkg -i tugraph-3.4.0-1.x86_64.deb export LD_LIBRARY_PATH=/usr/local/lib64:/usr/local/lib:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/server/:$LD_LIBRARY_PATH lgraph_server
+Expose container ports 7070 and 9090 to host machine docker ps docker commit &lt;container_name_or_id&gt; &lt;new_image_name&gt; docker stop &lt;container_name_or_id&gt; docker run -p &lt;host_port&gt;:&lt;container_port&gt; &lt;new_image_name&gt;" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://example.org/docs/stage1/make_file/" /><meta property="article:section" content="docs" />
+<meta property="og:url" content="http://example.org/docs/oatk/tugraph/" /><meta property="article:section" content="docs" />
 
-<meta property="article:modified_time" content="2023-02-23T23:48:22+08:00" />
-<title>Make File | My CS Learning</title>
+<meta property="article:modified_time" content="2023-05-17T13:16:34+08:00" />
+<title>Tugraph | My CS Learning</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.c58292d36b18b675680ab9baea2029204537b839ea72f258746ec0f32ce8d6c8.css" integrity="sha256-xYKS02sYtnVoCrm66iApIEU3uDnqcvJYdG7A8yzo1sg=" crossorigin="anonymous">
@@ -185,7 +187,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/stage1/make_file/" class="active">Make File</a>
+    <a href="/docs/stage1/make_file/" class="">Make File</a>
   
 
         </li>
@@ -224,7 +226,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/oatk/tugraph/" class="">Tugraph</a>
+    <a href="/docs/oatk/tugraph/" class="active">Tugraph</a>
   
 
         </li>
@@ -279,7 +281,7 @@ https://github.com/alex-shpak/hugo-book
     <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <strong>Make File</strong>
+  <strong>Tugraph</strong>
 
   <label for="toc-control">
     
@@ -293,12 +295,7 @@ https://github.com/alex-shpak/hugo-book
   <aside class="hidden clearfix">
     
   
-<nav id="TableOfContents">
-  <ul>
-    <li><a href="#概述">概述</a></li>
-    <li><a href="#makefile的规则">Makefile的规则</a></li>
-  </ul>
-</nav>
+<nav id="TableOfContents"></nav>
 
 
 
@@ -309,47 +306,48 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown"><h1 id="概述">
-  概述
-  <a class="anchor" href="#%e6%a6%82%e8%bf%b0">#</a>
-</h1>
-<ul>
-<li>makefile关系到了整个系统的编译规则，哪些文件需要先编译，哪些后编译等等</li>
-<li>自动化编译</li>
-</ul>
-<h1 id="makefile的规则">
-  Makefile的规则
-  <a class="anchor" href="#makefile%e7%9a%84%e8%a7%84%e5%88%99">#</a>
-</h1>
-<pre tabindex="0"><code>target ...: prerequisites ...
-	command
-	...
-	...
-</code></pre><ul>
-<li>如果prerequisites后面的文件比target文件新，就执行command</li>
-<li>执行：make
-<ul>
-<li>一层层地找文件的依赖关系，直到最终编译出第一个目标文件</li>
-</ul>
-</li>
-<li>变量
-<ul>
-<li>$(obj)</li>
-</ul>
-</li>
-<li>自动推导
-<ul>
-<li>make看到.o文件会自动把.c文件加在依赖关系prerequisites中</li>
-</ul>
-</li>
-<li>clean
-<ul>
-<li>make clean 才会执行</li>
-<li>放在文件的最后</li>
-</ul>
-</li>
-</ul>
-</article>
+  <article class="markdown"><p>Steps for compiling TuGraph
+docker pull tugraph/tugraph-compile-ubuntu18.04
+docker run -it tugraph/tugraph-compile-ubuntu18.04
+// In the container
+export http_proxy=http://child-prc.intel.com:913
+export https_proxy=http://child-prc.intel.com:913
+export HTTPS_PROXY=http://child-prc.intel.com:913
+export HTTP_PROXY=http://child-prc.intel.com:913
+git clone <a href="https://github.com/TuGraph-family/tugraph-db.git">https://github.com/TuGraph-family/tugraph-db.git</a>
+git submodule update &ndash;init &ndash;recursive
+cd tugraph-db
+deps/build_deps.sh
+deps/build_deps.sh &ndash;fix
+cmake .. -DOURSYSTEM=ubuntu -DENABLE_PREDOWNLOAD_DEPENDS_PACKAGE=1 -DCMAKE_BUILD_TYPE=debug
+make
+make package
+dpkg -i tugraph-3.4.0-1.x86_64.deb
+export LD_LIBRARY_PATH=/usr/local/lib64:/usr/local/lib:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/server/:$LD_LIBRARY_PATH
+lgraph_server</p>
+<p>Expose container ports 7070 and 9090 to host machine
+docker ps
+docker commit &lt;container_name_or_id&gt; &lt;new_image_name&gt;
+docker stop &lt;container_name_or_id&gt;
+docker run -p &lt;host_port&gt;:&lt;container_port&gt; &lt;new_image_name&gt;</p>
+<p>Reconnect to container
+docker start container_id
+docker exec -it container_id bash</p>
+<p>Run and debug TuGraph
+docker run -it -p 7070:7070 -p 9090:9090 &ndash;privileged qiuyuleng/tugraph_debug
+// In the container
+lgraph_server</p>
+<pre tabindex="0"><code>/usr/bin/python pip module not found when cmake: default python refers to python2.
+
+root@ff32e4cc3e1a:/tugraph-db/deps# python --version
+Python 2.7.17
+root@ff32e4cc3e1a:/tugraph-db/deps# ls -l $(which python)
+lrwxrwxrwx 1 root root 9 Apr 16  2018 /usr/bin/python -&gt; python2.7
+root@ff32e4cc3e1a:/tugraph-db/deps# rm /usr/bin/python
+root@ff32e4cc3e1a:/tugraph-db/deps# ln -s  /usr/bin/python3.6 /usr/bin/python
+root@ff32e4cc3e1a:/tugraph-db/deps# ls -l $(which python)
+lrwxrwxrwx 1 root root 18 May 16 05:45 /usr/bin/python -&gt; /usr/bin/python3.6
+</code></pre></article>
  
       
 
@@ -388,12 +386,7 @@ https://github.com/alex-shpak/hugo-book
       <div class="book-toc-content">
         
   
-<nav id="TableOfContents">
-  <ul>
-    <li><a href="#概述">概述</a></li>
-    <li><a href="#makefile的规则">Makefile的规则</a></li>
-  </ul>
-</nav>
+<nav id="TableOfContents"></nav>
 
 
  
