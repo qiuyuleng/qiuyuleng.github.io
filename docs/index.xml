@@ -224,7 +224,7 @@ Expose container ports 7070 and 9090 to host machine docker ps docker commit &am
       <pubDate>Mon, 08 May 2023 20:42:57 +0800</pubDate>
       
       <guid>http://example.org/docs/others/c_and_linux/</guid>
-      <description> 程序的基本概念 # 程序和编程语言 # 汇编语言和机器语言的指令是一一对应的。
+      <description>程序的基本概念 # 程序和编程语言 # 汇编语言和机器语言的指令是一一对应的。
 把机器语言中一组一组的数字用助记符(Mnemonic)表示，直接用这些助记符写出汇编程序，然后让汇编器(Assembler)去查表把助记符替换成数字，也就把汇编语言翻译成了机器语言。
 汇编器就是做一个简单的替换工作。
 C语言到汇编语言到过程是编译（compile），是平台无关的（platform independent），把C语言编译成各种不同体系结构的机器指令。
@@ -234,7 +234,8 @@ C语言到汇编语言到过程是编译（compile），是平台无关的（pla
 另外有解释型（interpret）语言：它把脚本中的每一行当作一条命令解释执行，而不需要先生成包含机器指令的可执行文件再执行。代码会逐行被解释器读取并转换为计算机能够理解的机器码，然后立即执行。SHELL脚本也是解释型语言
 第一代：机器语言；第二代：汇编语言；第三代：C，C++，python等；第四代：声明式，例如SQL语言
 自然语言和形式语言 # syntax语法规则，包含: 词法lexical规则，语法grammar规则
-程序的调试 # 编译时错误：编译失败 运行时错误：运行崩溃 逻辑和语义错误 常量、变量和表达式 # 声明(Declaration)有变量声明、函数声明和类型声明三种 一个变量或函数的声明要求编译器为它分配存储空间，那么 也可以称为定义(Definition)。 定义是声明的一种 定义一个变量，就是分配 一块存储空间并给它命名;给一个变量赋值，就是把一个值保存到这块存储空间中。定义+赋值叫做初始化 char型本质上就是整数，只不过取值范围比int型 小，char型和int型统称为整数类型(Integer Type)或简称整型 &amp;lsquo;a&amp;rsquo;+1：结果是&amp;rsquo;b&amp;rsquo; </description>
+程序的调试 # 编译时错误：编译失败 运行时错误：运行崩溃 逻辑和语义错误 常量、变量和表达式 # 声明(Declaration)有变量声明、函数声明和类型声明三种 一个变量或函数的声明要求编译器为它分配存储空间，那么 也可以称为定义(Definition)。 定义是声明的一种 定义一个变量，就是分配 一块存储空间并给它命名;给一个变量赋值，就是把一个值保存到这块存储空间中。定义+赋值叫做初始化 char型本质上就是整数，只不过取值范围比int型 小，char型和int型统称为整数类型(Integer Type)或简称整型 &amp;lsquo;a&amp;rsquo;+1：结果是&amp;rsquo;b&amp;rsquo; 简单函数 # 函数的side effect: 调用它不是为了返回值，而是为了它产生的副作用（比如printf）
+可以按照代码的执行顺序来读代码。</description>
     </item>
     
   </channel>
