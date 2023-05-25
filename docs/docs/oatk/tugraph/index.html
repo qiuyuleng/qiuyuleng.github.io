@@ -3,22 +3,20 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Steps for compiling TuGraph docker pull tugraph/tugraph-compile-ubuntu18.04 docker run -it tugraph/tugraph-compile-ubuntu18.04 // In the container export http_proxy=http://child-prc.intel.com:913 export https_proxy=http://child-prc.intel.com:913 export HTTPS_PROXY=http://child-prc.intel.com:913 export HTTP_PROXY=http://child-prc.intel.com:913 git clone https://github.com/TuGraph-family/tugraph-db.git git submodule update &ndash;init &ndash;recursive cd tugraph-db deps/build_deps.sh deps/build_deps.sh &ndash;fix cmake .. -DOURSYSTEM=ubuntu -DENABLE_PREDOWNLOAD_DEPENDS_PACKAGE=1 -DCMAKE_BUILD_TYPE=debug make make package dpkg -i tugraph-3.4.0-1.x86_64.deb export LD_LIBRARY_PATH=/usr/local/lib64:/usr/local/lib:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/server/:$LD_LIBRARY_PATH lgraph_server
-Expose container ports 7070 and 9090 to host machine docker ps docker commit &lt;container_name_or_id&gt; &lt;new_image_name&gt; docker stop &lt;container_name_or_id&gt; docker run -p &lt;host_port&gt;:&lt;container_port&gt; &lt;new_image_name&gt;">
+<meta name="description" content="Steps for compiling TuGraph # docker pull tugraph/tugraph-compile-ubuntu18.04 docker run -it tugraph/tugraph-compile-ubuntu18.04 // In the container export http_proxy=http:// export https_proxy=http:// export HTTPS_PROXY=http:// export HTTP_PROXY=http:// git clone https://github.com/TuGraph-family/tugraph-db.git git submodule update --init --recursive cd tugraph-db deps/build_deps.sh deps/build_deps.sh --fix cmake .. -DOURSYSTEM=ubuntu -DENABLE_PREDOWNLOAD_DEPENDS_PACKAGE=1 -DCMAKE_BUILD_TYPE=debug make make package dpkg -i tugraph-3.4.0-1.x86_64.deb export LD_LIBRARY_PATH=/usr/local/lib64:/usr/local/lib:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/server/:$LD_LIBRARY_PATH lgraph_server Expose container ports 7070 and 9090 to host machine # docker ps docker commit &lt;container_name_or_id&gt; &lt;new_image_name&gt; docker stop &lt;container_name_or_id&gt; docker run -p &lt;host_port&gt;:&lt;container_port&gt; &lt;new_image_name&gt; Reconnect to container # docker start container_id docker exec -it container_id bash Run and debug TuGraph # docker run -it -p 7070:7070 -p 9090:9090 --privileged qiuyuleng/tugraph_debug docker exec -it f4b0fcbe0c0f bash // In the container lgraph_server //get the PID ps -ef | grep graph Tugraph Cypher # // In the container.">
 <meta name="theme-color" content="#FFFFFF">
 <meta name="color-scheme" content="light dark"><meta property="og:title" content="Tugraph" />
-<meta property="og:description" content="Steps for compiling TuGraph docker pull tugraph/tugraph-compile-ubuntu18.04 docker run -it tugraph/tugraph-compile-ubuntu18.04 // In the container export http_proxy=http://child-prc.intel.com:913 export https_proxy=http://child-prc.intel.com:913 export HTTPS_PROXY=http://child-prc.intel.com:913 export HTTP_PROXY=http://child-prc.intel.com:913 git clone https://github.com/TuGraph-family/tugraph-db.git git submodule update &ndash;init &ndash;recursive cd tugraph-db deps/build_deps.sh deps/build_deps.sh &ndash;fix cmake .. -DOURSYSTEM=ubuntu -DENABLE_PREDOWNLOAD_DEPENDS_PACKAGE=1 -DCMAKE_BUILD_TYPE=debug make make package dpkg -i tugraph-3.4.0-1.x86_64.deb export LD_LIBRARY_PATH=/usr/local/lib64:/usr/local/lib:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/server/:$LD_LIBRARY_PATH lgraph_server
-Expose container ports 7070 and 9090 to host machine docker ps docker commit &lt;container_name_or_id&gt; &lt;new_image_name&gt; docker stop &lt;container_name_or_id&gt; docker run -p &lt;host_port&gt;:&lt;container_port&gt; &lt;new_image_name&gt;" />
+<meta property="og:description" content="Steps for compiling TuGraph # docker pull tugraph/tugraph-compile-ubuntu18.04 docker run -it tugraph/tugraph-compile-ubuntu18.04 // In the container export http_proxy=http:// export https_proxy=http:// export HTTPS_PROXY=http:// export HTTP_PROXY=http:// git clone https://github.com/TuGraph-family/tugraph-db.git git submodule update --init --recursive cd tugraph-db deps/build_deps.sh deps/build_deps.sh --fix cmake .. -DOURSYSTEM=ubuntu -DENABLE_PREDOWNLOAD_DEPENDS_PACKAGE=1 -DCMAKE_BUILD_TYPE=debug make make package dpkg -i tugraph-3.4.0-1.x86_64.deb export LD_LIBRARY_PATH=/usr/local/lib64:/usr/local/lib:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/server/:$LD_LIBRARY_PATH lgraph_server Expose container ports 7070 and 9090 to host machine # docker ps docker commit &lt;container_name_or_id&gt; &lt;new_image_name&gt; docker stop &lt;container_name_or_id&gt; docker run -p &lt;host_port&gt;:&lt;container_port&gt; &lt;new_image_name&gt; Reconnect to container # docker start container_id docker exec -it container_id bash Run and debug TuGraph # docker run -it -p 7070:7070 -p 9090:9090 --privileged qiuyuleng/tugraph_debug docker exec -it f4b0fcbe0c0f bash // In the container lgraph_server //get the PID ps -ef | grep graph Tugraph Cypher # // In the container." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://example.org/docs/oatk/tugraph/" /><meta property="article:section" content="docs" />
 
-<meta property="article:modified_time" content="2023-05-17T13:16:34+08:00" />
+<meta property="article:modified_time" content="2023-05-25T17:45:09+08:00" />
 <title>Tugraph | My CS Learning</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.c58292d36b18b675680ab9baea2029204537b839ea72f258746ec0f32ce8d6c8.css" integrity="sha256-xYKS02sYtnVoCrm66iApIEU3uDnqcvJYdG7A8yzo1sg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.1e3c1c2653122adcbb57d8ed241314e7d0beb55c625f3c9aebeab51823c62736.js" integrity="sha256-HjwcJlMSKty7V9jtJBMU59C&#43;tVxiXzya6&#43;q1GCPGJzY=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.3f574176503abace0b0a9d7806011454f6627752bfec621879ac906b513843bc.js" integrity="sha256-P1dBdlA6us4LCp14BgEUVPZid1K/7GIYeayQa1E4Q7w=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -295,7 +293,19 @@ https://github.com/alex-shpak/hugo-book
   <aside class="hidden clearfix">
     
   
-<nav id="TableOfContents"></nav>
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#steps-for-compiling-tugraph">Steps for compiling TuGraph</a>
+      <ul>
+        <li><a href="#expose-container-ports-7070-and-9090-to-host-machine">Expose container ports 7070 and 9090 to host machine</a></li>
+        <li><a href="#reconnect-to-container">Reconnect to container</a></li>
+        <li><a href="#run-and-debug-tugraph">Run and debug TuGraph</a></li>
+        <li><a href="#tugraph-cypher">Tugraph Cypher</a></li>
+        <li><a href="#usrbinpython-pip-module-not-found-when-cmake-default-python-refers-to-python2">/usr/bin/python pip module not found when cmake: default python refers to python2.</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
 
 
 
@@ -306,40 +316,66 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown"><p>Steps for compiling TuGraph
-docker pull tugraph/tugraph-compile-ubuntu18.04
+  <article class="markdown"><h1 id="steps-for-compiling-tugraph">
+  Steps for compiling TuGraph
+  <a class="anchor" href="#steps-for-compiling-tugraph">#</a>
+</h1>
+<pre tabindex="0"><code>docker pull tugraph/tugraph-compile-ubuntu18.04
 docker run -it tugraph/tugraph-compile-ubuntu18.04
 // In the container
-export http_proxy=http://child-prc.intel.com:913
-export https_proxy=http://child-prc.intel.com:913
-export HTTPS_PROXY=http://child-prc.intel.com:913
-export HTTP_PROXY=http://child-prc.intel.com:913
-git clone <a href="https://github.com/TuGraph-family/tugraph-db.git">https://github.com/TuGraph-family/tugraph-db.git</a>
-git submodule update &ndash;init &ndash;recursive
+export http_proxy=http://
+export https_proxy=http://
+export HTTPS_PROXY=http://
+export HTTP_PROXY=http://
+git clone https://github.com/TuGraph-family/tugraph-db.git
+git submodule update --init --recursive
 cd tugraph-db
 deps/build_deps.sh
-deps/build_deps.sh &ndash;fix
+deps/build_deps.sh --fix
 cmake .. -DOURSYSTEM=ubuntu -DENABLE_PREDOWNLOAD_DEPENDS_PACKAGE=1 -DCMAKE_BUILD_TYPE=debug
 make
 make package
 dpkg -i tugraph-3.4.0-1.x86_64.deb
 export LD_LIBRARY_PATH=/usr/local/lib64:/usr/local/lib:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/server/:$LD_LIBRARY_PATH
-lgraph_server</p>
-<p>Expose container ports 7070 and 9090 to host machine
-docker ps
+lgraph_server
+</code></pre><h2 id="expose-container-ports-7070-and-9090-to-host-machine">
+  Expose container ports 7070 and 9090 to host machine
+  <a class="anchor" href="#expose-container-ports-7070-and-9090-to-host-machine">#</a>
+</h2>
+<pre tabindex="0"><code>docker ps
 docker commit &lt;container_name_or_id&gt; &lt;new_image_name&gt;
 docker stop &lt;container_name_or_id&gt;
-docker run -p &lt;host_port&gt;:&lt;container_port&gt; &lt;new_image_name&gt;</p>
-<p>Reconnect to container
-docker start container_id
-docker exec -it container_id bash</p>
-<p>Run and debug TuGraph
-docker run -it -p 7070:7070 -p 9090:9090 &ndash;privileged qiuyuleng/tugraph_debug
+docker run -p &lt;host_port&gt;:&lt;container_port&gt; &lt;new_image_name&gt;
+</code></pre><h2 id="reconnect-to-container">
+  Reconnect to container
+  <a class="anchor" href="#reconnect-to-container">#</a>
+</h2>
+<pre tabindex="0"><code>docker start container_id
+docker exec -it container_id bash
+</code></pre><h2 id="run-and-debug-tugraph">
+  Run and debug TuGraph
+  <a class="anchor" href="#run-and-debug-tugraph">#</a>
+</h2>
+<pre tabindex="0"><code>docker run -it -p 7070:7070 -p 9090:9090 --privileged qiuyuleng/tugraph_debug
+docker exec -it f4b0fcbe0c0f bash
 // In the container
-lgraph_server</p>
-<pre tabindex="0"><code>/usr/bin/python pip module not found when cmake: default python refers to python2.
-
-root@ff32e4cc3e1a:/tugraph-db/deps# python --version
+lgraph_server
+//get the PID
+ps -ef | grep graph
+</code></pre><h2 id="tugraph-cypher">
+  Tugraph Cypher
+  <a class="anchor" href="#tugraph-cypher">#</a>
+</h2>
+<pre tabindex="0"><code>// In the container. Note that before start tugraph_cypher, we need to start lgraph_server and log in beforehand.
+python /tugraph-db/src/python/FMA_shell/lgraph_shell/lgraph_cypher.py -c /usr/local/etc/lgraph.json -u admin -P 73@TuGraph
+// In lgraph_cypher
+CREATE (a:person {name: &#39;Anne&#39;, id: 1235}); // id is the primary key. It has to be unique
+</code></pre><p>If cannot parsing json, delete the proxy.</p>
+<h2 id="usrbinpython-pip-module-not-found-when-cmake-default-python-refers-to-python2">
+  /usr/bin/python pip module not found when cmake: default python refers to python2.
+  <a class="anchor" href="#usrbinpython-pip-module-not-found-when-cmake-default-python-refers-to-python2">#</a>
+</h2>
+<pre tabindex="0"><code>root@ff32e4cc3e1a:/tugraph-db/deps# python --version
 Python 2.7.17
 root@ff32e4cc3e1a:/tugraph-db/deps# ls -l $(which python)
 lrwxrwxrwx 1 root root 9 Apr 16  2018 /usr/bin/python -&gt; python2.7
@@ -386,7 +422,19 @@ lrwxrwxrwx 1 root root 18 May 16 05:45 /usr/bin/python -&gt; /usr/bin/python3.6
       <div class="book-toc-content">
         
   
-<nav id="TableOfContents"></nav>
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#steps-for-compiling-tugraph">Steps for compiling TuGraph</a>
+      <ul>
+        <li><a href="#expose-container-ports-7070-and-9090-to-host-machine">Expose container ports 7070 and 9090 to host machine</a></li>
+        <li><a href="#reconnect-to-container">Reconnect to container</a></li>
+        <li><a href="#run-and-debug-tugraph">Run and debug TuGraph</a></li>
+        <li><a href="#tugraph-cypher">Tugraph Cypher</a></li>
+        <li><a href="#usrbinpython-pip-module-not-found-when-cmake-default-python-refers-to-python2">/usr/bin/python pip module not found when cmake: default python refers to python2.</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
 
 
  

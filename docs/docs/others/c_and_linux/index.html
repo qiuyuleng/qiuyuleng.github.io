@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="程序的基本概念 # 程序和编程语言 # 汇编语言和机器语言的指令是一一对应的。
+<meta name="description" content=" 程序的基本概念 # 程序和编程语言 # 汇编语言和机器语言的指令是一一对应的。
 把机器语言中一组一组的数字用助记符(Mnemonic)表示，直接用这些助记符写出汇编程序，然后让汇编器(Assembler)去查表把助记符替换成数字，也就把汇编语言翻译成了机器语言。
 汇编器就是做一个简单的替换工作。
 C语言到汇编语言到过程是编译（compile），是平台无关的（platform independent），把C语言编译成各种不同体系结构的机器指令。
@@ -14,10 +14,16 @@ C语言到汇编语言到过程是编译（compile），是平台无关的（pla
 第一代：机器语言；第二代：汇编语言；第三代：C，C&#43;&#43;，python等；第四代：声明式，例如SQL语言
 自然语言和形式语言 # syntax语法规则，包含: 词法lexical规则，语法grammar规则
 程序的调试 # 编译时错误：编译失败 运行时错误：运行崩溃 逻辑和语义错误 常量、变量和表达式 # 声明(Declaration)有变量声明、函数声明和类型声明三种 一个变量或函数的声明要求编译器为它分配存储空间，那么 也可以称为定义(Definition)。 定义是声明的一种 定义一个变量，就是分配 一块存储空间并给它命名;给一个变量赋值，就是把一个值保存到这块存储空间中。定义&#43;赋值叫做初始化 char型本质上就是整数，只不过取值范围比int型 小，char型和int型统称为整数类型(Integer Type)或简称整型 &lsquo;a&rsquo;&#43;1：结果是&rsquo;b&rsquo; 简单函数 # 函数的side effect: 调用它不是为了返回值，而是为了它产生的副作用（比如printf）
-可以按照代码的执行顺序来读代码。">
+可以按照代码的执行顺序来读代码。
+C语言从语法上规定全局变量只能用常量表达式来初始化。
+局部变量的存储空间在每次函数调用时分配，在函数返回时释放，每次调用这个函数时局部变量的初值可能不一 样，运行环境不同，函数的调用次序不同，都会影响到局部变量的初值。
+C语言不允许嵌套定义函数。
+分支语句 # 单独使用语句块通常是为了定义 一些比函数的局部变量更“局部”的变量。
+switch语句中的case后面跟表达式的必须是整型常量表达式，这个值和全局变量的初始值一样必须在编译时计算出来。
+深入理解函数 # ">
 <meta name="theme-color" content="#FFFFFF">
 <meta name="color-scheme" content="light dark"><meta property="og:title" content="C_and_linux" />
-<meta property="og:description" content="程序的基本概念 # 程序和编程语言 # 汇编语言和机器语言的指令是一一对应的。
+<meta property="og:description" content=" 程序的基本概念 # 程序和编程语言 # 汇编语言和机器语言的指令是一一对应的。
 把机器语言中一组一组的数字用助记符(Mnemonic)表示，直接用这些助记符写出汇编程序，然后让汇编器(Assembler)去查表把助记符替换成数字，也就把汇编语言翻译成了机器语言。
 汇编器就是做一个简单的替换工作。
 C语言到汇编语言到过程是编译（compile），是平台无关的（platform independent），把C语言编译成各种不同体系结构的机器指令。
@@ -28,17 +34,23 @@ C语言到汇编语言到过程是编译（compile），是平台无关的（pla
 第一代：机器语言；第二代：汇编语言；第三代：C，C&#43;&#43;，python等；第四代：声明式，例如SQL语言
 自然语言和形式语言 # syntax语法规则，包含: 词法lexical规则，语法grammar规则
 程序的调试 # 编译时错误：编译失败 运行时错误：运行崩溃 逻辑和语义错误 常量、变量和表达式 # 声明(Declaration)有变量声明、函数声明和类型声明三种 一个变量或函数的声明要求编译器为它分配存储空间，那么 也可以称为定义(Definition)。 定义是声明的一种 定义一个变量，就是分配 一块存储空间并给它命名;给一个变量赋值，就是把一个值保存到这块存储空间中。定义&#43;赋值叫做初始化 char型本质上就是整数，只不过取值范围比int型 小，char型和int型统称为整数类型(Integer Type)或简称整型 &lsquo;a&rsquo;&#43;1：结果是&rsquo;b&rsquo; 简单函数 # 函数的side effect: 调用它不是为了返回值，而是为了它产生的副作用（比如printf）
-可以按照代码的执行顺序来读代码。" />
+可以按照代码的执行顺序来读代码。
+C语言从语法上规定全局变量只能用常量表达式来初始化。
+局部变量的存储空间在每次函数调用时分配，在函数返回时释放，每次调用这个函数时局部变量的初值可能不一 样，运行环境不同，函数的调用次序不同，都会影响到局部变量的初值。
+C语言不允许嵌套定义函数。
+分支语句 # 单独使用语句块通常是为了定义 一些比函数的局部变量更“局部”的变量。
+switch语句中的case后面跟表达式的必须是整型常量表达式，这个值和全局变量的初始值一样必须在编译时计算出来。
+深入理解函数 # " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://example.org/docs/others/c_and_linux/" /><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2023-05-08T20:42:57+08:00" />
-<meta property="article:modified_time" content="2023-05-23T20:59:53+08:00" />
+<meta property="article:modified_time" content="2023-05-24T21:26:01+08:00" />
 <title>C_and_linux | My CS Learning</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.c58292d36b18b675680ab9baea2029204537b839ea72f258746ec0f32ce8d6c8.css" integrity="sha256-xYKS02sYtnVoCrm66iApIEU3uDnqcvJYdG7A8yzo1sg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.1e3c1c2653122adcbb57d8ed241314e7d0beb55c625f3c9aebeab51823c62736.js" integrity="sha256-HjwcJlMSKty7V9jtJBMU59C&#43;tVxiXzya6&#43;q1GCPGJzY=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.3f574176503abace0b0a9d7806011454f6627752bfec621879ac906b513843bc.js" integrity="sha256-P1dBdlA6us4LCp14BgEUVPZid1K/7GIYeayQa1E4Q7w=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -326,6 +338,8 @@ https://github.com/alex-shpak/hugo-book
     </li>
     <li><a href="#常量变量和表达式">常量、变量和表达式</a></li>
     <li><a href="#简单函数">简单函数</a></li>
+    <li><a href="#分支语句">分支语句</a></li>
+    <li><a href="#深入理解函数">深入理解函数</a></li>
   </ul>
 </nav>
 
@@ -404,6 +418,22 @@ https://github.com/alex-shpak/hugo-book
 <p><img src="/../img/image-20230524211013814.png" alt="image-20230524211013814" /></p>
 <p><img src="/../img/image-20230524212406694.png" alt="image-20230524212406694" /></p>
 <p><img src="/../img/image-20230524212456710.png" alt="image-20230524212456710" /></p>
+<p><img src="/../img/image-20230525210226259.png" alt="image-20230525210226259" /></p>
+<p>C语言从语法上规定全局变量只能用常量表达式来初始化。</p>
+<p><img src="/../img/image-20230525210359395.png" alt="image-20230525210359395" /></p>
+<p>局部变量的存储空间在每次函数调用时分配，在函数返回时释放，每次调用这个函数时局部变量的初值可能不一 样，运行环境不同，函数的调用次序不同，都会影响到局部变量的初值。</p>
+<p>C语言不允许嵌套定义函数。</p>
+<h1 id="分支语句">
+  分支语句
+  <a class="anchor" href="#%e5%88%86%e6%94%af%e8%af%ad%e5%8f%a5">#</a>
+</h1>
+<p><img src="/../img/image-20230525212242079.png" alt="image-20230525212242079" /></p>
+<p>单独使用语句块通常是为了定义 一些比函数的局部变量更“局部”的变量。</p>
+<p>switch语句中的case后面跟表达式的必须是整型常量表达式，这个值和全局变量的初始值一样必须在编译时计算出来。</p>
+<h1 id="深入理解函数">
+  深入理解函数
+  <a class="anchor" href="#%e6%b7%b1%e5%85%a5%e7%90%86%e8%a7%a3%e5%87%bd%e6%95%b0">#</a>
+</h1>
 </article>
  
       
@@ -454,6 +484,8 @@ https://github.com/alex-shpak/hugo-book
     </li>
     <li><a href="#常量变量和表达式">常量、变量和表达式</a></li>
     <li><a href="#简单函数">简单函数</a></li>
+    <li><a href="#分支语句">分支语句</a></li>
+    <li><a href="#深入理解函数">深入理解函数</a></li>
   </ul>
 </nav>
 
