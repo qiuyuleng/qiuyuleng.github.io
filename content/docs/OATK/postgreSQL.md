@@ -101,3 +101,18 @@ Install process:
 - if failed: ERROR: pg_stat_statements must be loaded via shared_preload_libraries
 
     - lsof -i tcp:5432, then kill the corresponding PID
+
+# MySQL InnoDB insert buffer
+
+## What?
+
+BTree+结构，存在在硬盘中（共享表空间），也可以存在在buffer pool。全局只有一棵insert buffer B+树，负责对所有的表的辅助索引进行 insert buffer（4.1版本之后）。
+
+## Why？
+
+在进行插入操作（后来拓展到了update，delete等其他操作，现在叫change buffer了）时（尤其是升序插入），对于非唯一索引（因为对于唯一索引，需要把相关的索引页读出来才知道是不是唯一，这样insert buffer就没有意义了，肯定要读出来），当受影响的index leaf page不在buffer pool中时，缓存index page的变化（只针对单个页面）。在index page读入buffer pool时，再执行合并操作。这样可以减少I/O操作。
+
+## When merge？
+
+- 按需合并：如果页面含有没有被merge的记录，那么这页将被标记为不可用,所以对unmerged 页面的读取操作，必须先等待merge操作完成,然后才能进行。这会降低读取的速度。另一方面，对页面的读取操作，会触发insert buffer的merge操作。
+- 系统I/O空闲时，会进行merge
